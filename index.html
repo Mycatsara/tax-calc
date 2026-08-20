@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3.3% 계산기 — 프리랜서·알바 세금 실수령액 계산</title>
+<meta name="description" content="3.3% 세금 계산기. 프리랜서·알바 급여에서 원천징수 3.3%를 뗀 실수령액을 바로 계산합니다. 실수령액으로 세전 금액 역계산, 환급 안내까지.">
+<meta property="og:title" content="3.3% 계산기 — 프리랜서·알바 실수령액">
+<meta property="og:description" content="받을 돈에서 3.3% 떼면 얼마? 세전·실수령 양방향 계산기.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "3.3% 세금은 왜 떼나요?", "acceptedAnswer": {"@type": "Answer", "text": "프리랜서·일용직 등 사업소득자에게 대금을 지급할 때 소득세 3%와 지방소득세 0.3%를 합한 3.3%를 원천징수하도록 소득세법에 정해져 있기 때문입니다."}},
+    {"@type": "Question", "name": "3.3% 뗀 세금은 돌려받을 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "다음 해 5월 종합소득세 신고를 하면 정산됩니다. 연 소득이 적거나 경비가 많으면 이미 낸 3.3%의 일부 또는 전부를 환급받는 경우가 많습니다."}},
+    {"@type": "Question", "name": "3.3%와 4대보험 공제는 뭐가 다른가요?", "acceptedAnswer": {"@type": "Answer", "text": "3.3%는 사업소득자(프리랜서) 방식이고, 4대보험 공제는 근로자(직원) 방식입니다. 같은 일을 해도 계약 형태에 따라 공제 방식이 달라집니다."}}
+  ]
+}
+</script>
+<style>
+  :root{
+    --bg:#EDF0F4;        /* 서류 받침 회청색 */
+    --ink:#14181F;       /* 먹색 */
+    --paper:#FFFFFF;     /* 영수증 종이 */
+    --green:#0E7A4E;     /* 입금 초록 */
+    --green-deep:#0A5C3B;
+    --amber:#E8A13C;     /* 도장 주황 */
+    --line:#D8DCE2;
+    --sub:#5B6472;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Noto Sans KR',sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+  }
+  .wrap{max-width:560px;margin:0 auto;padding:32px 20px 60px}
+
+  /* 헤더 */
+  header .eyebrow{
+    display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;
+    color:var(--green);border:1.5px solid var(--green);
+    padding:4px 10px;border-radius:4px;margin-bottom:14px;
+  }
+  header h1{font-size:32px;font-weight:900;line-height:1.25;letter-spacing:-0.5px}
+  header h1 .pct{color:var(--green)}
+  header p{margin-top:10px;font-size:15px;color:var(--sub)}
+
+  /* 방향 전환 탭 */
+  .tabs{
+    display:flex;margin-top:26px;
+    background:#E0E4EA;border-radius:12px;padding:4px;
+  }
+  .tabs button{
+    flex:1;font-family:inherit;font-size:14px;font-weight:700;
+    padding:11px 8px;border:none;border-radius:9px;
+    background:transparent;color:var(--sub);cursor:pointer;
+  }
+  .tabs button.on{background:var(--paper);color:var(--ink);box-shadow:0 1px 3px rgba(20,24,31,.12)}
+  .tabs button:focus-visible{outline:3px solid var(--amber)}
+
+  /* 입력 카드 */
+  .card{
+    background:var(--paper);border:1px solid var(--line);
+    border-radius:14px;padding:22px 20px;margin-top:14px;
+  }
+  label{display:block;font-size:13px;font-weight:700;color:var(--sub);margin-bottom:8px}
+  .input-row{display:flex;align-items:center;gap:10px}
+  input[type=text]{
+    flex:1;width:100%;
+    font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;
+    padding:13px 14px;text-align:right;
+    border:2px solid var(--line);border-radius:10px;
+    background:#FAFBFC;color:var(--ink);
+  }
+  input[type=text]:focus{outline:none;border-color:var(--green)}
+  .unit{font-size:16px;font-weight:700;color:var(--sub)}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .chip{
+    font-family:inherit;font-size:13px;font-weight:700;
+    padding:8px 13px;border-radius:999px;
+    border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);cursor:pointer;
+  }
+  .chip:active{background:var(--amber);border-color:var(--amber)}
+  .chip.reset{border-color:var(--line);color:var(--sub)}
+
+  /* 시그니처: 지급 영수증 */
+  .receipt{
+    margin-top:22px;background:var(--paper);border-radius:14px 14px 0 0;
+    box-shadow:0 6px 20px rgba(20,24,31,.10);
+    position:relative;overflow:hidden;
+  }
+  .receipt-head{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:16px 20px;border-bottom:1.5px dashed var(--line);
+  }
+  .receipt-head b{font-size:14px;letter-spacing:1px}
+  .stamp{
+    font-size:11px;font-weight:900;color:var(--amber);
+    border:2px solid var(--amber);border-radius:6px;
+    padding:3px 8px;transform:rotate(-6deg);letter-spacing:1px;
+  }
+  .receipt-body{padding:18px 20px 8px;font-family:'IBM Plex Mono',monospace}
+  .r-line{display:flex;justify-content:space-between;padding:7px 0;font-size:15px}
+  .r-line .k{font-family:'Noto Sans KR',sans-serif;font-size:13.5px;color:var(--sub);font-weight:500}
+  .r-line.minus .v{color:#C0392B}
+  .r-total{
+    margin:10px -20px 0;padding:16px 20px 20px;
+    background:var(--green);color:#fff;
+  }
+  .r-total .k{font-size:13px;font-weight:700;letter-spacing:1.5px;opacity:.85;font-family:'Noto Sans KR',sans-serif}
+  .r-total .v{
+    display:block;font-family:'IBM Plex Mono',monospace;
+    font-size:36px;font-weight:600;margin-top:4px;letter-spacing:-1px;
+  }
+  /* 영수증 절취선 하단 */
+  .receipt-tear{
+    height:14px;background:var(--paper);
+    -webkit-mask:radial-gradient(circle 7px at 7px 14px,transparent 96%,#000) -7px 0/14px 100%;
+    mask:radial-gradient(circle 7px at 7px 14px,transparent 96%,#000) -7px 0/14px 100%;
+    box-shadow:0 6px 20px rgba(20,24,31,.10);
+    margin-bottom:6px;
+  }
+  .copy-btn{
+    width:100%;margin-top:14px;
+    font-family:inherit;font-size:14px;font-weight:700;
+    padding:13px;border-radius:10px;cursor:pointer;
+    border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);
+  }
+  .copy-btn:active{background:var(--ink);color:#fff}
+
+  /* 안내/FAQ — 애드센스·SEO용 본문 */
+  section{margin-top:44px}
+  section h2{font-size:20px;font-weight:900;letter-spacing:-0.3px;margin-bottom:12px}
+  section p{font-size:14.5px;color:#333A45;margin-bottom:10px}
+  details{
+    background:var(--paper);border:1px solid var(--line);
+    border-radius:10px;margin-bottom:8px;
+  }
+  summary{
+    padding:14px 16px;font-size:14.5px;font-weight:700;cursor:pointer;
+    list-style:none;display:flex;justify-content:space-between;align-items:center;
+  }
+  summary::after{content:"+";font-weight:400;color:var(--sub);font-size:18px}
+  details[open] summary::after{content:"–"}
+  details .a{padding:0 16px 14px;font-size:14px;color:#333A45}
+  .tip{
+    margin-top:20px;background:#FDF6EA;border:1px solid #F0DDBB;
+    border-radius:10px;padding:14px 16px;font-size:13.5px;color:#6B5320;
+  }
+  footer{margin-top:48px;text-align:center;font-size:12px;color:#98A0AB}
+  footer .disclaimer{max-width:420px;margin:0 auto 8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="eyebrow">사업소득 원천징수</span>
+    <h1><span class="pct">3.3%</span> 계산기</h1>
+    <p>프리랜서·알바 대금에서 세금 떼면 실제로 받는 돈. 반대로 "통장에 이만큼 찍혔는데 원래 얼마였지?"도 계산됩니다.</p>
+  </header>
+
+  <div class="tabs" role="tablist" aria-label="계산 방향">
+    <button id="tabGross" class="on" role="tab" aria-selected="true">세전 → 실수령</button>
+    <button id="tabNet" role="tab" aria-selected="false">실수령 → 세전</button>
+  </div>
+
+  <div class="card">
+    <label for="amount" id="amountLabel">계약 금액 (세전)</label>
+    <div class="input-row">
+      <input type="text" id="amount" inputmode="numeric" placeholder="0" autocomplete="off">
+      <span class="unit">원</span>
+    </div>
+    <div class="chips" role="group" aria-label="금액 빠른 추가">
+      <button class="chip" data-add="100000">+10만</button>
+      <button class="chip" data-add="500000">+50만</button>
+      <button class="chip" data-add="1000000">+100만</button>
+      <button class="chip reset" data-add="reset">지우기</button>
+    </div>
+  </div>
+
+  <div class="receipt" role="status" aria-live="polite">
+    <div class="receipt-head">
+      <b>지급 내역서</b>
+      <span class="stamp">원천징수 3.3%</span>
+    </div>
+    <div class="receipt-body">
+      <div class="r-line"><span class="k">세전 금액</span><span class="v" id="rGross">0</span></div>
+      <div class="r-line minus"><span class="k">소득세 (3%)</span><span class="v" id="rTax">−0</span></div>
+      <div class="r-line minus"><span class="k">지방소득세 (0.3%)</span><span class="v" id="rLocal">−0</span></div>
+      <div class="r-total">
+        <span class="k" id="totalLabel">실수령액</span>
+        <span class="v" id="rNet">0원</span>
+      </div>
+    </div>
+  </div>
+  <div class="receipt-tear" aria-hidden="true"></div>
+
+  <button class="copy-btn" id="copyBtn">계산 결과 복사하기</button>
+
+  <div class="tip">
+    💡 떼인 3.3%는 사라지는 돈이 아닙니다. 다음 해 5월 종합소득세 신고 때 정산되며, 소득이 적으면 대부분 돌려받습니다.
+  </div>
+
+  <section>
+    <h2>3.3% 세금, 3분 정리</h2>
+    <p>회사에 소속되지 않고 일하는 프리랜서, 일부 아르바이트, 배달·강의·디자인 외주 등은 세법상 <b>사업소득자</b>로 분류됩니다. 돈을 주는 쪽은 지급액의 <b>소득세 3% + 지방소득세 0.3% = 총 3.3%</b>를 미리 떼서 국가에 대신 납부하는데, 이를 원천징수라고 합니다.</p>
+    <p>예를 들어 100만 원을 계약했다면 33,000원을 뗀 <b>967,000원</b>이 통장에 들어옵니다. 이 계산기가 하는 일이 바로 그 계산입니다.</p>
+  </section>
+
+  <section>
+    <h2>자주 묻는 질문</h2>
+    <details>
+      <summary>떼인 3.3%는 돌려받을 수 있나요?</summary>
+      <div class="a">네, 가능성이 높습니다. 다음 해 5월 종합소득세 신고를 하면 1년 소득 전체를 기준으로 세금을 다시 계산합니다. 연 소득이 적거나 경비 처리할 것이 많다면, 미리 낸 3.3%가 실제 낼 세금보다 많아 차액을 환급받는 경우가 흔합니다. 신고는 홈택스에서 직접 하거나 세무 서비스를 이용하면 됩니다.</div>
+    </details>
+    <details>
+      <summary>알바인데 왜 4대보험이 아니라 3.3%를 떼나요?</summary>
+      <div class="a">사업주가 근로계약이 아닌 프리랜서(사업소득) 계약 형태로 처리했기 때문입니다. 실제 근무 형태가 지휘·감독을 받는 근로자에 가깝다면 근로계약이 원칙이며, 이 경우 주휴수당·퇴직금 등 근로기준법상 권리와도 연결됩니다. 본인의 계약 형태를 확인해 보세요.</div>
+    </details>
+    <details>
+      <summary>3.3%를 안 떼고 전액 받았어요. 문제인가요?</summary>
+      <div class="a">원천징수 의무는 지급하는 쪽에 있으므로 받는 사람이 처벌받는 것은 아닙니다. 다만 소득 신고가 누락됐을 수 있으니, 5월 종합소득세 신고 때 해당 소득을 직접 신고해야 나중에 가산세 문제가 생기지 않습니다.</div>
+    </details>
+    <details>
+      <summary>부가세 10%와는 다른 건가요?</summary>
+      <div class="a">완전히 다릅니다. 3.3%는 소득에 대한 세금(소득세)을 미리 떼는 것이고, 부가세 10%는 사업자등록을 한 사업자가 공급가액에 붙여 받는 세금입니다. 사업자등록 없이 일하는 프리랜서 대부분은 3.3%만 관련이 있습니다.</div>
+    </details>
+    <details>
+      <summary>계산 금액이 실제 입금액과 몇 원 다른데요?</summary>
+      <div class="a">원천징수 세액은 원 단위 절사(소득세법상 10원 미만 버림) 방식이 회사마다 조금씩 달라 1~9원 차이가 날 수 있습니다. 이 계산기는 소득세·지방소득세를 각각 10원 미만 절사하는 일반적인 방식을 따릅니다.</div>
+    </details>
+  </section>
+
+  <footer>
+    <p class="disclaimer">본 계산기는 참고용 간이 계산 도구이며, 실제 세액은 계약 조건과 신고 내용에 따라 달라질 수 있습니다.</p>
+    <p>세금 계산기 모음 · 무료 도구</p>
+  </footer>
+</div>
+
+<script>
+  const amount = document.getElementById('amount');
+  const tabGross = document.getElementById('tabGross');
+  const tabNet = document.getElementById('tabNet');
+  const amountLabel = document.getElementById('amountLabel');
+  let mode = 'gross'; // gross: 세전입력, net: 실수령입력
+
+  const comma = n => Math.floor(n).toLocaleString('ko-KR');
+  const floor10 = n => Math.floor(n / 10) * 10; // 10원 미만 절사
+
+  function parseAmount(){
+    return parseInt(amount.value.replace(/[^0-9]/g,''), 10) || 0;
+  }
+
+  function render(){
+    const v = parseAmount();
+    let gross, tax, local, net;
+    if(mode === 'gross'){
+      gross = v;
+      tax = floor10(gross * 0.03);
+      local = floor10(gross * 0.003);
+      net = gross - tax - local;
+    }else{
+      // 실수령 → 세전 역산: net ≈ gross * 0.967
+      gross = Math.round(v / 0.967);
+      tax = floor10(gross * 0.03);
+      local = floor10(gross * 0.003);
+      net = v;
+      // 절사 오차 보정
+      if(gross - tax - local !== net){ gross = net + tax + local; }
+    }
+    document.getElementById('rGross').textContent = comma(gross);
+    document.getElementById('rTax').textContent = '−' + comma(tax);
+    document.getElementById('rLocal').textContent = '−' + comma(local);
+    document.getElementById('rNet').textContent =
+      comma(mode === 'gross' ? net : gross) + '원';
+    document.getElementById('totalLabel').textContent =
+      mode === 'gross' ? '실수령액' : '세전 계약 금액';
+  }
+
+  amount.addEventListener('input', ()=>{
+    const raw = parseAmount();
+    amount.value = raw ? comma(raw) : '';
+    render();
+  });
+
+  function setMode(m){
+    mode = m;
+    tabGross.classList.toggle('on', m==='gross');
+    tabNet.classList.toggle('on', m==='net');
+    tabGross.setAttribute('aria-selected', m==='gross');
+    tabNet.setAttribute('aria-selected', m==='net');
+    amountLabel.textContent = m==='gross' ? '계약 금액 (세전)' : '통장에 들어온 금액 (실수령)';
+    render();
+  }
+  tabGross.addEventListener('click', ()=>setMode('gross'));
+  tabNet.addEventListener('click', ()=>setMode('net'));
+
+  document.querySelectorAll('.chip').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      if(btn.dataset.add === 'reset'){ amount.value=''; }
+      else{
+        const cur = parseAmount();
+        amount.value = comma(cur + parseInt(btn.dataset.add,10));
+      }
+      render();
+    });
+  });
+
+  document.getElementById('copyBtn').addEventListener('click', async ()=>{
+    const g = document.getElementById('rGross').textContent;
+    const n = document.getElementById('rNet').textContent;
+    const text = `[3.3% 계산] 세전 ${g}원 → 실수령 ${n} (소득세 3% + 지방소득세 0.3% 공제)`;
+    try{
+      await navigator.clipboard.writeText(text);
+      const btn = document.getElementById('copyBtn');
+      btn.textContent = '복사 완료!';
+      setTimeout(()=>btn.textContent='계산 결과 복사하기', 1500);
+    }catch(e){ alert(text); }
+  });
+
+  render();
+</script>
+</body>
+</html>
