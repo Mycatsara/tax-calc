@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://taxtool.kr/sitemap.xml
