@@ -35,6 +35,7 @@ git log --since=midnight --diff-filter=A --name-only --pretty=format: -- guide/ 
 **가장 최근에 게시된 글 페이지(예: guide/jongsose.html)를 열어 그 구조·CSS를 그대로 복사**하고 내용만 교체한다. 스타일을 새로 짓지 않는다. 구성 요소:
 
 - head: title, meta description, og:title/og:description(메타 설명 축약)/og:type=article, Google Fonts 링크, JSON-LD Article (mainEntityOfPage는 `https://taxtool.kr/guide/<슬러그>.html`)
+- head 끝(`</head>` 직전): AdSense 스크립트 + **Google Analytics 4 스니펫(측정 ID G-P4F2M5B9DS)** — 최근 글 페이지의 것을 그대로 복사. 둘 중 하나라도 빠지면 안 됨
 - 본문: crumb(홈/가이드/짧은 주제명) → eyebrow(주제 태그) → h1 → .meta 한 줄 소개 → article
 - article 내부: 첫 문단은 `.lead`, `##` → `<h2>`, `**굵게**` → `<b>`, 목록 → `<ul>/<ol>`, 상대 링크는 그대로 `<a href>`
 - `## 정리` 섹션 → `.summary-box`로 변환
