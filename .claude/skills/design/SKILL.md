@@ -66,9 +66,20 @@ description: taxtool.kr 디자인 규칙(색상·폰트·컴포넌트·금지사
 → section(안내 p 2~3개) → section(FAQ details 3~5개, JSON-LD FAQPage와 내용 일치)
 → .related(.rel-card 2~4개 + .rel-more) → .tip(선택) → footer
 ```
-- head: charset, viewport, title(" — 설명" 형식), description, og 3종, **og:url·og:image(/og.png 1200×630)·og:site_name·twitter:card·canonical**, Google Fonts, JSON-LD(FAQPage 또는 Article), **BreadcrumbList(홈 › 계산기명)**, **WebApplication(name·url·applicationCategory=FinanceApplication·isAccessibleForFree·offers 0원·dateModified)**, **AdSense 스크립트 + GA4 스니펫(G-P4F2M5B9DS) `</head>` 직전** — 둘 다 `index.html`에서 복사
+- head: charset, viewport, title(" — 설명" 형식), description, og 3종, **og:url·og:image(/og.png 1200×630)·og:site_name·twitter:card·canonical**, Google Fonts, JSON-LD(FAQPage 또는 Article), **BreadcrumbList(홈 › 계산기명)**, **WebApplication(name·url·applicationCategory=FinanceApplication·isAccessibleForFree·offers 0원·dateModified)**, **AdSense 스크립트 + GA4 스니펫(G-P4F2M5B9DS, 자동화·`?ga=off` 제외 가드 포함) `</head>` 직전** — 둘 다 `index.html`에서 복사
 - 결과 금액에는 반드시 `comma()` 천단위 콤마 + "원". 마이너스 항목은 `.minus`
 - GA 이벤트: 첫 입력 `calc_use{tool,mode}`, 탭 전환 `calc_mode`, 복사 `calc_copy` — `typeof gtag==='function'` 가드. **입력 금액 값은 이벤트에 담지 않는다**(privacy 고지와 일치)
+
+## 6-2. 광고 배치 시 필수 확인 (8/22 추가)
+
+**광고는 "조용히 안 뜨는" 것이 기본값이다.** 광고 태그 자체에 `display:none`이 들어 있어서, 반응형으로 PC/모바일을 나눌 때 base 클래스를 빠뜨리면 한쪽에서만 영구히 숨겨진다. (실제 사례: 같은 유형의 계산기 사이트가 모바일 광고만 안 뜨는 상태로 **21곳 동일 실수**를 방치)
+
+광고를 넣거나 고친 뒤 배포하면 반드시:
+1. **375px 폭**에서 광고 컨테이너의 `offsetHeight > 0` 인지 확인
+2. **1280px 폭**에서도 동일 확인
+3. 광고를 넣은 **모든 페이지를 전수 확인** — 한 곳의 실수는 전 페이지의 실수다
+4. 콘솔에 `adsbygoogle` 관련 오류가 없는지 확인
+5. 배치 한도 준수: 계산 결과 아래 1개 중심, 페이지당 2~3개 이하
 
 ## 7. 금지
 - **이모지 금지** (아이콘 필요하면 텍스트 기호 `+ – → ·` 또는 CSS 도형). 이 사이트는 기호만 쓴다

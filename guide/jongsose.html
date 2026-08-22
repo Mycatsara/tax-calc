@@ -96,11 +96,20 @@
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4428587485814712" crossorigin="anonymous"></script>
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P4F2M5B9DS"></script>
 <script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','G-P4F2M5B9DS');
-document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';var t=(a.textContent||'').trim().slice(0,60);if(/coupang\.com|link\.coupang|toss/.test(h)){gtag('event','affiliate_click',{link_url:h,link_text:t,page_path:location.pathname});return;}if(a.closest('.cta,.rel-card,.post-card,.card')){gtag('event','internal_link',{link_url:h,link_text:t,page_path:location.pathname});}});
+(function(){
+  // ?ga=off 로 접속하면 이 브라우저 세션 동안 집계 제외 (운영자·클로드 점검용)
+  try{ if(location.search.indexOf('ga=off')>-1) sessionStorage.setItem('gaoff','1'); }catch(e){}
+  var off=false; try{ off=sessionStorage.getItem('gaoff')==='1'; }catch(e){}
+  // 자동화 브라우저(크롤러·스크래퍼)는 집계하지 않는다. 실제 사용자에게는 절대 걸리지 않는 조건만 사용.
+  var auto = navigator.webdriver===true || /HeadlessChrome|PhantomJS|Puppeteer|Playwright|Selenium/i.test(navigator.userAgent);
+  if(off||auto) return;
+  var s=document.createElement('script'); s.async=true;
+  s.src='https://www.googletagmanager.com/gtag/js?id=G-P4F2M5B9DS'; document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments);};
+  gtag('js',new Date()); gtag('config','G-P4F2M5B9DS');
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';var t=(a.textContent||'').trim().slice(0,60);if(/coupang\.com|link\.coupang|toss/.test(h)){gtag('event','affiliate_click',{link_url:h,link_text:t,page_path:location.pathname});return;}if(a.closest('.cta,.rel-card,.post-card,.card')){gtag('event','internal_link',{link_url:h,link_text:t,page_path:location.pathname});}});
+})();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://taxtool.kr/"},{"@type":"ListItem","position":2,"name":"가이드","item":"https://taxtool.kr/guide/"},{"@type":"ListItem","position":3,"name":"종합소득세 신고","item":"https://taxtool.kr/guide/jongsose.html"}]}
