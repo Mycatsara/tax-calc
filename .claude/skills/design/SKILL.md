@@ -50,6 +50,7 @@ description: taxtool.kr 디자인 규칙(색상·폰트·컴포넌트·금지사
 | `.tip` / `.summary-box` | 배경 #FDF6EA, 테두리 #F0DDBB, radius 10px, 글자 #6B5320 |
 | `.cta` (글 하단) | 초록 배경 흰 글자 radius 12px padding 20px, 링크 **하나만**, 밑줄 `rgba(255,255,255,.5)` |
 | `.footnote` | 12.5px sub 이탤릭 |
+| `.pubdate` 게시일 | 글 헤더 `.meta` 바로 아래, `margin-top:6px;font-size:12.5px;color:#98A0AB` |
 | `.stepper` 수량 입력 (pay) | `.step-btn` 38×38 pill, 1.5px ink 테두리, active 시 amber 채움, disabled 시 `--line` 테두리+sub 글자 / `.step-val` Plex Mono 22px/600 / `.step-unit` 14px/700 sub. 옵션 묶음은 `.opt-row`(간격 18px) + `.hint`(12px sub) |
 | `.r-line.sum` 공제 합계 | 영수증 안 소계 행: 위 1.5px dashed 구분선, 값 600. `.r-line .k small`(11.5px)로 요율 표기. `.r-total .sub`(12.5px, opacity .85)로 연 환산 등 보조 정보 |
 | `.home-link` | 계산기 하위 페이지 상단 "← 홈" 13px sub 링크 |
@@ -65,7 +66,7 @@ description: taxtool.kr 디자인 규칙(색상·폰트·컴포넌트·금지사
 → section(안내 p 2~3개) → section(FAQ details 3~5개, JSON-LD FAQPage와 내용 일치)
 → .related(.rel-card 2~4개 + .rel-more) → .tip(선택) → footer
 ```
-- head: charset, viewport, title(" — 설명" 형식), description, og 3종, **og:url·og:image(/og.png 1200×630)·og:site_name·twitter:card·canonical**, Google Fonts, JSON-LD(FAQPage 또는 Article), **BreadcrumbList(홈 › 계산기명)**, **AdSense 스크립트 + GA4 스니펫(G-P4F2M5B9DS) `</head>` 직전** — 둘 다 `index.html`에서 복사
+- head: charset, viewport, title(" — 설명" 형식), description, og 3종, **og:url·og:image(/og.png 1200×630)·og:site_name·twitter:card·canonical**, Google Fonts, JSON-LD(FAQPage 또는 Article), **BreadcrumbList(홈 › 계산기명)**, **WebApplication(name·url·applicationCategory=FinanceApplication·isAccessibleForFree·offers 0원·dateModified)**, **AdSense 스크립트 + GA4 스니펫(G-P4F2M5B9DS) `</head>` 직전** — 둘 다 `index.html`에서 복사
 - 결과 금액에는 반드시 `comma()` 천단위 콤마 + "원". 마이너스 항목은 `.minus`
 - GA 이벤트: 첫 입력 `calc_use{tool,mode}`, 탭 전환 `calc_mode`, 복사 `calc_copy` — `typeof gtag==='function'` 가드. **입력 금액 값은 이벤트에 담지 않는다**(privacy 고지와 일치)
 
