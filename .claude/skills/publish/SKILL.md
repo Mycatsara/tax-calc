@@ -34,7 +34,7 @@ git log --since=midnight --diff-filter=A --name-only --pretty=format: -- guide/ 
 
 **가장 최근에 게시된 글 페이지(예: guide/jongsose.html)를 열어 그 구조·CSS를 그대로 복사**하고 내용만 교체한다. 스타일을 새로 짓지 않는다. 구성 요소:
 
-- head: title, meta description, og:title/og:description(메타 설명 축약)/og:type=article, Google Fonts 링크, JSON-LD Article (mainEntityOfPage는 `https://taxtool.kr/guide/<슬러그>.html`)
+- head: title, meta description, og:title/og:description(**80~125자**. 메타 설명이 그 범위면 그대로, 길면 핵심만 축약 — 스레드·카톡 공유 카드에 그대로 노출됨)/og:type=article, Google Fonts 링크, JSON-LD Article (mainEntityOfPage는 `https://taxtool.kr/guide/<슬러그>.html`)
 - head 끝(`</head>` 직전): AdSense 스크립트 + **Google Analytics 4 스니펫(측정 ID G-P4F2M5B9DS)** — 최근 글 페이지의 것을 그대로 복사. 둘 중 하나라도 빠지면 안 됨
 - head 공유·검색 태그(8/22~ 필수): `og:url`(페이지 절대 URL) · `og:image`=`https://taxtool.kr/og.png` + width 1200/height 630 · `og:site_name` · `twitter:card=summary_large_image` · `<link rel="canonical">` — 최근 글 페이지에서 복사하고 URL만 교체. 그리고 `</head>` 직전에 **BreadcrumbList JSON-LD**(홈 › 가이드 › 짧은 주제명, item은 절대 URL). `html{}`에 `-webkit-text-size-adjust:100%` 유지
 - **날짜(GEO·최신성 신호)**: Article JSON-LD에 `datePublished`(게시일)와 `dateModified`를 **둘 다** 넣는다. 신규 글은 두 값이 같다. 헤더 `.meta` 바로 아래에 `<p class="pubdate">YYYY년 M월 D일 게시</p>` 표시. **기존 글의 세율·법령·수치를 고치면 `dateModified`와 화면 문구를 그날 날짜로 갱신**하고 문구는 `~ 게시 · YYYY년 M월 D일 수정`으로 바꾼다. 오탈자·디자인 수정만 한 경우에는 갱신하지 않는다
@@ -50,7 +50,7 @@ git log --since=midnight --diff-filter=A --name-only --pretty=format: -- guide/ 
 ## 4단계: 3종 반영 (하나라도 빠지면 안 됨)
 
 1. **guide/index.html**: `.list` 맨 위에 새 `.post-card` 추가 (태그·제목·메타설명 기반 요약·"읽어보기 →")
-2. **sitemap.xml**: `</urlset>` 앞에 새 url 블록 추가 (changefreq monthly, priority 0.6)
+2. **sitemap.xml**: `</urlset>` 앞에 새 url 블록 추가 (`<lastmod>`=게시일 YYYY-MM-DD, changefreq monthly, priority 0.6). **글의 `dateModified`를 갱신하면 sitemap의 `<lastmod>`도 같은 날짜로 함께 갱신**한다(불일치 금지)
 3. **index.html(홈)**: `.related` 안에 새 `.rel-card` 추가. 배치는 계산기 사용자 관심 순서를 고려해 판단. **카드가 6개를 넘으면 추가하기 전에 운영자에게 어떤 글을 홈에서 뺄지 확인**
 
 ## 5단계: 배포 전 검사
