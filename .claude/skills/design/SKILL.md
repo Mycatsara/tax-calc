@@ -50,6 +50,7 @@ description: taxtool.kr 디자인 규칙(색상·폰트·컴포넌트·금지사
 | `.tip` / `.summary-box` | 배경 #FDF6EA, 테두리 #F0DDBB, radius 10px, 글자 #6B5320 |
 | `.cta` (글 하단) | 초록 배경 흰 글자 radius 12px padding 20px, 링크 **하나만**, 밑줄 `rgba(255,255,255,.5)` |
 | `.footnote` | 12.5px sub 이탤릭 |
+| `.tbl` 금액 표 (글 본문) | `width:100%;border-collapse:collapse`, 14px, 셀 padding 9px 4px, 행 구분 1px `--line`, `th`는 12.5px/700 sub + 1.5px `--line` 밑줄. **마지막 열(금액)은 우측 정렬 + Plex Mono 600 + `white-space:nowrap`**. 합계행 `tr.total`은 위 1.5px dashed + ink 굵게. 375px에서 2열까지만 — 3열 이상이면 목록으로 바꾼다 |
 | `.pubdate` 게시일 | 글 헤더 `.meta` 바로 아래, `margin-top:6px;font-size:12.5px;color:#98A0AB` |
 | `.stepper` 수량 입력 (pay) | `.step-btn` 38×38 pill, 1.5px ink 테두리, active 시 amber 채움, disabled 시 `--line` 테두리+sub 글자 / `.step-val` Plex Mono 22px/600 / `.step-unit` 14px/700 sub. 옵션 묶음은 `.opt-row`(간격 18px) + `.hint`(12px sub) |
 | `.r-line.sum` 공제 합계 | 영수증 안 소계 행: 위 1.5px dashed 구분선, 값 600. `.r-line .k small`(11.5px)로 요율 표기. `.r-total .sub`(12.5px, opacity .85)로 연 환산 등 보조 정보 |
