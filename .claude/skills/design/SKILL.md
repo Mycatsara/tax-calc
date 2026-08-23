@@ -55,6 +55,9 @@ description: taxtool.kr 디자인 규칙(색상·폰트·컴포넌트·금지사
 | `.r-line.sum` 공제 합계 | 영수증 안 소계 행: 위 1.5px dashed 구분선, 값 600. `.r-line .k small`(11.5px)로 요율 표기. `.r-total .sub`(12.5px, opacity .85)로 연 환산 등 보조 정보 |
 | `.home-link` | 계산기 하위 페이지 상단 "← 홈" 13px sub 링크 |
 | `footer` | 12px #98A0AB 중앙 정렬, `.disclaimer`(max 420px) → 한 줄 소개 → `.footer-links`(가이드·사이트 소개·개인정보처리방침) |
+| `.post-list` 번호형 글 목록 | 홈·글 하단 공용. `<ol>`, 위아래 1px `--line` 구분선, 행 padding 12px 2px, `.n`(Plex Mono 12.5px/600 #98A0AB) · `.t`(14.5px/700) · `.g`(초록 화살표). hover 시 `.t`가 초록 |
+| `.next-read` 글 하단 관련 글 | `margin-top:34px`, h2 15px/900. **위치는 정리 박스 뒤 · CTA 앞** (계산기로 바로 보내면 이탈하므로 다음 읽을거리를 먼저 준다). 내용은 `tools/buildlist.js`가 생성 |
+| `.filter` 글 검색·태그 칩 (가이드 목록) | `.search input`(Noto 14.5px 좌측 정렬, 1.5px `--line`, radius 10px, focus 초록) + `.chip`(pill, 1.5px ink 테두리, `.on`은 amber 채움) + `.count` + `.no-result`. 계산기 입력창과 달리 Plex Mono·우측 정렬을 쓰지 않는다 |
 
 그림자는 위 두 가지(`0 1px 3px` / `0 6px 20px`)만 쓴다. 모서리는 4 / 9 / 10 / 12 / 14 / 999px만 쓴다. transition은 `.15s`만.
 

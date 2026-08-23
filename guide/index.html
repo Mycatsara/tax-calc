@@ -71,6 +71,20 @@
   footer .footer-links{margin-top:10px}
   footer .footer-links a{color:#98A0AB;text-decoration:underline;margin:0 6px}
   footer .footer-links a:hover{color:var(--sub)}
+
+  /* 글 검색·태그 필터 */
+  .filter{margin-top:24px}
+  .search input{width:100%;font-family:'Noto Sans KR',sans-serif;font-size:14.5px;color:var(--ink);background:#FAFBFC;border:1.5px solid var(--line);border-radius:10px;padding:11px 14px;outline:none;transition:border-color .15s}
+  .search input:focus{border-color:var(--green)}
+  .search input::placeholder{color:#98A0AB}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .chip{font-family:inherit;font-size:13px;font-weight:700;color:var(--ink);background:transparent;border:1.5px solid var(--ink);border-radius:999px;padding:6px 12px;cursor:pointer;transition:.15s}
+  .chip.on{background:var(--amber);border-color:var(--amber)}
+  .count{margin-top:18px;font-size:13px;color:var(--sub)}
+  .list{margin-top:14px}
+  .no-result{display:none;margin-top:16px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:22px 20px;text-align:center;font-size:14px;color:var(--sub)}
+  .no-result a{color:var(--green);font-weight:700;text-decoration:none}
+  .post-card .num{font-size:12px;font-weight:600;font-family:'IBM Plex Mono',monospace;color:#98A0AB;margin-right:8px}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4428587485814712" crossorigin="anonymous"></script>
 <!-- Google Analytics 4 -->
@@ -86,7 +100,7 @@
   s.src='https://www.googletagmanager.com/gtag/js?id=G-P4F2M5B9DS'; document.head.appendChild(s);
   window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments);};
   gtag('js',new Date()); gtag('config','G-P4F2M5B9DS');
-  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';var t=(a.textContent||'').trim().slice(0,60);if(/coupang\.com|link\.coupang|toss/.test(h)){gtag('event','affiliate_click',{link_url:h,link_text:t,page_path:location.pathname});return;}if(a.closest('.cta,.rel-card,.post-card,.card')){gtag('event','internal_link',{link_url:h,link_text:t,page_path:location.pathname});}});
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';var t=(a.textContent||'').trim().slice(0,60);if(/coupang\.com|link\.coupang|toss/.test(h)){gtag('event','affiliate_click',{link_url:h,link_text:t,page_path:location.pathname});return;}if(a.closest('.cta,.rel-card,.post-card,.post-list,.card')){gtag('event','internal_link',{link_url:h,link_text:t,page_path:location.pathname});}});
 })();
 </script>
 <script type="application/ld+json">
@@ -104,44 +118,65 @@
     <p>프리랜서·알바·직장인을 위한 세금·환급·실수령액 관련 글을 모았습니다. 계속 추가될 예정입니다.</p>
   </header>
 
-  <div class="list">
-    <a class="post-card" href="/guide/gyeongbiyul.html">
-      <span class="tag">경비율</span>
-      <h2>단순경비율 vs 기준경비율, 장부 없는 프리랜서의 세금이 갈리는 지점</h2>
-      <p>작년엔 환급받았는데 올해 갑자기 세금이 나왔다면 경비율이 바뀐 겁니다. 두 경비율의 차이, 확인하는 법, 세금이 뛰기 전 대비법을 정리했습니다.</p>
-      <span class="arrow">읽어보기 →</span>
-    </a>
-    <a class="post-card" href="/guide/gihanhu.html">
-      <span class="tag">환급 구제</span>
-      <h2>놓친 세금 돌려받기: 기한 후 신고와 경정청구</h2>
-      <p>5월 종합소득세 신고를 놓쳤어도 환급은 끝나지 않았습니다. 기한 후 신고와 경정청구로 최대 5년까지 소급해서 돌려받는 방법을 정리했습니다.</p>
-      <span class="arrow">읽어보기 →</span>
-    </a>
-    <a class="post-card" href="/guide/wonchon.html">
-      <span class="tag">사장님 가이드</span>
-      <h2>프리랜서에게 3.3% 떼고 지급할 때, 사장님이 해야 할 일 정리</h2>
-      <p>3.3% 원천징수는 떼는 것으로 끝이 아닙니다. 원천세 신고·납부 기한, 지급명세서 제출, 자주 하는 실수까지 지급하는 쪽의 의무를 순서대로 정리했습니다.</p>
-      <span class="arrow">읽어보기 →</span>
-    </a>
-    <a class="post-card" href="/guide/jongsose.html">
-      <span class="tag">종합소득세</span>
-      <h2>프리랜서 종합소득세 신고, 처음이라면 이 순서대로 (5월 신고 가이드)</h2>
-      <p>첫 종합소득세 신고, 헤매는 지점만 골라 순서대로 정리했습니다. 모두채움 신고서, 홈택스 절차, 경비율 제도, 안 하면 생기는 불이익까지.</p>
-      <span class="arrow">읽어보기 →</span>
-    </a>
-    <a class="post-card" href="/guide/alba33.html">
-      <span class="tag">3.3% vs 4대보험</span>
-      <h2>알바인데 왜 3.3%를 떼나요? 4대보험과 뭐가 다른지 정리</h2>
-      <p>알바 급여에서 3.3%를 떼는 이유, 4대보험 공제와의 차이, 나에게 유리한 쪽은 어디인지 정리했습니다. 주휴수당·퇴직금과의 관계까지 확인하세요.</p>
-      <span class="arrow">읽어보기 →</span>
-    </a>
-    <a class="post-card" href="/guide/refund.html">
-      <span class="tag">환급</span>
-      <h2>프리랜서·알바 3.3% 세금, 5월에 돌려받는 법</h2>
-      <p>5월 종합소득세 신고로 3.3% 환급받는 법, 대상, 신고 방법 3가지와 놓쳤을 때 소급받는 법까지 정리했습니다.</p>
-      <span class="arrow">읽어보기 →</span>
-    </a>
+  <div class="filter">
+    <div class="search"><input type="search" id="q" placeholder="글 검색 (예: 환급, 경비율)" autocomplete="off" aria-label="글 검색"></div>
+    <div class="chips" id="chips">
+<!-- AUTO:CHIPS:START -->
+        <button class="chip on" type="button" data-tag="">전체</button>
+        <button class="chip" type="button" data-tag="환급">환급</button>
+        <button class="chip" type="button" data-tag="신고">신고</button>
+        <button class="chip" type="button" data-tag="알바·계약">알바·계약</button>
+        <button class="chip" type="button" data-tag="사장님">사장님</button>
+<!-- AUTO:CHIPS:END -->
+    </div>
   </div>
+
+<!-- AUTO:COUNT:START -->
+  <p class="count" id="count">전체 6편</p>
+<!-- AUTO:COUNT:END -->
+
+  <div class="list" id="list">
+<!-- AUTO:LIST:START -->
+      <a class="post-card" href="/guide/gyeongbiyul.html" data-tag="신고" data-text="단순경비율 vs 기준경비율, 장부 없는 프리랜서의 세금이 갈리는 지점 작년엔 환급받았는데 올해 갑자기 세금이 나왔다면 경비율이 바뀐 겁니다. 두 경비율의 차이, 확인하는 법, 세금이 뛰기 전 대비법을 정리했습니다. 신고">
+        <span class="num">01</span><span class="tag">신고</span>
+        <h2>단순경비율 vs 기준경비율, 장부 없는 프리랜서의 세금이 갈리는 지점</h2>
+        <p>작년엔 환급받았는데 올해 갑자기 세금이 나왔다면 경비율이 바뀐 겁니다. 두 경비율의 차이, 확인하는 법, 세금이 뛰기 전 대비법을 정리했습니다.</p>
+        <span class="arrow">읽어보기 →</span>
+      </a>
+      <a class="post-card" href="/guide/gihanhu.html" data-tag="환급" data-text="놓친 세금 돌려받기: 기한 후 신고와 경정청구 5월 종합소득세 신고를 놓쳤어도 환급은 끝나지 않았습니다. 기한 후 신고와 경정청구로 최대 5년까지 소급해서 돌려받는 방법을 정리했습니다. 환급">
+        <span class="num">02</span><span class="tag">환급</span>
+        <h2>놓친 세금 돌려받기: 기한 후 신고와 경정청구</h2>
+        <p>5월 종합소득세 신고를 놓쳤어도 환급은 끝나지 않았습니다. 기한 후 신고와 경정청구로 최대 5년까지 소급해서 돌려받는 방법을 정리했습니다.</p>
+        <span class="arrow">읽어보기 →</span>
+      </a>
+      <a class="post-card" href="/guide/wonchon.html" data-tag="사장님" data-text="프리랜서에게 3.3% 떼고 지급할 때, 사장님이 해야 할 일 정리 3.3% 원천징수는 떼는 것으로 끝이 아닙니다. 원천세 신고·납부 기한, 지급명세서 제출, 자주 하는 실수까지 지급하는 쪽의 의무를 순서대로 정리했습니다. 사장님">
+        <span class="num">03</span><span class="tag">사장님</span>
+        <h2>프리랜서에게 3.3% 떼고 지급할 때, 사장님이 해야 할 일 정리</h2>
+        <p>3.3% 원천징수는 떼는 것으로 끝이 아닙니다. 원천세 신고·납부 기한, 지급명세서 제출, 자주 하는 실수까지 지급하는 쪽의 의무를 순서대로 정리했습니다.</p>
+        <span class="arrow">읽어보기 →</span>
+      </a>
+      <a class="post-card" href="/guide/jongsose.html" data-tag="신고" data-text="프리랜서 종합소득세 신고, 처음이라면 이 순서대로 (5월 신고 가이드) 첫 종합소득세 신고, 헤매는 지점만 골라 순서대로 정리했습니다. 모두채움 신고서, 홈택스 절차, 경비율 제도, 안 하면 생기는 불이익까지. 신고">
+        <span class="num">04</span><span class="tag">신고</span>
+        <h2>프리랜서 종합소득세 신고, 처음이라면 이 순서대로 (5월 신고 가이드)</h2>
+        <p>첫 종합소득세 신고, 헤매는 지점만 골라 순서대로 정리했습니다. 모두채움 신고서, 홈택스 절차, 경비율 제도, 안 하면 생기는 불이익까지.</p>
+        <span class="arrow">읽어보기 →</span>
+      </a>
+      <a class="post-card" href="/guide/alba33.html" data-tag="알바·계약" data-text="알바인데 왜 3.3%를 떼나요? 4대보험과 뭐가 다른지 정리 알바 급여에서 3.3%를 떼는 이유, 4대보험 공제와의 차이, 나에게 유리한 쪽은 어디인지 정리했습니다. 주휴수당·퇴직금과의 관계까지 확인하세요. 알바·계약">
+        <span class="num">05</span><span class="tag">알바·계약</span>
+        <h2>알바인데 왜 3.3%를 떼나요? 4대보험과 뭐가 다른지 정리</h2>
+        <p>알바 급여에서 3.3%를 떼는 이유, 4대보험 공제와의 차이, 나에게 유리한 쪽은 어디인지 정리했습니다. 주휴수당·퇴직금과의 관계까지 확인하세요.</p>
+        <span class="arrow">읽어보기 →</span>
+      </a>
+      <a class="post-card" href="/guide/refund.html" data-tag="환급" data-text="프리랜서·알바 3.3% 세금, 5월에 돌려받는 법 5월 종합소득세 신고로 3.3% 환급받는 법, 대상, 신고 방법 3가지와 놓쳤을 때 소급받는 법까지 정리했습니다. 환급">
+        <span class="num">06</span><span class="tag">환급</span>
+        <h2>프리랜서·알바 3.3% 세금, 5월에 돌려받는 법</h2>
+        <p>5월 종합소득세 신고로 3.3% 환급받는 법, 대상, 신고 방법 3가지와 놓쳤을 때 소급받는 법까지 정리했습니다.</p>
+        <span class="arrow">읽어보기 →</span>
+      </a>
+<!-- AUTO:LIST:END -->
+  </div>
+
+  <div class="no-result" id="nores">찾으시는 글이 아직 없습니다. <a href="/">계산기로 직접 계산해보기 →</a></div>
 
   <p class="empty-note">더 많은 글이 곧 추가됩니다.</p>
 
@@ -155,5 +190,47 @@
     </nav>
   </footer>
 </div>
+
+<script>
+(function(){
+  var q=document.getElementById('q'), chips=document.getElementById('chips'), list=document.getElementById('list'),
+      cnt=document.getElementById('count'), nores=document.getElementById('nores');
+  if(!q||!chips||!list) return;
+  var cards=[].slice.call(list.querySelectorAll('.post-card')), tag='', term='', shown=cards.length, timer;
+  function norm(s){ return (s||'').toLowerCase().replace(/\s+/g,''); }
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okTag = !tag || c.getAttribute('data-tag')===tag;
+      var okTerm = !term || norm(c.getAttribute('data-text')).indexOf(term)>-1;
+      var show = okTag && okTerm;
+      c.style.display = show ? '' : 'none';
+      if(show) n++;
+    });
+    shown=n;
+    cnt.textContent = (tag||term) ? ('검색 결과 '+n+'편') : ('전체 '+cards.length+'편');
+    nores.style.display = n ? 'none' : 'block';
+  }
+  q.addEventListener('input', function(){
+    term = norm(q.value); apply();
+    clearTimeout(timer);
+    timer = setTimeout(function(){
+      var v = q.value.trim();
+      if(v.length>1 && typeof gtag==='function'){
+        gtag('event','guide_search',{search_term:v.slice(0,60), results:shown});
+      }
+    }, 1200);
+  });
+  chips.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('button'); if(!b) return;
+    [].forEach.call(chips.querySelectorAll('.chip'), function(x){ x.classList.remove('on'); });
+    b.classList.add('on');
+    tag = b.getAttribute('data-tag') || '';
+    apply();
+    if(tag && typeof gtag==='function'){ gtag('event','guide_filter',{filter_tag:tag, results:shown}); }
+  });
+  apply();
+})();
+</script>
 </body>
 </html>

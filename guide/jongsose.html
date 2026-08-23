@@ -93,6 +93,17 @@
   footer .footer-links a{color:#98A0AB;text-decoration:underline;margin:0 6px}
   footer .footer-links a:hover{color:var(--sub)}
   .pubdate{margin-top:6px;font-size:12.5px;color:#98A0AB}
+
+  /* 글 목록(번호형) — 홈·글 하단 공용 */
+  .post-list{list-style:none;margin:14px 0 0;padding:0;border-top:1px solid var(--line)}
+  .post-list li{border-bottom:1px solid var(--line)}
+  .post-list a{display:flex;align-items:baseline;gap:10px;padding:12px 2px;text-decoration:none}
+  .post-list .n{flex:none;font-size:12.5px;font-weight:600;font-family:'IBM Plex Mono',monospace;color:#98A0AB}
+  .post-list .t{flex:1;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.45}
+  .post-list a:hover .t{color:var(--green)}
+  .post-list .g{flex:none;color:var(--green);font-weight:700;font-size:14px}
+  .next-read{margin-top:34px}
+  .next-read h2{font-size:15px;font-weight:900;letter-spacing:-0.3px;margin:0}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4428587485814712" crossorigin="anonymous"></script>
 <!-- Google Analytics 4 -->
@@ -108,7 +119,7 @@
   s.src='https://www.googletagmanager.com/gtag/js?id=G-P4F2M5B9DS'; document.head.appendChild(s);
   window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments);};
   gtag('js',new Date()); gtag('config','G-P4F2M5B9DS');
-  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';var t=(a.textContent||'').trim().slice(0,60);if(/coupang\.com|link\.coupang|toss/.test(h)){gtag('event','affiliate_click',{link_url:h,link_text:t,page_path:location.pathname});return;}if(a.closest('.cta,.rel-card,.post-card,.card')){gtag('event','internal_link',{link_url:h,link_text:t,page_path:location.pathname});}});
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';var t=(a.textContent||'').trim().slice(0,60);if(/coupang\.com|link\.coupang|toss/.test(h)){gtag('event','affiliate_click',{link_url:h,link_text:t,page_path:location.pathname});return;}if(a.closest('.cta,.rel-card,.post-card,.post-list,.card')){gtag('event','internal_link',{link_url:h,link_text:t,page_path:location.pathname});}});
 })();
 </script>
 <script type="application/ld+json">
@@ -174,6 +185,17 @@
         <li>신고를 놓치면 환급은 못 받고, 납부 대상자는 가산세가 붙는다</li>
       </ul>
     </div>
+
+    <!-- AUTO:NEXT:START -->
+    <div class="next-read">
+      <h2>이어서 읽으면 좋은 글</h2>
+      <ol class="post-list">
+        <li><a href="/guide/gyeongbiyul.html"><span class="n">01</span><span class="t">단순경비율 vs 기준경비율, 세금이 갈리는 지점</span><span class="g">→</span></a></li>
+        <li><a href="/guide/gihanhu.html"><span class="n">02</span><span class="t">놓친 세금 돌려받기: 기한 후 신고와 경정청구</span><span class="g">→</span></a></li>
+        <li><a href="/guide/wonchon.html"><span class="n">03</span><span class="t">프리랜서에게 3.3% 떼고 지급할 때, 사장님이 해야 할 일</span><span class="g">→</span></a></li>
+      </ol>
+    </div>
+<!-- AUTO:NEXT:END -->
 
     <div class="cta">
       <a href="/">작년에 떼인 3.3%가 총 얼마인지, 지금 계산해보기 →</a>

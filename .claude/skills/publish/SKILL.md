@@ -47,11 +47,15 @@ git log --since=midnight --diff-filter=A --name-only --pretty=format: -- guide/ 
 
 **본문 내용, 특히 세금 수치·법령·기한은 원고에서 한 글자도 바꾸지 않는다.** 문구 개선이 필요해 보여도 게시 전에 운영자에게 물어본다.
 
-## 4단계: 3종 반영 (하나라도 빠지면 안 됨)
+## 4단계: 목록 반영 (tools/posts.json 한 곳만 고친다)
 
-1. **guide/index.html**: `.list` 맨 위에 새 `.post-card` 추가 (태그·제목·메타설명 기반 요약·"읽어보기 →")
-2. **sitemap.xml**: `</urlset>` 앞에 새 url 블록 추가 (`<lastmod>`=게시일 YYYY-MM-DD, changefreq monthly, priority 0.6). **글의 `dateModified`를 갱신하면 sitemap의 `<lastmod>`도 같은 날짜로 함께 갱신**한다(불일치 금지)
-3. **index.html(홈)**: `.related` 안에 새 `.rel-card` 추가. 배치는 계산기 사용자 관심 순서를 고려해 판단. **카드가 6개를 넘으면 추가하기 전에 운영자에게 어떤 글을 홈에서 뺄지 확인**
+1. **tools/posts.json**의 `posts` 배열 **맨 앞**에 새 글 항목을 추가한다:
+   `{ "slug", "date"(게시일), "tag"(반드시 파일 위쪽 "tags" 목록 안의 값), "title"(목록용 전체 제목), "short"(홈·관련글용 짧은 제목, 30자 안팎), "summary"(목록 카드 설명 2줄) }`
+   문맥상 꼭 이어 읽히면 좋은 글이 있으면 `"related": ["슬러그", ...]`로 직접 지정한다. 생략하면 같은 태그 우선 → 최신순으로 자동 선정된다.
+2. `node tools/buildlist.js` 실행 → **가이드 목록·태그 칩·전체 편수·홈 최신 5편·모든 글의 "이어서 읽으면 좋은 글"이 한 번에 갱신**된다. 오류가 나면(파일 없음, 슬러그 중복 등) 메시지대로 고친 뒤 다시 실행한다.
+3. **sitemap.xml**: `</urlset>` 앞에 새 url 블록 추가 (`<lastmod>`=게시일 YYYY-MM-DD). **글의 `dateModified`를 갱신하면 sitemap의 `<lastmod>`도 같은 날짜로 함께 갱신**한다(불일치 금지).
+
+※ guide/index.html·index.html·각 글의 `<!-- AUTO:... -->` 구간은 **손으로 고치지 않는다.** 전부 buildlist.js가 생성한다.
 
 ## 5단계: 배포 전 검사
 
