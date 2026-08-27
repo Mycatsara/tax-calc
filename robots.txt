@@ -1,4 +1,50 @@
 User-agent: *
 Allow: /
 
+# ── AI 크롤러 정책 ──────────────────────────────
+# 인용 유입이 목표이므로 학습·검색 색인·실시간 열람 모두 허용한다.
+# 명단은 각사 문서 기준으로 바뀔 수 있으므로 분기마다 확인한다.
+
+# 학습용 (모델 훈련 데이터 수집)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# 검색 색인용 (AI 검색의 자체 인덱스)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# 실시간 열람용 (사용자 질문 시 페이지 fetch)
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
 Sitemap: https://taxtool.kr/sitemap.xml
