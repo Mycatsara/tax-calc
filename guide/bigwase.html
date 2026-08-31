@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>식대 비과세 20만 원, 같은 월급인데 실수령액이 다른 이유 — taxtool.kr</title>
+<meta name="description" content="식대 비과세 한도 월 20만 원이 실수령액을 얼마나 바꾸는지 숫자로 정리했습니다. 자가운전보조금·출산보육수당 등 2026년 비과세 항목별 조건과 월급 300만 원 기준 차이까지 확인하세요.">
+<meta property="og:title" content="식대 비과세 20만 원, 같은 월급인데 실수령액이 다른 이유">
+<meta property="og:description" content="식대 비과세 한도 월 20만 원이 실수령액을 얼마나 바꾸는지 숫자로 정리했습니다. 자가운전보조금·출산보육수당 등 2026년 비과세 항목별 조건까지.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://taxtool.kr/guide/bigwase.html">
+<meta property="og:image" content="https://taxtool.kr/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="taxtool.kr">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://taxtool.kr/guide/bigwase.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "식대 비과세 20만 원, 같은 월급인데 실수령액이 다른 이유",
+  "description": "식대 비과세 한도 월 20만 원이 실수령액을 얼마나 바꾸는지 숫자로 정리했습니다. 자가운전보조금·출산보육수당 등 2026년 비과세 항목별 조건과 월급 300만 원 기준 차이까지 확인하세요.",
+  "mainEntityOfPage": "https://taxtool.kr/guide/bigwase.html",
+  "datePublished": "2026-08-31",
+  "dateModified": "2026-08-31",
+  "author": {"@type": "Organization", "name": "taxtool.kr"},
+  "publisher": {"@type": "Organization", "name": "taxtool.kr"}
+}
+</script>
+<style>
+  :root{
+    --bg:#EDF0F4;
+    --ink:#14181F;
+    --paper:#FFFFFF;
+    --green:#0E7A4E;
+    --amber:#E8A13C;
+    --line:#D8DCE2;
+    --sub:#5B6472;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  body{
+    font-family:'Noto Sans KR',sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+  }
+  .wrap{max-width:640px;margin:0 auto;padding:32px 20px 60px}
+  .crumb{font-size:13px;color:var(--sub);margin-bottom:18px}
+  .crumb a{color:var(--sub);text-decoration:none}
+  .crumb a:hover{color:var(--green);text-decoration:underline}
+  header .eyebrow{
+    display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;
+    color:var(--green);border:1.5px solid var(--green);
+    padding:4px 10px;border-radius:4px;margin-bottom:14px;
+  }
+  header h1{font-size:26px;font-weight:900;line-height:1.35;letter-spacing:-0.5px}
+  header .meta{margin-top:12px;font-size:13px;color:var(--sub)}
+
+  article{margin-top:30px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px 24px}
+  article .lead{font-size:15.5px;color:#333A45;margin-bottom:20px;padding-bottom:20px;border-bottom:1.5px dashed var(--line)}
+  article h2{font-size:19px;font-weight:900;letter-spacing:-0.3px;margin:26px 0 12px}
+  article h2:first-child{margin-top:0}
+  article p{font-size:14.5px;color:#333A45;margin-bottom:12px}
+  article b{color:var(--ink)}
+  article ul, article ol{margin:6px 0 14px 20px}
+  article li{font-size:14.5px;color:#333A45;margin-bottom:6px}
+  article a{color:var(--green);font-weight:700;text-decoration:none}
+  article a:hover{text-decoration:underline}
+  /* 금액 표 */
+  .tbl{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:14px;color:#333A45}
+  .tbl th,.tbl td{padding:9px 4px;border-bottom:1px solid var(--line);text-align:left}
+  .tbl th{font-size:12.5px;font-weight:700;color:var(--sub);border-bottom:1.5px solid var(--line)}
+  .tbl th:last-child,.tbl td:last-child{text-align:right;font-family:'IBM Plex Mono',monospace;font-weight:600;white-space:nowrap}
+  .tbl tr.total td{border-top:1.5px dashed var(--line);border-bottom:none;color:var(--ink);font-weight:700}
+  /* 3열 금액 표: 가운데 열(실수령액)도 숫자 정렬 */
+  .tbl.cols3 th:nth-child(2){text-align:right}
+  .tbl.cols3 td:nth-child(2){text-align:right;font-family:'IBM Plex Mono',monospace;font-weight:600;white-space:nowrap}
+  .tbl.cols3 td:last-child{font-weight:500;color:var(--sub)}
+  .summary-box{
+    margin-top:22px;background:#FDF6EA;border:1px solid #F0DDBB;
+    border-radius:10px;padding:16px 18px;
+  }
+  .summary-box h2{margin-top:0;font-size:15px}
+  .summary-box ul{margin:6px 0 0 18px}
+  .summary-box li{font-size:13.5px;color:#6B5320;margin-bottom:5px}
+  .cta{
+    margin-top:22px;text-align:center;background:var(--green);color:#fff;
+    border-radius:12px;padding:20px;
+  }
+  .cta a{color:#fff;font-weight:900;font-size:16px;text-decoration:none;border-bottom:2px solid rgba(255,255,255,.5)}
+  .cta a:hover{border-color:#fff}
+  .footnote{margin-top:18px;font-size:12.5px;color:var(--sub);font-style:italic}
+  .back{display:inline-block;margin-top:28px;font-size:13px;font-weight:700;color:var(--green);text-decoration:none}
+  .back:hover{text-decoration:underline}
+
+  footer{margin-top:48px;text-align:center;font-size:12px;color:#98A0AB}
+  footer .disclaimer{max-width:420px;margin:0 auto 8px}
+  footer .footer-links{margin-top:10px}
+  footer .footer-links a{color:#98A0AB;text-decoration:underline;margin:0 6px}
+  footer .footer-links a:hover{color:var(--sub)}
+  .pubdate{margin-top:6px;font-size:12.5px;color:#98A0AB}
+
+  /* 글 목록(번호형) — 홈·글 하단 공용 */
+  .post-list{list-style:none;margin:14px 0 0;padding:0;border-top:1px solid var(--line)}
+  .post-list li{border-bottom:1px solid var(--line)}
+  .post-list a{display:flex;align-items:baseline;gap:10px;padding:12px 2px;text-decoration:none}
+  .post-list .n{flex:none;font-size:12.5px;font-weight:600;font-family:'IBM Plex Mono',monospace;color:#98A0AB}
+  .post-list .t{flex:1;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.45}
+  .post-list a:hover .t{color:var(--green)}
+  .post-list .g{flex:none;color:var(--green);font-weight:700;font-size:14px}
+  .next-read{margin-top:34px}
+  .next-read h2{font-size:15px;font-weight:900;letter-spacing:-0.3px;margin:0}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4428587485814712" crossorigin="anonymous"></script>
+<!-- Google Analytics 4 -->
+<script>
+(function(){
+  // ?ga=off 로 접속하면 이 브라우저 세션 동안 집계 제외 (운영자·클로드 점검용)
+  try{ if(location.search.indexOf('ga=off')>-1) sessionStorage.setItem('gaoff','1'); }catch(e){}
+  var off=false; try{ off=sessionStorage.getItem('gaoff')==='1'; }catch(e){}
+  // 자동화 브라우저(크롤러·스크래퍼)는 집계하지 않는다. 실제 사용자에게는 절대 걸리지 않는 조건만 사용.
+  var auto = navigator.webdriver===true || /HeadlessChrome|PhantomJS|Puppeteer|Playwright|Selenium/i.test(navigator.userAgent);
+  if(off||auto) return;
+  var s=document.createElement('script'); s.async=true;
+  s.src='https://www.googletagmanager.com/gtag/js?id=G-P4F2M5B9DS'; document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments);};
+  gtag('js',new Date()); gtag('config','G-P4F2M5B9DS');
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';var t=(a.textContent||'').trim().slice(0,60);if(/coupang\.com|link\.coupang|toss/.test(h)){gtag('event','affiliate_click',{link_url:h,link_text:t,page_path:location.pathname});return;}if(a.closest('.cta,.rel-card,.post-card,.post-list,.card')){gtag('event','internal_link',{link_url:h,link_text:t,page_path:location.pathname});}});
+})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://taxtool.kr/"},{"@type":"ListItem","position":2,"name":"가이드","item":"https://taxtool.kr/guide/"},{"@type":"ListItem","position":3,"name":"식대 비과세","item":"https://taxtool.kr/guide/bigwase.html"}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="crumb"><a href="/">홈</a> / <a href="/guide/">가이드</a> / 식대 비과세</p>
+
+  <header>
+    <span class="eyebrow">식대 비과세</span>
+    <h1>식대 비과세 20만 원, 같은 월급인데 실수령액이 다른 이유</h1>
+    <p class="meta">식대 20만 원 비과세가 실수령액을 얼마나 바꾸는지, 2026년 비과세 항목별 조건과 함께 정리했습니다.</p>
+    <p class="pubdate">2026년 8월 31일 게시</p>
+  </header>
+
+  <article>
+    <p class="lead">입사 동기와 세전 월급이 똑같은데 통장에 찍히는 돈이 몇만 원 다르다면, 회사가 계산을 잘못한 게 아닙니다. 급여명세서에 "식대 200,000"이라는 줄이 있는지부터 확인해 보세요. 월 300만 원 기준으로 식대 20만 원이 비과세로 잡힌 사람은 그렇지 않은 사람보다 매달 38,740원을 더 받습니다. 1년이면 46만 원이 넘는 차이입니다. 이 글은 그 차이가 어디서 나오는지, 식대 말고 어떤 항목이 더 있는지를 정리합니다.</p>
+
+    <h2>비과세는 "세금 계산에서 아예 빼주는 돈"</h2>
+    <p>월급에서 빠지는 소득세와 4대보험료는 세전 월급 전체가 아니라 <b>과세 대상 금액</b>을 기준으로 계산합니다. 비과세 항목은 이 기준 금액에서 아예 제외되는 돈입니다. 세율을 깎아주는 게 아니라 계산 판 자체에서 빼주는 방식입니다. 그래서 소득세·지방소득세만이 아니라 국민연금·건강보험·고용보험료까지 전부 줄어듭니다.</p>
+    <p>어떤 항목이 비과세인지는 소득세법에 정해져 있습니다. 회사가 마음대로 "이건 비과세"라고 정할 수 없고, 법에 있는 항목을 법이 정한 한도와 조건 안에서 지급할 때만 인정됩니다.</p>
+
+    <h2>식대: 월 20만 원까지, 조건은 두 가지</h2>
+    <p>직장인이 가장 흔하게 받는 비과세 항목입니다. 한도는 <b>월 20만 원</b>이고, 조건은 두 가지입니다.</p>
+    <ul>
+      <li><b>회사가 식사를 따로 제공하지 않아야 합니다.</b> 구내식당 밥을 무료로 먹으면서 식대까지 비과세로 받을 수는 없습니다. 이 경우 식대는 과세 대상이 됩니다.</li>
+      <li><b>지급 기준이 급여 규정이나 근로계약서에 있어야 합니다.</b> 명세서에 식대가 따로 적혀 있다면 대부분 갖춰진 조건입니다.</li>
+    </ul>
+    <p>한도를 넘는 부분은 과세됩니다. 식대를 월 30만 원 받으면 20만 원은 비과세, 10만 원은 과세 대상입니다.</p>
+
+    <h2>얼마나 차이 날까: 월 300만 원으로 계산해 보면</h2>
+    <p>세전 월급 300만 원, 부양가족 없이 혼자인 경우입니다. 금액은 <a href="/pay/">월급 실수령액 계산기</a>와 같은 방식(2026년 요율·간이세액표)으로 계산했습니다.</p>
+    <table class="tbl cols3">
+      <thead>
+        <tr><th>비과세 금액</th><th>실수령액</th><th>차이</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>0원</td><td>2,626,700원</td><td>—</td></tr>
+        <tr><td>식대 20만 원</td><td>2,665,440원</td><td>+38,740원</td></tr>
+        <tr><td>식대 20만 + 보육수당 20만</td><td>2,703,700원</td><td>+77,000원</td></tr>
+      </tbody>
+    </table>
+    <p>식대 20만 원 하나로 매달 38,740원, 1년에 464,880원이 달라집니다. 월급이 오르면 차이도 커집니다. 월 400만 원이면 식대 20만 원 비과세로 매달 48,800원, 1년에 585,600원을 더 받습니다.</p>
+    <p>공제 구조 전체가 궁금하다면 <a href="/guide/gongje.html">4대보험 요율과 소득세 정리 글</a>을 함께 보세요.</p>
+
+    <h2>식대 말고도 있다: 2026년 주요 비과세 항목</h2>
+    <p><b>자가운전보조금 — 월 20만 원.</b> 본인 소유이거나 본인 명의로 빌린 차를 직접 운전해 업무에 쓰는 경우입니다. 출장비를 따로 받지 않는 대신, 회사 지급 기준에 따라 받는 금액이어야 합니다. 배우자 명의 차나 단순 출퇴근용은 인정되지 않습니다.</p>
+    <p><b>출산·보육수당 — 자녀 1인당 월 20만 원.</b> 6세 이하 자녀의 보육과 관련해 회사에서 받는 수당입니다. 원래는 근로자 한 명당 20만 원이었는데, 2026년부터 <b>자녀 1인당</b> 20만 원으로 늘었습니다. 6세 이하 자녀가 둘이면 월 40만 원까지 비과세됩니다.</p>
+    <p><b>출산지원금 — 전액 비과세.</b> 자녀 출생일 이후 2년 안에 최대 2회까지, 금액 제한 없이 비과세됩니다. 2024년 말 세법 개정으로 생긴 항목입니다. 다만 사업주 본인이나 그 가족, 법인의 지배주주 등은 제외됩니다.</p>
+    <p><b>생산직 연장·야간·휴일근로수당 — 연 240만 원.</b> 조건이 붙습니다. 생산직 등 법이 정한 직종이면서 월정액급여 210만 원 이하, 직전 연도 총급여 3,000만 원 이하인 경우에만 적용됩니다.</p>
+    <p>이 밖에 실비 수준의 일직·숙직료와 출장 여비도 비과세입니다. 업무 관련 요건을 갖춘 본인 학자금, 고용보험에서 나오는 육아휴직 급여도 마찬가지입니다.</p>
+
+    <h2>알아두면 좋은 것 두 가지</h2>
+    <p><b>비과세는 회사가 급여 항목을 어떻게 설계했느냐의 문제입니다.</b> 근로자가 신청한다고 생기는 게 아닙니다. 명세서에 식대 항목이 없다면, 연봉 협상 때 식대 분리가 가능한지 물어볼 수는 있습니다. 회사 입장에서도 4대보험 회사 부담분이 줄어 손해가 아닙니다.</p>
+    <p><b>국민연금이 줄면 나중에 받을 연금도 줄어듭니다.</b> 비과세가 커지면 국민연금 납부액이 줄어듭니다. 납부액이 줄면 노후에 받는 연금액도 따라서 줄어듭니다. 당장의 실수령과 노후 연금 사이의 맞바꿈인 셈입니다.</p>
+
+    <div class="summary-box">
+      <h2>정리</h2>
+      <ul>
+        <li>비과세 항목은 소득세와 4대보험 계산 기준에서 아예 빠지는 돈이라, 같은 월급이라도 실수령액이 달라진다</li>
+        <li>식대는 월 20만 원까지 비과세. 회사가 식사를 제공하지 않고, 지급 기준이 규정에 있어야 한다</li>
+        <li>월 300만 원 기준 식대 20만 원 비과세면 매달 38,740원, 1년에 464,880원을 더 받는다</li>
+        <li>자가운전보조금·출산보육수당·출산지원금 등도 조건을 갖추면 비과세다</li>
+        <li>비과세는 법이 정한 항목·한도·조건 안에서만 인정되며, 회사의 급여 설계에 달려 있다</li>
+      </ul>
+    </div>
+
+    <!-- AUTO:NEXT:START -->
+    <div class="next-read">
+      <h2>이어서 읽으면 좋은 글</h2>
+      <ol class="post-list">
+        <li><a href="/guide/gongje.html"><span class="n">01</span><span class="t">월급에서 뭐가 얼마나 빠질까: 4대보험과 소득세</span><span class="g">→</span></a></li>
+        <li><a href="/guide/yeonbong.html"><span class="n">02</span><span class="t">2026 연봉 실수령액 표 (2,400만~1억)</span><span class="g">→</span></a></li>
+        <li><a href="/guide/alba33.html"><span class="n">03</span><span class="t">알바인데 왜 3.3%를 떼나요? 4대보험과 뭐가 다른지</span><span class="g">→</span></a></li>
+      </ol>
+    </div>
+<!-- AUTO:NEXT:END -->
+
+    <div class="cta">
+      <a href="/pay/">내 비과세를 반영한 실수령액, 계산기에 금액만 넣으면 바로 나옵니다 →</a>
+    </div>
+
+    <p class="footnote">본 글은 일반적인 정보 제공을 목적으로 하며, 비과세 항목과 한도는 2026년 8월 소득세법 기준입니다. 실제 적용 여부는 회사의 급여 규정과 지급 조건에 따라 달라질 수 있습니다.</p>
+  </article>
+
+  <a class="back" href="/guide/">← 가이드 목록으로</a>
+
+  <footer>
+    <p class="disclaimer">본 사이트의 정보는 참고용이며, 실제 세액·환급액과 다를 수 있습니다.</p>
+    <p>세금은 어렵게, 계산은 쉽게 · taxtool.kr</p>
+    <nav class="footer-links">
+      <a href="/guide/">가이드</a>·<a href="/about.html">사이트 소개</a>·<a href="/privacy.html">개인정보처리방침</a>
+    </nav>
+  </footer>
+</div>
+</body>
+</html>
