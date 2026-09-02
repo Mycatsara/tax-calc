@@ -40,6 +40,15 @@ git log --since=midnight --diff-filter=A --name-only --pretty=format: -- guide/ 
 - **날짜(GEO·최신성 신호)**: Article JSON-LD에 `datePublished`(게시일)와 `dateModified`를 **둘 다** 넣는다. 신규 글은 두 값이 같다. 헤더 `.meta` 바로 아래에 `<p class="pubdate">YYYY년 M월 D일 게시</p>` 표시. **기존 글의 세율·법령·수치를 고치면 `dateModified`와 화면 문구를 그날 날짜로 갱신**하고 문구는 `~ 게시 · YYYY년 M월 D일 수정`으로 바꾼다. 오탈자·디자인 수정만 한 경우에는 갱신하지 않는다
 - 본문: crumb(홈/가이드/짧은 주제명) → eyebrow(주제 태그) → h1 → .meta 한 줄 소개 → article
 - article 내부: 첫 문단은 `.lead`, `##` → `<h2>`, `**굵게**` → `<b>`, 목록 → `<ul>/<ol>`, 상대 링크는 그대로 `<a href>`
+- **이미지(2026-09-02~, 글마다 2장)**: 원고의 `![alt](/img/파일.webp)` 줄은 그 자리에 `<figure class="fig"><img src="/img/파일.webp" width="1200" height="686" alt="…" loading="lazy" decoding="async"></figure>`로 변환한다. 규칙:
+  - **alt 필수** — 원고의 대괄호 문구 그대로(장면을 한 문장으로). 빈 alt·"이미지"·파일명 금지
+  - **width/height 속성 필수**(레이아웃 밀림 방지). 값은 `node tools/imgopt.js`가 출력한 것을 쓴다
+  - **첫 번째 이미지(히어로)는 `loading="lazy"` 빼고 `fetchpriority="high"`**, 나머지는 lazy. 히어로는 `.lead` 문단 바로 아래, 두 번째는 핵심 소제목 `<h2>` 바로 위
+  - **파일은 300KB 이하 webp, 폭 1200px**, 위치 `tax-calc/img/슬러그-용도.webp`(예: myeongsese-hero, myeongsese-deduct). 생성 원본 PNG는 `Documents/원고대기/사진/`에 보관(git 제외)
+  - CSS는 최근 글에서 `.fig` 블록을 복사: `article .fig{margin:22px 0}` `article .fig img{display:block;width:100%;height:auto;border-radius:12px}` (`article .lead{…}` 줄 바로 아래)
+  - **taxtool 그림체는 선화 플랫 일러스트로 고정** — 공통 스타일 문장은 `Documents/tools/imgplan-taxtool-2026-09-02.json`의 `style` 값을 그대로 쓴다(진회색 윤곽선·단색 면·회청색 배경·초록/주황 포인트·서류 글자는 흐린 줄 무늬). 마이펫랩의 고양이 파스텔풍과 섞지 않는다
+  - 생성·압축·삽입은 계획 JSON(`"site": "tax-calc"`) 한 벌로: `Documents`에서 `node tools/imgbatch.js <계획.json>` → 검수 → `node tools/imginsert.js <계획.json>`(이미 게시된 글) 또는 원고 md에 `![alt](/img/…)` 줄 추가(새 글). 축소 시트는 `node tools/imgsheet.js <계획.json>`
+  - **프롬프트는 `Documents/기록/이미지생성_진행상황.md`의 "★ 프롬프트 규칙"을 따른다** — 사람은 상반신 이상 보이게(손만 금지) / 이목구비 단순·성별·나이 특정 없음 / 서명·글자·숫자 없음(명세서·지폐도 숫자 없이) / 물건 목록 명시 후 "그 외 물건 없음" / 소품 3개 이하. 생성 후 검수 3단계(시트·구석 확대·체크리스트) 통과 전 게시 금지
 - `## 정리` 섹션 → `.summary-box`로 변환
 - 마지막 계산기 안내 문장 → `.cta` 박스 (링크 하나만)
 - 기울임 면책 문구 → `.footnote`
@@ -62,6 +71,7 @@ git log --since=midnight --diff-filter=A --name-only --pretty=format: -- guide/ 
 - `node tools/readcheck.js guide/<슬러그>.html` 실행 → 긴 문장(70자+)·1,000자 넘는 문단·같은 어미 4연속·금지 표현 경고를 확인한다. 경고는 **고칠지 운영자에게 보고**하고 자동 수정하지 않는다(수치·법령 임의 수정 금지). 경고 0건이 목표지만 사실 단정("절대 불가" 등 사실인 경우)은 유지 가능
 - 새 페이지와 수정된 파일의 내부 링크(`href="/..."`)가 모두 실제 파일로 연결되는지 전수 확인. 깨진 링크가 있으면 **배포 중단**하고 수정
 - 메타 설명 문구가 본문에 노출되지 않았는지 확인
+- 이미지가 있는 글: `img/` 파일 존재·300KB 이하·alt 비어 있지 않음·width/height 있음 확인. 배포 후 **375px 폭(모바일)으로 열어 이미지가 본문 폭을 넘지 않고 글자와 겹치지 않는지** 스크린샷으로 확인
 
 ## 6단계: 커밋·푸시
 
