@@ -10,6 +10,17 @@ const file = process.argv[2];
 if (!file) { console.log('사용: node tools/readcheck.js <파일>'); process.exit(1); }
 let raw = fs.readFileSync(file, 'utf8');
 
+// 보이지 않는 문자 (AI 생성물에 섞이는 제로폭·특수 공백). 2026-09-04 추가, 출처: watermarks-remover(MIT) 검사 항목
+// 검사 대상은 원본 전체(태그 포함) — 복사 붙여넣기·검색엔진에서 깨질 수 있어 본문뿐 아니라 어디에 있어도 경고
+const INVISIBLE = { 0x200B: '제로폭 공백', 0x200C: '제로폭 비결합', 0x200D: '제로폭 결합', 0x2060: '단어 결합', 0xFEFF: 'BOM',
+  0x200E: '좌→우 표시', 0x200F: '우→좌 표시', 0x00A0: '줄바꿈 없는 공백', 0x202F: '좁은 줄바꿈 없는 공백', 0x00AD: '소프트 하이픈', 0x2028: '줄 구분자', 0x2029: '문단 구분자' };
+const invisibleWarn = [];
+{
+  const c = {};
+  for (let i = 0; i < raw.length; i++) { const k = raw.charCodeAt(i); if (INVISIBLE[k] && !(i === 0 && k === 0xFEFF)) c[k] = (c[k] || 0) + 1; }
+  Object.keys(c).forEach(k => invisibleWarn.push(`[보이지 않는 문자] U+${(+k).toString(16).toUpperCase().padStart(4, '0')} ${INVISIBLE[k]} ${c[k]}개 — 삭제 또는 일반 공백으로`));
+}
+
 // HTML이면 본문(article 또는 main)만 추출 후 태그 제거
 if (/\.html?$/i.test(file)) {
   const m = raw.match(/<article[\s\S]*?<\/article>/i) || raw.match(/<main[\s\S]*?<\/main>/i);
@@ -25,7 +36,7 @@ if (/\.html?$/i.test(file)) {
 }
 
 const paras = raw.split(/\n\s*\n|\n/).map(s => s.replace(/\s+/g, ' ').trim()).filter(s => s.length > 0);
-const warn = [];
+const warn = [...invisibleWarn];
 const LONG_SENT = 70;   // 모바일 3줄 이상 (규칙: 두 줄 넘기지 않기, 약간 여유)
 const LONG_PARA = 1000; // 문단 상한
 const SHORT_PARA_SKIP = 30; // 소제목·캡션 등은 제외
