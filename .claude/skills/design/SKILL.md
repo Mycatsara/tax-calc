@@ -21,7 +21,7 @@ description: taxtool.kr 디자인 규칙(색상·폰트·컴포넌트·금지사
 --line:#D8DCE2;      /* 테두리·구분선 */
 --sub:#5B6472;       /* 보조 글자(라벨·메타) */
 ```
-고정 보조색: 본문 회색 `#333A45` / 마이너스 빨강 `#C0392B` / 팁·요약 박스 배경 `#FDF6EA` 테두리 `#F0DDBB` 글자 `#6B5320` / 태그 배경 `#E7F3ED` / 푸터 글자 `#98A0AB` / 탭 트랙 `#E0E4EA` / 입력 배경 `#FAFBFC`.
+고정 보조색(2026-09-04 푸터·게시일·목록 번호 회색을 #98A0AB→#5B6472로 교체 — 배경 대비 2.3:1이 WCAG AA 4.5:1 미달이었음. 옅은 회색 글자는 다시 만들지 않는다): 본문 회색 `#333A45` / 마이너스 빨강 `#C0392B` / 팁·요약 박스 배경 `#FDF6EA` 테두리 `#F0DDBB` 글자 `#6B5320` / 태그 배경 `#E7F3ED` / 푸터 글자 `#5B6472` / 탭 트랙 `#E0E4EA` / 입력 배경 `#FAFBFC`.
 
 ## 3. 타이포
 - Google Fonts: `Noto+Sans+KR:wght@400;500;700;900` + `IBM+Plex+Mono:wght@500;600` (preconnect 포함)
@@ -51,12 +51,12 @@ description: taxtool.kr 디자인 규칙(색상·폰트·컴포넌트·금지사
 | `.cta` (글 하단) | 초록 배경 흰 글자 radius 12px padding 20px, 링크 **하나만**, 밑줄 `rgba(255,255,255,.5)` |
 | `.footnote` | 12.5px sub 이탤릭 |
 | `.tbl` 금액 표 (글 본문) | `width:100%;border-collapse:collapse`, 14px, 셀 padding 9px 4px, 행 구분 1px `--line`, `th`는 12.5px/700 sub + 1.5px `--line` 밑줄. **마지막 열(금액)은 우측 정렬 + Plex Mono 600 + `white-space:nowrap`**. 합계행 `tr.total`은 위 1.5px dashed + ink 굵게. 기본 2열. **값이 짧으면(연봉 축약형·금액·% 등) `.tbl.cols3`로 3열 허용** — 가운데 열도 mono 우측 정렬, 단 375px에서 표 폭 실측이 통과해야 한다(yeonbong: 285px 통과). 4열 이상은 목록으로 바꾼다 |
-| `.pubdate` 게시일 | 글 헤더 `.meta` 바로 아래, `margin-top:6px;font-size:12.5px;color:#98A0AB` |
+| `.pubdate` 게시일 | 글 헤더 `.meta` 바로 아래, `margin-top:6px;font-size:12.5px;color:#5B6472` |
 | `.stepper` 수량 입력 (pay) | `.step-btn` 38×38 pill, 1.5px ink 테두리, active 시 amber 채움, disabled 시 `--line` 테두리+sub 글자 / `.step-val` Plex Mono 22px/600 / `.step-unit` 14px/700 sub. 옵션 묶음은 `.opt-row`(간격 18px) + `.hint`(12px sub) |
 | `.r-line.sum` 공제 합계 | 영수증 안 소계 행: 위 1.5px dashed 구분선, 값 600. `.r-line .k small`(11.5px)로 요율 표기. `.r-total .sub`(12.5px, opacity .85)로 연 환산 등 보조 정보 |
 | `.home-link` | 계산기 하위 페이지 상단 "← 홈" 13px sub 링크 |
-| `footer` | 12px #98A0AB 중앙 정렬, `.disclaimer`(max 420px) → 한 줄 소개 → `.footer-links`(가이드·사이트 소개·개인정보처리방침) |
-| `.post-list` 번호형 글 목록 | 홈·글 하단 공용. `<ol>`, 위아래 1px `--line` 구분선, 행 padding 12px 2px, `.n`(Plex Mono 12.5px/600 #98A0AB) · `.t`(14.5px/700) · `.g`(초록 화살표). hover 시 `.t`가 초록 |
+| `footer` | 12px #5B6472 중앙 정렬, `.disclaimer`(max 420px) → 한 줄 소개 → `.footer-links`(가이드·사이트 소개·개인정보처리방침) |
+| `.post-list` 번호형 글 목록 | 홈·글 하단 공용. `<ol>`, 위아래 1px `--line` 구분선, 행 padding 12px 2px, `.n`(Plex Mono 12.5px/600 #5B6472) · `.t`(14.5px/700) · `.g`(초록 화살표). hover 시 `.t`가 초록 |
 | `.next-read` 글 하단 관련 글 | `margin-top:34px`, h2 15px/900. **위치는 정리 박스 뒤 · CTA 앞** (계산기로 바로 보내면 이탈하므로 다음 읽을거리를 먼저 준다). 내용은 `tools/buildlist.js`가 생성 |
 | `.filter` 글 검색·태그 칩 (가이드 목록) | `.search input`(Noto 14.5px 좌측 정렬, 1.5px `--line`, radius 10px, focus 초록) + `.chip`(pill, 1.5px ink 테두리, `.on`은 amber 채움) + `.count` + `.no-result`. 계산기 입력창과 달리 Plex Mono·우측 정렬을 쓰지 않는다 |
 
