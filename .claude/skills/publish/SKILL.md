@@ -83,4 +83,4 @@ git log --since=midnight --diff-filter=A --name-only --pretty=format: -- guide/ 
 
 1. 원고 파일을 `원고대기` → `원고완료`로 이동
 2. `C:\Users\사라띠\Documents\CLAUDE.md`의 "게시된 글" 목록에 추가하고 "지금 단계" 갱신
-3. 운영자에게 보고: 게시된 URL (`https://taxtool.kr/guide/<슬러그>.html`), GitHub Pages 반영 1~2분 소요 안내, **서치콘솔에서 해당 URL 색인 요청** 리마인드
+3. 운영자에게 보고: 게시된 URL (`https://taxtool.kr/guide/<슬러그>.html`), GitHub Pages 반영 1~2분 소요 안내. **구글 색인 요청은 클로드가 한다(9/5 운영자 결정)**: 클로드 인 크롬으로 서치콘솔(운영자가 로그인 유지) → 해당 속성 → 상단 URL 검사창에 새 글 주소 → "색인 생성 요청" 클릭 → 완료 문구 확인 후 보고. 로그인·비밀번호 입력은 하지 않고, 로그아웃 상태면 운영자에게 로그인만 요청. 한도는 속성당 하루 10건 안팎
