@@ -46,7 +46,7 @@ git log --since=midnight --diff-filter=A --name-only --pretty=format: -- guide/ 
   - **첫 번째 이미지(히어로)는 `loading="lazy"` 빼고 `fetchpriority="high"`**, 나머지는 lazy. 히어로는 `.lead` 문단 바로 아래, 두 번째는 핵심 소제목 `<h2>` 바로 위
   - **파일은 300KB 이하 webp, 폭 1200px**, 위치 `tax-calc/img/슬러그-용도.webp`(예: myeongsese-hero, myeongsese-deduct). 생성 원본 PNG는 `Documents/원고대기/사진/`에 보관(git 제외)
   - CSS는 최근 글에서 `.fig` 블록을 복사: `article .fig{margin:22px 0}` `article .fig img{display:block;width:100%;height:auto;border-radius:12px}` (`article .lead{…}` 줄 바로 아래)
-  - **taxtool 그림체는 선화 플랫 일러스트로 고정** — 공통 스타일 문장은 `Documents/tools/imgplan-taxtool-2026-09-02.json`의 `style` 값을 그대로 쓴다(진회색 윤곽선·단색 면·회청색 배경·초록/주황 포인트·서류 글자는 흐린 줄 무늬). 마이펫랩의 고양이 파스텔풍과 섞지 않는다
+  - **taxtool 그림체 — 9/5 변경: 앞으로 발행하는 글은 눈치와 동일한 실사 사진**(`Documents/기록/이미지생성_진행상황.md` "★ 실사 이미지 규칙" 전부 적용 — 글의 순간·승인 두 번·검수 3단계+실사 항목, 아래 "프롬프트 규칙" 줄의 일러스트 항목은 실사에 맞게 대체). 기존 10편의 선화 일러스트는 그대로 두고 바꾸지 않는다. 옛 선화 스타일 문장(참고용)은 `Documents/tools/imgplan-taxtool-2026-09-02.json`의 `style` 값을 그대로 쓴다(진회색 윤곽선·단색 면·회청색 배경·초록/주황 포인트·서류 글자는 흐린 줄 무늬). 마이펫랩의 고양이 파스텔풍과 섞지 않는다
   - 생성·압축·삽입은 계획 JSON(`"site": "tax-calc"`) 한 벌로: `Documents`에서 `node tools/imgbatch.js <계획.json>` → 검수 → `node tools/imginsert.js <계획.json>`(이미 게시된 글) 또는 원고 md에 `![alt](/img/…)` 줄 추가(새 글). 축소 시트는 `node tools/imgsheet.js <계획.json>`
   - **프롬프트는 `Documents/기록/이미지생성_진행상황.md`의 "★ 프롬프트 규칙"을 따른다** — 사람은 상반신 이상 보이게(손만 금지) / 이목구비 단순·성별·나이 특정 없음 / 서명·글자·숫자 없음(명세서·지폐도 숫자 없이) / 물건 목록 명시 후 "그 외 물건 없음" / 소품 3개 이하. 생성 후 검수 3단계(시트·구석 확대·체크리스트) 통과 전 게시 금지
 - `## 정리` 섹션 → `.summary-box`로 변환
