@@ -15,7 +15,7 @@ const ROOT = path.join(__dirname, '..');
 const CFG = {
   cardArrowText: '읽어보기 →',
   cardMax: Number(process.env.CARDMAX) || 4, // 홈·목록·카테고리에서 사진 카드로 보일 글 수 (나머지는 제목 목록). posts.json의 cardMax가 있으면 그 값
-  pageSize: 10,                     // 제목 목록 한 페이지 편수 — 넘으면 site.js가 1·2·3 번호를 만든다. posts.json의 pageSize가 있으면 그 값
+  pageSize: 6,                      // 제목 목록 한 페이지 편수(9/6 운영자: 10은 눈에 안 들어와 6으로) — 넘으면 site.js가 1·2·3 번호를 만든다. posts.json의 pageSize가 있으면 그 값
 
   recentMax: 4,                     // 사이드바 최근 글 수
   nextMax: 3,                       // 글 하단 관련 글 수

@@ -1,7 +1,7 @@
 {
   "_읽는법": "글 목록의 단일 소스. 배열 순서 = 화면 표시 순서(최신 글이 맨 위). 새 글은 posts 배열 맨 앞에 추가(cat은 cats의 slug)한 뒤 `node tools/buildlist.js` 실행 → 가이드 목록·홈 목록·각 글의 관련 글이 한 번에 갱신된다. 카테고리 페이지(guide/<slug>/)·사이드바·상단 메뉴도 함께 생성된다. cardMax=사진 카드 편수(나머지는 제목 목록), pageSize=제목 목록 한 페이지 편수(넘으면 번호).",
   "cardMax": 4,
-  "pageSize": 10,
+  "pageSize": 6,
   "calcs": [
     {
       "path": "/33/",
