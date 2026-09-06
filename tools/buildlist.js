@@ -90,12 +90,13 @@ ${pic}
 };
 
 // 목록 블록: 앞 N편은 사진 카드(2열), 나머지는 제목·날짜 목록 (9/6 운영자 결정)
-const listItemDated = (p, i) => `        <li data-cat="${p.cat}" data-text="${esc((p.title + ' ' + p.summary + ' ' + catOf(p).name).replace(/\s+/g, ' '))}"><a href="/guide/${p.slug}.html"><span class="n">${num(i)}</span><span class="t">${esc(p.title)}</span><span class="d">${dateKo(p.date)}</span><span class="g">→</span></a></li>`;
+// 번호 없음(9/6 운영자). 순서는 posts.json 순서 = 최신이 위, 오래된 글이 아래
+const listItemDated = (p) => `        <li data-cat="${p.cat}" data-text="${esc((p.title + ' ' + p.summary + ' ' + catOf(p).name).replace(/\s+/g, ' '))}"><a href="/guide/${p.slug}.html"><span class="t">${esc(p.title)}</span><span class="d">${dateKo(p.date)}</span><span class="g">→</span></a></li>`;
 function listBlock(list) {
   const n = data.cardMax || CFG.cardMax;
   const cards = list.slice(0, n).map(gridCard).join('\n');
   const rest = list.slice(n);
-  const ol = rest.length ? `\n      <ol class="post-list archive" data-page-size="${data.pageSize || CFG.pageSize}">\n${rest.map((p, i) => listItemDated(p, i + n)).join('\n')}\n      </ol>` : '';
+  const ol = rest.length ? `\n      <ol class="post-list archive" data-page-size="${data.pageSize || CFG.pageSize}">\n${rest.map(listItemDated).join('\n')}\n      </ol>` : '';
   return `      <div class="grid">\n${cards}\n      </div>${ol}`;
 }
 
