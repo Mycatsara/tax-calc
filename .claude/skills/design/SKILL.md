@@ -65,6 +65,7 @@ description: taxtool.kr 디자인 규칙(색상·폰트·컴포넌트·금지사
 | `.calc-strip a` | 200px 카드, **2px 초록 테두리**, radius 12px, `.lbl` 11px 초록 / `.nm` 15px/900 / `.ds` 12px sub. 현재 페이지 배경 #E7F3ED |
 | `.side-box` | paper, 1px line, radius 14px, h2 12px/2px 자간 초록. `.calcs`는 2px 초록 테두리. `.side-calc` hover #E7F3ED·현재 amber 점 / `.side-search` input 1.5px line + 버튼 ink 배경 흰 글자 / `.side-cat` 행 9px, 편수 sub / `.side-post` 썸네일 84×48 radius 6px + 제목 13.5px 2줄 말줄임 + 날짜 12px |
 | `.list.grid` + `.post-card.thumb` | 600px 이상 2열 격자, 카드는 이미지(1200:686) 위 · `.body` padding 14px 18px 18px · `.tag`(카테고리명) `.date` · h2 16px · p 13px 3줄 말줄임 |
+| `.post-list.archive` + `.pager` | 카드 아래 제목 목록: `.d` 날짜(Plex Mono 12px sub) 우측. 페이지 번호 36px 정사각 radius 10px, 현재 쪽 ink 배경 흰 글자, hover 초록. 내용·번호는 buildlist(`cardMax`·`pageSize`)와 `site.js`가 만든다 |
 | `.filter` 글 검색·태그 칩 (가이드 목록) | `.search input`(Noto 14.5px 좌측 정렬, 1.5px `--line`, radius 10px, focus 초록) + `.chip`(pill, 1.5px ink 테두리, `.on`은 amber 채움) + `.count` + `.no-result`. 계산기 입력창과 달리 Plex Mono·우측 정렬을 쓰지 않는다 |
 
 그림자는 위 두 가지(`0 1px 3px` / `0 6px 20px`)만 쓴다. 모서리는 4 / 9 / 10 / 12 / 14 / 999px만 쓴다. transition은 `.15s`만.
