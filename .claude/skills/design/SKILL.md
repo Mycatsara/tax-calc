@@ -32,7 +32,7 @@ description: taxtool.kr 디자인 규칙(색상·폰트·컴포넌트·금지사
 - eyebrow(상단 작은 태그): 12px/700, letter-spacing 2px, 초록 글자+1.5px 초록 테두리, radius 4px
 
 ## 4. 레이아웃 (2026-09-06 블로그형 개편)
-- 공통 뼈대(모든 페이지): `<header class="site-head">`(로고 tax먹색+tool초록 + 메뉴 `AUTO:NAV` = 홈·계산기·카테고리 3개·소개) → `.calc-strip`(960px 미만에서만, 계산기 카드 가로 스크롤, `AUTO:CALCS`) → `.layout` > `.main` > `.wrap` + `.side`(960px 이상에서만, sticky, `AUTO:SIDE` = 계산기·검색·카테고리·최근 글 4편) → `<footer>`(layout 밖)
+- 공통 뼈대(모든 페이지): `<header class="site-head">`(로고 tax먹색+tool초록 + 메뉴 `AUTO:NAV` = 홈·계산기·카테고리 3개·소개) → `.calc-strip`(960px 미만에서만, 계산기 카드 가로 스크롤, `AUTO:CALCS`) → `.layout` > `.main` > `.wrap` + `.side`(960px 이상에서만, 고정 없이 본문과 함께 스크롤 — 9/6 운영자 결정, `AUTO:SIDE` = 계산기·검색·카테고리·최근 글 4편) → `<footer>`(layout 밖)
 - `.wrap{max-width:640px}` 글·목록 / 계산기 페이지(`/33/`·`/pay/`)는 인라인 `.wrap{max-width:560px}`로 좁게 유지(영수증 폭)
 - 960px 이상: grid `minmax(0,680px) 280px`, gap 32px, 중앙 정렬. 미만: 단일 컬럼, 상단 메뉴는 가로 스크롤
 - 공통 CSS는 `/site.css`(`?v=YYYYMMDD` 캐시 버전, 고치면 버전 올리고 buildlist·전 페이지 링크 갱신). 페이지 고유 CSS만 인라인. site.css 링크는 인라인 `<style>`보다 앞
