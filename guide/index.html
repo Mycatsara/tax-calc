@@ -17,60 +17,11 @@
 <link rel="canonical" href="https://taxtool.kr/guide/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css?v=20260906">
 <style>
-  :root{
-    --bg:#EDF0F4;
-    --ink:#14181F;
-    --paper:#FFFFFF;
-    --green:#0E7A4E;
-    --line:#D8DCE2;
-    --sub:#5B6472;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
-  body{
-    font-family:'Noto Sans KR',sans-serif;
-    background:var(--bg);
-    color:var(--ink);
-    line-height:1.6;
-  }
-  .wrap{max-width:640px;margin:0 auto;padding:32px 20px 60px}
-  .crumb{font-size:13px;color:var(--sub);margin-bottom:18px}
-  .crumb a{color:var(--sub);text-decoration:none}
-  .crumb a:hover{color:var(--green);text-decoration:underline}
-  header .eyebrow{
-    display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;
-    color:var(--green);border:1.5px solid var(--green);
-    padding:4px 10px;border-radius:4px;margin-bottom:14px;
-  }
   header h1{font-size:28px;font-weight:900;line-height:1.3;letter-spacing:-0.5px}
   header p{margin-top:10px;font-size:15px;color:var(--sub)}
 
-  .list{margin-top:30px;display:flex;flex-direction:column;gap:14px}
-  .post-card{
-    display:block;background:var(--paper);border:1px solid var(--line);
-    border-radius:14px;padding:20px 22px;text-decoration:none;color:inherit;
-    transition:border-color .15s;
-  }
-  .post-card:hover{border-color:var(--green)}
-  .post-card .tag{
-    display:inline-block;font-size:11px;font-weight:700;letter-spacing:1px;
-    color:var(--green);background:#E7F3ED;border-radius:4px;padding:3px 8px;margin-bottom:10px;
-  }
-  .post-card h2{font-size:17px;font-weight:900;letter-spacing:-0.3px;line-height:1.4}
-  .post-card p{margin-top:8px;font-size:13.5px;color:var(--sub);line-height:1.55}
-  .post-card .arrow{margin-top:10px;font-size:13px;font-weight:700;color:var(--green)}
-
-  .empty-note{margin-top:30px;font-size:13.5px;color:var(--sub);text-align:center}
-
-  .back{display:inline-block;margin-top:28px;font-size:13px;font-weight:700;color:var(--green);text-decoration:none}
-  .back:hover{text-decoration:underline}
-
-  footer{margin-top:48px;text-align:center;font-size:12px;color:#5B6472}
-  footer .disclaimer{max-width:420px;margin:0 auto 8px}
-  footer .footer-links{margin-top:10px}
-  footer .footer-links a{color:#5B6472;text-decoration:underline;margin:0 6px}
-  footer .footer-links a:hover{color:var(--sub)}
 
   /* 글 검색·태그 필터 */
   .filter{margin-top:24px}
@@ -78,13 +29,12 @@
   .search input:focus{border-color:var(--green)}
   .search input::placeholder{color:#5B6472}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-  .chip{font-family:inherit;font-size:13px;font-weight:700;color:var(--ink);background:transparent;border:1.5px solid var(--ink);border-radius:999px;padding:6px 12px;cursor:pointer;transition:.15s}
+  .chip{font-family:inherit;font-size:13px;font-weight:700;color:var(--ink);background:transparent;border:1.5px solid var(--ink);border-radius:999px;padding:6px 12px;text-decoration:none;transition:.15s}
   .chip.on{background:var(--amber);border-color:var(--amber)}
   .count{margin-top:18px;font-size:13px;color:var(--sub)}
   .list{margin-top:14px}
   .no-result{display:none;margin-top:16px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:22px 20px;text-align:center;font-size:14px;color:var(--sub)}
   .no-result a{color:var(--green);font-weight:700;text-decoration:none}
-  .post-card .num{font-size:12px;font-weight:600;font-family:'IBM Plex Mono',monospace;color:#5B6472;margin-right:8px}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4428587485814712" crossorigin="anonymous"></script>
 <!-- Google Analytics 4 -->
@@ -100,7 +50,7 @@
   s.src='https://www.googletagmanager.com/gtag/js?id=G-P4F2M5B9DS'; document.head.appendChild(s);
   window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments);};
   gtag('js',new Date()); gtag('config','G-P4F2M5B9DS');
-  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';var t=(a.textContent||'').trim().slice(0,60);if(/coupang\.com|link\.coupang|toss/.test(h)){gtag('event','affiliate_click',{link_url:h,link_text:t,page_path:location.pathname});return;}if(a.closest('.cta,.rel-card,.post-card,.post-list,.card')){gtag('event','internal_link',{link_url:h,link_text:t,page_path:location.pathname});}});
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';var t=(a.textContent||'').trim().slice(0,60);if(/coupang\.com|link\.coupang|toss/.test(h)){gtag('event','affiliate_click',{link_url:h,link_text:t,page_path:location.pathname});return;}var area=a.closest('.calc-strip')?'strip':a.closest('.side')?'side':a.closest('.cta,.rel-card,.post-card,.post-list,.card')?'body':'';if(area){gtag('event','internal_link',{link_url:h,link_text:t,link_area:area,page_path:location.pathname});}});
 })();
 </script>
 <script type="application/ld+json">
@@ -108,6 +58,27 @@
 </script>
 </head>
 <body>
+<header class="site-head"><div class="in">
+  <a class="logo" href="/">tax<b>tool</b>.kr</a>
+  <nav>
+<!-- AUTO:NAV:START -->
+    <a href="/">홈</a>
+    <a href="/33/">계산기</a>
+    <a href="/guide/freelance/">프리랜서·알바</a>
+    <a href="/guide/salary/">직장인·급여</a>
+    <a href="/guide/owner/">사장님</a>
+    <a href="/about.html">소개</a>
+<!-- AUTO:NAV:END -->
+  </nav>
+</div></header>
+<div class="calc-strip">
+<!-- AUTO:CALCS:START -->
+    <a href="/33/"><span class="lbl">프리랜서·알바</span><span class="nm">3.3% 계산기</span><span class="ds">세전 ↔ 실수령 바로 환산</span></a>
+    <a href="/pay/"><span class="lbl">직장인</span><span class="nm">월급 실수령액 계산기</span><span class="ds">4대보험·소득세 뗀 실수령</span></a>
+<!-- AUTO:CALCS:END -->
+</div>
+<div class="layout">
+<main class="main">
 <div class="wrap">
 
   <p class="crumb"><a href="/">홈</a> / 가이드</p>
@@ -134,7 +105,7 @@
   <p class="count" id="count">전체 10편</p>
 <!-- AUTO:COUNT:END -->
 
-  <div class="list" id="list">
+  <div class="list grid" id="list">
 <!-- AUTO:LIST:START -->
       <a class="post-card thumb" href="/guide/myeongsese.html" data-cat="salary" data-text="급여명세서, 이 항목 빠져 있으면 과태료 대상입니다 급여명세서 보는 법을 월 300만 원 예시로 정리했습니다. 공제 6항목이 얼마씩 빠지는지, 법으로 정해진 필수 기재사항과 확인 포인트까지. 직장인·급여">
         <img src="/img/myeongsese-hero.webp" width="1200" height="686" alt="" loading="lazy" decoding="async">
@@ -199,60 +170,80 @@
 <!-- AUTO:LIST:END -->
   </div>
 
-  <div class="no-result" id="nores">찾으시는 글이 아직 없습니다. <a href="/">계산기로 직접 계산해보기 →</a></div>
+  <div class="no-result" id="nores">찾으시는 글이 아직 없습니다. <a href="/33/">계산기로 직접 계산해보기 →</a></div>
 
-  <p class="empty-note">더 많은 글이 곧 추가됩니다.</p>
 
-  <a class="back" href="/">← 3.3% 계산기로 돌아가기</a>
 
-  <footer>
+</div>
+</main>
+<aside class="side">
+<!-- AUTO:SIDE:START -->
+    <div class="side-box calcs">
+      <h2>계산기</h2>
+      <a class="side-calc" href="/33/"><span class="txt"><span class="nm">3.3% 계산기</span><span class="ds">세전 ↔ 실수령 바로 환산</span></span><span class="arr">→</span></a>
+      <a class="side-calc" href="/pay/"><span class="txt"><span class="nm">월급 실수령액 계산기</span><span class="ds">4대보험·소득세 뗀 실수령</span></span><span class="arr">→</span></a>
+    </div>
+    <div class="side-box">
+      <h2>검색</h2>
+      <form class="side-search" action="/guide/" method="get" role="search"><input type="search" name="q" placeholder="찾는 말" aria-label="글 검색" autocomplete="off"><button type="submit">찾기</button></form>
+    </div>
+    <div class="side-box">
+      <h2>카테고리</h2>
+      <a class="side-cat" href="/guide/freelance/">프리랜서·알바 <span>(5)</span></a>
+      <a class="side-cat" href="/guide/salary/">직장인·급여 <span>(4)</span></a>
+      <a class="side-cat" href="/guide/owner/">사장님 <span>(1)</span></a>
+    </div>
+    <div class="side-box">
+      <h2>최근 글</h2>
+      <a class="side-post" href="/guide/myeongsese.html"><img src="/img/myeongsese-hero.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">급여명세서 보는 법: 공제 6줄과 확인할 3가지</span><span class="d">2026.09.04</span></span></a>
+      <a class="side-post" href="/guide/bigwase.html"><img src="/img/bigwase-hero.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">식대 비과세 20만 원, 실수령액이 달라지는 이유</span><span class="d">2026.08.31</span></span></a>
+      <a class="side-post" href="/guide/yeonbong.html"><img src="/img/yeonbong-hero.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">2026 연봉 실수령액 표 (2,400만~1억)</span><span class="d">2026.08.27</span></span></a>
+      <a class="side-post" href="/guide/gongje.html"><img src="/img/gongje-hero.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">월급에서 뭐가 얼마나 빠질까: 4대보험과 소득세</span><span class="d">2026.08.23</span></span></a>
+    </div>
+<!-- AUTO:SIDE:END -->
+</aside>
+</div>
+<footer>
     <p class="disclaimer">본 사이트의 정보는 참고용이며, 실제 세액·환급액과 다를 수 있습니다.</p>
     <p>세금은 어렵게, 계산은 쉽게 · taxtool.kr</p>
     <nav class="footer-links">
       <a href="/guide/">가이드</a>·<a href="/about.html">사이트 소개</a>·<a href="/privacy.html">개인정보처리방침</a>
     </nav>
   </footer>
-</div>
 
 <script>
 (function(){
-  var q=document.getElementById('q'), chips=document.getElementById('chips'), list=document.getElementById('list'),
+  var q=document.getElementById('q'), list=document.getElementById('list'),
       cnt=document.getElementById('count'), nores=document.getElementById('nores');
-  if(!q||!chips||!list) return;
-  var cards=[].slice.call(list.querySelectorAll('.post-card')), tag='', term='', shown=cards.length, timer;
-  function norm(s){ return (s||'').toLowerCase().replace(/\s+/g,''); }
+  if(!q||!list) return;
+  var cards=[].slice.call(list.querySelectorAll('.post-card')), term='', shown=cards.length, timer;
+  function norm(s){ return (s||'').toLowerCase().replace(/s+/g,''); }
   function apply(){
     var n=0;
     cards.forEach(function(c){
-      var okTag = !tag || c.getAttribute('data-tag')===tag;
-      var okTerm = !term || norm(c.getAttribute('data-text')).indexOf(term)>-1;
-      var show = okTag && okTerm;
+      var show = !term || norm(c.getAttribute('data-text')).indexOf(term)>-1;
       c.style.display = show ? '' : 'none';
       if(show) n++;
     });
     shown=n;
-    cnt.textContent = (tag||term) ? ('검색 결과 '+n+'편') : ('전체 '+cards.length+'편');
+    cnt.textContent = term ? ('검색 결과 '+n+'편') : ('전체 '+cards.length+'편');
     nores.style.display = n ? 'none' : 'block';
+  }
+  function track(){
+    var v = q.value.trim();
+    if(v.length>1 && typeof gtag==='function'){ gtag('event','guide_search',{search_term:v.slice(0,60), results:shown}); }
   }
   q.addEventListener('input', function(){
     term = norm(q.value); apply();
-    clearTimeout(timer);
-    timer = setTimeout(function(){
-      var v = q.value.trim();
-      if(v.length>1 && typeof gtag==='function'){
-        gtag('event','guide_search',{search_term:v.slice(0,60), results:shown});
-      }
-    }, 1200);
+    clearTimeout(timer); timer = setTimeout(track, 1200);
   });
-  chips.addEventListener('click', function(e){
-    var b = e.target.closest && e.target.closest('button'); if(!b) return;
-    [].forEach.call(chips.querySelectorAll('.chip'), function(x){ x.classList.remove('on'); });
-    b.classList.add('on');
-    tag = b.getAttribute('data-tag') || '';
-    apply();
-    if(tag && typeof gtag==='function'){ gtag('event','guide_filter',{filter_tag:tag, results:shown}); }
-  });
+  // 사이드바 검색(/guide/?q=찾는말)에서 넘어온 경우
+  try{
+    var m = location.search.match(/[?&]q=([^&]*)/);
+    if(m && m[1]){ q.value = decodeURIComponent(m[1].replace(/+/g,' ')); term = norm(q.value); }
+  }catch(e){}
   apply();
+  if(term) track();
 })();
 </script>
 </body>

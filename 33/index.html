@@ -28,33 +28,11 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="/site.css?v=20260906">
 <style>
-  :root{
-    --bg:#EDF0F4;        /* 서류 받침 회청색 */
-    --ink:#14181F;       /* 먹색 */
-    --paper:#FFFFFF;     /* 영수증 종이 */
-    --green:#0E7A4E;     /* 입금 초록 */
-    --green-deep:#0A5C3B;
-    --amber:#E8A13C;     /* 도장 주황 */
-    --line:#D8DCE2;
-    --sub:#5B6472;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
-  body{
-    font-family:'Noto Sans KR',sans-serif;
-    background:var(--bg);
-    color:var(--ink);
-    line-height:1.6;
-  }
-  .wrap{max-width:560px;margin:0 auto;padding:32px 20px 60px}
+  .wrap{max-width:560px}
 
   /* 헤더 */
-  header .eyebrow{
-    display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;
-    color:var(--green);border:1.5px solid var(--green);
-    padding:4px 10px;border-radius:4px;margin-bottom:14px;
-  }
   header h1{font-size:32px;font-weight:900;line-height:1.25;letter-spacing:-0.5px}
   header h1 .pct{color:var(--green)}
   header p{margin-top:10px;font-size:15px;color:var(--sub)}
@@ -171,26 +149,11 @@
   }
   .rel-card .t{font-size:14px;font-weight:700;color:var(--ink);line-height:1.45}
   .rel-card .arr{flex:none;color:var(--green);font-weight:700;font-size:15px}
-  .rel-more{display:inline-block;margin-top:12px;font-size:13.5px;font-weight:700;color:var(--green);text-decoration:none}
-  .rel-more:hover{text-decoration:underline}
   .tip{
     margin-top:20px;background:#FDF6EA;border:1px solid #F0DDBB;
     border-radius:10px;padding:14px 16px;font-size:13.5px;color:#6B5320;
   }
-  footer{margin-top:48px;text-align:center;font-size:12px;color:#5B6472}
-  footer .disclaimer{max-width:420px;margin:0 auto 8px}
-  footer .footer-links{margin-top:10px}
-  footer .footer-links a{color:#5B6472;text-decoration:underline;margin:0 6px}
-  footer .footer-links a:hover{color:var(--sub)}
 
-  /* 글 목록(번호형) — 홈·글 하단 공용 */
-  .post-list{list-style:none;margin:14px 0 0;padding:0;border-top:1px solid var(--line)}
-  .post-list li{border-bottom:1px solid var(--line)}
-  .post-list a{display:flex;align-items:baseline;gap:10px;padding:12px 2px;text-decoration:none}
-  .post-list .n{flex:none;font-size:12.5px;font-weight:600;font-family:'IBM Plex Mono',monospace;color:#5B6472}
-  .post-list .t{flex:1;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.45}
-  .post-list a:hover .t{color:var(--green)}
-  .post-list .g{flex:none;color:var(--green);font-weight:700;font-size:14px}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4428587485814712" crossorigin="anonymous"></script>
 <!-- Google Analytics 4 -->
@@ -206,7 +169,7 @@
   s.src='https://www.googletagmanager.com/gtag/js?id=G-P4F2M5B9DS'; document.head.appendChild(s);
   window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments);};
   gtag('js',new Date()); gtag('config','G-P4F2M5B9DS');
-  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';var t=(a.textContent||'').trim().slice(0,60);if(/coupang\.com|link\.coupang|toss/.test(h)){gtag('event','affiliate_click',{link_url:h,link_text:t,page_path:location.pathname});return;}if(a.closest('.cta,.rel-card,.post-card,.post-list,.card')){gtag('event','internal_link',{link_url:h,link_text:t,page_path:location.pathname});}});
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';var t=(a.textContent||'').trim().slice(0,60);if(/coupang\.com|link\.coupang|toss/.test(h)){gtag('event','affiliate_click',{link_url:h,link_text:t,page_path:location.pathname});return;}var area=a.closest('.calc-strip')?'strip':a.closest('.side')?'side':a.closest('.cta,.rel-card,.post-card,.post-list,.card')?'body':'';if(area){gtag('event','internal_link',{link_url:h,link_text:t,link_area:area,page_path:location.pathname});}});
 })();
 </script>
 <script type="application/ld+json">
@@ -217,6 +180,27 @@
 </script>
 </head>
 <body>
+<header class="site-head"><div class="in">
+  <a class="logo" href="/">tax<b>tool</b>.kr</a>
+  <nav>
+<!-- AUTO:NAV:START -->
+    <a href="/">홈</a>
+    <a href="/33/" aria-current="page">계산기</a>
+    <a href="/guide/freelance/">프리랜서·알바</a>
+    <a href="/guide/salary/">직장인·급여</a>
+    <a href="/guide/owner/">사장님</a>
+    <a href="/about.html">소개</a>
+<!-- AUTO:NAV:END -->
+  </nav>
+</div></header>
+<div class="calc-strip">
+<!-- AUTO:CALCS:START -->
+    <a href="/33/" aria-current="page"><span class="lbl">프리랜서·알바</span><span class="nm">3.3% 계산기</span><span class="ds">세전 ↔ 실수령 바로 환산</span></a>
+    <a href="/pay/"><span class="lbl">직장인</span><span class="nm">월급 실수령액 계산기</span><span class="ds">4대보험·소득세 뗀 실수령</span></a>
+<!-- AUTO:CALCS:END -->
+</div>
+<div class="layout">
+<main class="main">
 <div class="wrap">
 
   <header>
@@ -297,7 +281,36 @@
     </details>
   </section>
 
-  <footer>
+</div>
+</main>
+<aside class="side">
+<!-- AUTO:SIDE:START -->
+    <div class="side-box calcs">
+      <h2>계산기</h2>
+      <a class="side-calc" href="/33/" aria-current="page"><span class="txt"><span class="nm">3.3% 계산기</span><span class="ds">세전 ↔ 실수령 바로 환산</span></span><span class="arr">→</span></a>
+      <a class="side-calc" href="/pay/"><span class="txt"><span class="nm">월급 실수령액 계산기</span><span class="ds">4대보험·소득세 뗀 실수령</span></span><span class="arr">→</span></a>
+    </div>
+    <div class="side-box">
+      <h2>검색</h2>
+      <form class="side-search" action="/guide/" method="get" role="search"><input type="search" name="q" placeholder="찾는 말" aria-label="글 검색" autocomplete="off"><button type="submit">찾기</button></form>
+    </div>
+    <div class="side-box">
+      <h2>카테고리</h2>
+      <a class="side-cat" href="/guide/freelance/">프리랜서·알바 <span>(5)</span></a>
+      <a class="side-cat" href="/guide/salary/">직장인·급여 <span>(4)</span></a>
+      <a class="side-cat" href="/guide/owner/">사장님 <span>(1)</span></a>
+    </div>
+    <div class="side-box">
+      <h2>최근 글</h2>
+      <a class="side-post" href="/guide/myeongsese.html"><img src="/img/myeongsese-hero.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">급여명세서 보는 법: 공제 6줄과 확인할 3가지</span><span class="d">2026.09.04</span></span></a>
+      <a class="side-post" href="/guide/bigwase.html"><img src="/img/bigwase-hero.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">식대 비과세 20만 원, 실수령액이 달라지는 이유</span><span class="d">2026.08.31</span></span></a>
+      <a class="side-post" href="/guide/yeonbong.html"><img src="/img/yeonbong-hero.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">2026 연봉 실수령액 표 (2,400만~1억)</span><span class="d">2026.08.27</span></span></a>
+      <a class="side-post" href="/guide/gongje.html"><img src="/img/gongje-hero.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">월급에서 뭐가 얼마나 빠질까: 4대보험과 소득세</span><span class="d">2026.08.23</span></span></a>
+    </div>
+<!-- AUTO:SIDE:END -->
+</aside>
+</div>
+<footer>
     <p class="disclaimer">계산 근거: 소득세법상 인적용역 사업소득 원천징수세율 3% + 지방소득세(소득세의 10%) 0.3%.</p>
     <p class="disclaimer">본 계산기는 참고용 간이 계산 도구이며, 실제 세액은 계약 조건과 신고 내용에 따라 달라질 수 있습니다.</p>
     <p>세금은 어렵게, 계산은 쉽게 · taxtool.kr</p>
@@ -305,7 +318,6 @@
       <a href="/guide/">가이드</a>·<a href="/about.html">사이트 소개</a>·<a href="/privacy.html">개인정보처리방침</a>
     </nav>
   </footer>
-</div>
 
 <script>
   const amount = document.getElementById('amount');
