@@ -6,10 +6,13 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--ink)
 
 /* 상단 헤더 */
 .site-head{background:var(--paper);border-bottom:1px solid var(--line)}
-.site-head .in{max-width:1000px;margin:0 auto;padding:0 20px;height:54px;display:flex;align-items:center;justify-content:space-between}
-.site-head .logo{font-size:18px;font-weight:900;letter-spacing:-0.5px;color:var(--ink);text-decoration:none}
+.site-head .in{max-width:1000px;margin:0 auto;padding:0 20px;height:54px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.site-head .logo{flex:none;font-size:18px;font-weight:900;letter-spacing:-0.5px;color:var(--ink);text-decoration:none}
 .site-head .logo b{color:var(--green);font-weight:900}
-.site-head nav a{font-size:13.5px;font-weight:700;color:var(--sub);text-decoration:none;margin-left:16px}
+.site-head nav{display:flex;min-width:0;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.site-head nav::-webkit-scrollbar{display:none}
+.site-head nav a{flex:none;font-size:13.5px;font-weight:700;color:var(--sub);text-decoration:none;margin-left:16px}
+.site-head nav a:first-child{margin-left:0}
 .site-head nav a:hover,.site-head nav a[aria-current=page]{color:var(--green)}
 
 /* 모바일 계산기 줄 (960px 미만) */
@@ -42,9 +45,21 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--ink)
 .side-calc .nm{display:block;font-size:15px;font-weight:700;line-height:1.3}
 .side-calc .ds{display:block;font-size:12.5px;color:var(--sub);margin-top:2px}
 .side-calc .arr{margin-left:auto;color:var(--green);font-weight:700;flex:none}
-.side-box .post-list{margin-top:0;border-top:none}
-.side-box .post-list li:last-child{border-bottom:none}
-.side-box .post-list .t{font-size:13.5px}
+.side-search{display:flex;gap:8px}
+.side-search input{flex:1;min-width:0;font-family:inherit;font-size:14px;color:var(--ink);background:#FAFBFC;border:1.5px solid var(--line);border-radius:10px;padding:9px 12px;outline:none}
+.side-search input:focus{border-color:var(--green)}
+.side-search button{flex:none;font-family:inherit;font-size:13.5px;font-weight:700;color:#fff;background:var(--ink);border:none;border-radius:10px;padding:9px 14px;cursor:pointer}
+.side-cat{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px;font-weight:700;color:var(--ink);text-decoration:none}
+.side-cat:last-child{border-bottom:none}
+.side-cat span{font-weight:500;color:var(--sub)}
+.side-cat:hover,.side-cat[aria-current=page]{color:var(--green)}
+.side-post{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.side-post:last-child{border-bottom:none}
+.side-post img,.side-post .ph{flex:none;width:84px;height:48px;object-fit:cover;border-radius:6px;background:#E0E4EA;display:block}
+.side-post .txt{min-width:0}
+.side-post .t{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:13.5px;font-weight:700;line-height:1.4}
+.side-post .d{display:block;font-size:12px;color:var(--sub);margin-top:3px}
+.side-post:hover .t{color:var(--green)}
 
 /* 공용 조각 */
 header .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;color:var(--green);border:1.5px solid var(--green);padding:4px 10px;border-radius:4px;margin-bottom:14px}
@@ -70,9 +85,14 @@ header .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spaci
 .post-card h2{font-size:17px;font-weight:900;letter-spacing:-0.3px;line-height:1.4}
 .post-card p{margin-top:8px;font-size:13.5px;color:var(--sub);line-height:1.55}
 .post-card .arrow{display:block;margin-top:10px;font-size:13px;font-weight:700;color:var(--green)}
-.post-card.thumb{display:grid;grid-template-columns:1fr;gap:14px}
-.post-card.thumb img{display:block;width:100%;height:auto;aspect-ratio:1200/686;object-fit:cover;border-radius:10px;background:#E0E4EA}
-@media(min-width:600px){.post-card.thumb{grid-template-columns:150px 1fr;align-items:start}}
+.list.grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:600px){.list.grid{grid-template-columns:1fr 1fr}}
+.post-card.thumb{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.post-card.thumb img,.post-card.thumb .ph{display:block;width:100%;height:auto;aspect-ratio:1200/686;object-fit:cover;background:#E0E4EA}
+.post-card.thumb .body{display:block;padding:14px 18px 18px}
+.post-card.thumb .tag{margin-bottom:8px}
+.post-card.thumb h2{font-size:16px}
+.post-card.thumb p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:13px}
 
 /* 푸터 */
 footer{max-width:1000px;margin:8px auto 0;padding:0 20px 60px;text-align:center;font-size:12px;color:#5B6472}

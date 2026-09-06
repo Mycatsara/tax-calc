@@ -2,11 +2,14 @@
 const fs = require('fs'); const path = require('path'); const assert = require('assert');
 const ROOT = path.join(__dirname, '..', '..');
 const html = (d) => fs.readdirSync(path.join(ROOT, d)).filter((f) => f.endsWith('.html')).map((f) => path.join(d, f));
-const PAGES = [...html('.'), ...html('guide'), ...html('pay'), ...html('33')];
+const cats = JSON.parse(fs.readFileSync(path.join(ROOT, 'tools/posts.json'), 'utf8')).cats;
+const PAGES = [...html('.'), ...html('guide'), ...html('pay'), ...html('33'), ...cats.flatMap((c) => html(`guide/${c.slug}`))];
 let n = 0; const ok = (m) => { n++; console.log('  ✓', m); };
 
+for (const c of cats) assert(fs.existsSync(path.join(ROOT, 'guide', c.slug, 'index.html')), `카테고리 페이지 없음 ${c.slug}`);
 for (const f of PAGES) {
   const s = fs.readFileSync(path.join(ROOT, f), 'utf8');
+  assert(s.includes('<!-- AUTO:NAV:START -->'), `${f}: NAV 마커 없음`);
   assert(s.includes('<link rel="stylesheet" href="/site.css?v='), `${f}: site.css 링크 없음`);
   assert(/<link rel="stylesheet" href="\/site\.css\?v=[^"]+">[\s\S]*<style>/.test(s), `${f}: site.css가 인라인 style보다 앞에 있어야 함`);
   assert(s.includes('<header class="site-head">'), `${f}: site-head 없음`);
@@ -25,6 +28,7 @@ ok(`페이지 ${PAGES.length}개 뼈대·마커·내부 링크`);
 const sm = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 const urls = [...sm.matchAll(/<loc>https:\/\/taxtool\.kr(\/[^<]*)<\/loc>/g)].map((m) => m[1]);
 assert(urls.includes('/33/'), 'sitemap에 /33/ 없음');
+for (const c of cats) assert(urls.includes(`/guide/${c.slug}/`), `sitemap에 /guide/${c.slug}/ 없음`);
 for (const u of urls) { const p = u.endsWith('/') ? u + 'index.html' : u; assert(fs.existsSync(path.join(ROOT, p)), `sitemap URL 파일 없음 ${u}`); }
 ok(`sitemap ${urls.length}개 URL ↔ 파일`);
 

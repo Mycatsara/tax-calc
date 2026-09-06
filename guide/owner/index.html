@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사장님 세금 가이드 — taxtool.kr</title>
+<meta name="description" content="사장님 세금 가이드 1편. 원천징수 의무·지급명세서·부가세을 숫자와 근거로 정리했습니다.">
+<meta property="og:title" content="사장님 세금 가이드 — taxtool.kr">
+<meta property="og:description" content="사장님 세금 가이드 1편. 원천징수 의무·지급명세서·부가세.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://taxtool.kr/guide/owner/">
+<meta property="og:image" content="https://taxtool.kr/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="taxtool.kr">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://taxtool.kr/guide/owner/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css?v=20260906">
+<style>
+  header h1{font-size:26px;font-weight:900;line-height:1.3;letter-spacing:-0.5px}
+  header p{margin-top:8px;font-size:14.5px;color:var(--sub)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .chip{font-size:13px;font-weight:700;color:var(--ink);background:transparent;border:1.5px solid var(--ink);border-radius:999px;padding:6px 12px;text-decoration:none}
+  .chip.on{background:var(--amber);border-color:var(--amber)}
+  .list{margin-top:18px}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4428587485814712" crossorigin="anonymous"></script>
+<!-- Google Analytics 4 -->
+<script>
+(function(){
+  // ?ga=off 로 접속하면 이 브라우저 세션 동안 집계 제외 (운영자·클로드 점검용)
+  try{ if(location.search.indexOf('ga=off')>-1) sessionStorage.setItem('gaoff','1'); }catch(e){}
+  var off=false; try{ off=sessionStorage.getItem('gaoff')==='1'; }catch(e){}
+  // 자동화 브라우저(크롤러·스크래퍼)는 집계하지 않는다. 실제 사용자에게는 절대 걸리지 않는 조건만 사용.
+  var auto = navigator.webdriver===true || /HeadlessChrome|PhantomJS|Puppeteer|Playwright|Selenium/i.test(navigator.userAgent);
+  if(off||auto) return;
+  var s=document.createElement('script'); s.async=true;
+  s.src='https://www.googletagmanager.com/gtag/js?id=G-P4F2M5B9DS'; document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments);};
+  gtag('js',new Date()); gtag('config','G-P4F2M5B9DS');
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';var t=(a.textContent||'').trim().slice(0,60);if(/coupang\.com|link\.coupang|toss/.test(h)){gtag('event','affiliate_click',{link_url:h,link_text:t,page_path:location.pathname});return;}var area=a.closest('.calc-strip')?'strip':a.closest('.side')?'side':a.closest('.cta,.rel-card,.post-card,.post-list,.card')?'body':'';if(area){gtag('event','internal_link',{link_url:h,link_text:t,link_area:area,page_path:location.pathname});}});
+})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://taxtool.kr/"},{"@type":"ListItem","position":2,"name":"가이드","item":"https://taxtool.kr/guide/"},{"@type":"ListItem","position":3,"name":"사장님","item":"https://taxtool.kr/guide/owner/"}]}
+</script>
+</head>
+<body>
+<header class="site-head"><div class="in">
+  <a class="logo" href="/">tax<b>tool</b>.kr</a>
+  <nav>
+<!-- AUTO:NAV:START -->
+    <a href="/">홈</a>
+    <a href="/33/">계산기</a>
+    <a href="/guide/freelance/">프리랜서·알바</a>
+    <a href="/guide/salary/">직장인·급여</a>
+    <a href="/guide/owner/" aria-current="page">사장님</a>
+    <a href="/about.html">소개</a>
+<!-- AUTO:NAV:END -->
+  </nav>
+</div></header>
+<div class="calc-strip">
+<!-- AUTO:CALCS:START -->
+    <a href="/33/"><span class="lbl">프리랜서·알바</span><span class="nm">3.3% 계산기</span><span class="ds">세전 ↔ 실수령 바로 환산</span></a>
+    <a href="/pay/"><span class="lbl">직장인</span><span class="nm">월급 실수령액 계산기</span><span class="ds">4대보험·소득세 뗀 실수령</span></a>
+<!-- AUTO:CALCS:END -->
+</div>
+<div class="layout">
+<main class="main">
+<div class="wrap">
+
+  <p class="crumb"><a href="/">홈</a> / <a href="/guide/">가이드</a> / 사장님</p>
+
+  <header>
+    <span class="eyebrow">GUIDE</span>
+    <h1>사장님</h1>
+    <p>원천징수 의무·지급명세서·부가세 · 전체 1편</p>
+  </header>
+
+  <div class="chips">
+<!-- AUTO:CHIPS:START -->
+        <a class="chip" href="/guide/">전체</a>
+        <a class="chip" href="/guide/freelance/">프리랜서·알바 5</a>
+        <a class="chip" href="/guide/salary/">직장인·급여 4</a>
+        <a class="chip on" href="/guide/owner/">사장님 1</a>
+<!-- AUTO:CHIPS:END -->
+  </div>
+
+  <div class="list grid">
+<!-- AUTO:LIST:START -->
+      <a class="post-card thumb" href="/guide/wonchon.html" data-cat="owner" data-text="프리랜서에게 3.3% 떼고 지급할 때, 사장님이 해야 할 일 정리 3.3% 원천징수는 떼는 것으로 끝이 아닙니다. 원천세 신고·납부 기한, 지급명세서 제출, 자주 하는 실수까지 지급하는 쪽의 의무를 순서대로 정리했습니다. 사장님">
+        <img src="/img/wonchon-hero.webp" width="1200" height="686" alt="" loading="lazy" decoding="async">
+        <span class="body"><span class="tag">사장님</span><span class="date">2026.08.20</span>
+        <h2>프리랜서에게 3.3% 떼고 지급할 때, 사장님이 해야 할 일 정리</h2>
+        <p>3.3% 원천징수는 떼는 것으로 끝이 아닙니다. 원천세 신고·납부 기한, 지급명세서 제출, 자주 하는 실수까지 지급하는 쪽의 의무를 순서대로 정리했습니다.</p></span>
+      </a>
+<!-- AUTO:LIST:END -->
+  </div>
+
+</div>
+</main>
+<aside class="side">
+<!-- AUTO:SIDE:START -->
+    <div class="side-box calcs">
+      <h2>계산기</h2>
+      <a class="side-calc" href="/33/"><span class="txt"><span class="nm">3.3% 계산기</span><span class="ds">세전 ↔ 실수령 바로 환산</span></span><span class="arr">→</span></a>
+      <a class="side-calc" href="/pay/"><span class="txt"><span class="nm">월급 실수령액 계산기</span><span class="ds">4대보험·소득세 뗀 실수령</span></span><span class="arr">→</span></a>
+    </div>
+    <div class="side-box">
+      <h2>검색</h2>
+      <form class="side-search" action="/guide/" method="get" role="search"><input type="search" name="q" placeholder="찾는 말" aria-label="글 검색" autocomplete="off"><button type="submit">찾기</button></form>
+    </div>
+    <div class="side-box">
+      <h2>카테고리</h2>
+      <a class="side-cat" href="/guide/freelance/">프리랜서·알바 <span>(5)</span></a>
+      <a class="side-cat" href="/guide/salary/">직장인·급여 <span>(4)</span></a>
+      <a class="side-cat" href="/guide/owner/" aria-current="page">사장님 <span>(1)</span></a>
+    </div>
+    <div class="side-box">
+      <h2>최근 글</h2>
+      <a class="side-post" href="/guide/myeongsese.html"><img src="/img/myeongsese-hero.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">급여명세서 보는 법: 공제 6줄과 확인할 3가지</span><span class="d">2026.09.04</span></span></a>
+      <a class="side-post" href="/guide/bigwase.html"><img src="/img/bigwase-hero.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">식대 비과세 20만 원, 실수령액이 달라지는 이유</span><span class="d">2026.08.31</span></span></a>
+      <a class="side-post" href="/guide/yeonbong.html"><img src="/img/yeonbong-hero.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">2026 연봉 실수령액 표 (2,400만~1억)</span><span class="d">2026.08.27</span></span></a>
+      <a class="side-post" href="/guide/gongje.html"><img src="/img/gongje-hero.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">월급에서 뭐가 얼마나 빠질까: 4대보험과 소득세</span><span class="d">2026.08.23</span></span></a>
+    </div>
+<!-- AUTO:SIDE:END -->
+</aside>
+</div>
+<footer>
+  <p class="disclaimer">본 사이트의 정보는 참고용이며, 실제 세액·환급액과 다를 수 있습니다.</p>
+  <p>세금은 어렵게, 계산은 쉽게 · taxtool.kr</p>
+  <nav class="footer-links">
+    <a href="/guide/">가이드</a>·<a href="/about.html">사이트 소개</a>·<a href="/privacy.html">개인정보처리방침</a>
+  </nav>
+</footer>
+</body>
+</html>
