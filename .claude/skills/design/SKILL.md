@@ -31,10 +31,13 @@ description: taxtool.kr 디자인 규칙(색상·폰트·컴포넌트·금지사
 - 본문 p: 14.5px, color #333A45. 라벨 13px/700 `--sub`
 - eyebrow(상단 작은 태그): 12px/700, letter-spacing 2px, 초록 글자+1.5px 초록 테두리, radius 4px
 
-## 4. 레이아웃
-- `.wrap{max-width:560px}` 계산기 / `640px` 글. `margin:0 auto;padding:32px 20px 60px`
-- **모바일 우선 단일 컬럼.** 좌우 여백 20px. 데스크톱도 중앙 좁은 컬럼 유지(앱 느낌)
-- 세로 리듬: 헤더 → 탭(26px 위) → 카드(14px) → 결과(22px) → 본문 섹션(44px) → 푸터(48px)
+## 4. 레이아웃 (2026-09-06 블로그형 개편)
+- 공통 뼈대(모든 페이지): `<header class="site-head">`(로고 tax먹색+tool초록 + 메뉴 `AUTO:NAV` = 홈·계산기·카테고리 3개·소개) → `.calc-strip`(960px 미만에서만, 계산기 카드 가로 스크롤, `AUTO:CALCS`) → `.layout` > `.main` > `.wrap` + `.side`(960px 이상에서만, sticky, `AUTO:SIDE` = 계산기·검색·카테고리·최근 글 4편) → `<footer>`(layout 밖)
+- `.wrap{max-width:640px}` 글·목록 / 계산기 페이지(`/33/`·`/pay/`)는 인라인 `.wrap{max-width:560px}`로 좁게 유지(영수증 폭)
+- 960px 이상: grid `minmax(0,680px) 280px`, gap 32px, 중앙 정렬. 미만: 단일 컬럼, 상단 메뉴는 가로 스크롤
+- 공통 CSS는 `/site.css`(`?v=YYYYMMDD` 캐시 버전, 고치면 버전 올리고 buildlist·전 페이지 링크 갱신). 페이지 고유 CSS만 인라인. site.css 링크는 인라인 `<style>`보다 앞
+- 사이드바·계산기 줄·상단 메뉴·홈 카드·카테고리 페이지는 손으로 쓰지 않는다 — `tools/posts.json`(`cats`·`calcs`·`posts`) + `node tools/buildlist.js`. 카테고리 페이지 원형은 `tools/tpl-category.html`
+- 새 페이지는 가장 최근 `guide/*.html`의 `<body>` 뼈대(마커 포함)를 복사한다
 
 ## 5. 컴포넌트 (클래스명·수치 고정)
 | 컴포넌트 | 규칙 |
@@ -58,6 +61,10 @@ description: taxtool.kr 디자인 규칙(색상·폰트·컴포넌트·금지사
 | `footer` | 12px #5B6472 중앙 정렬, `.disclaimer`(max 420px) → 한 줄 소개 → `.footer-links`(가이드·사이트 소개·개인정보처리방침) |
 | `.post-list` 번호형 글 목록 | 홈·글 하단 공용. `<ol>`, 위아래 1px `--line` 구분선, 행 padding 12px 2px, `.n`(Plex Mono 12.5px/600 #5B6472) · `.t`(14.5px/700) · `.g`(초록 화살표). hover 시 `.t`가 초록 |
 | `.next-read` 글 하단 관련 글 | `margin-top:34px`, h2 15px/900. **위치는 정리 박스 뒤 · CTA 앞** (계산기로 바로 보내면 이탈하므로 다음 읽을거리를 먼저 준다). 내용은 `tools/buildlist.js`가 생성 |
+| `.site-head` | paper 배경, 하단 1px line, 높이 54px, 로고 18px/900(`tool`만 초록), 메뉴 13.5px/700 sub, 현재 페이지 초록. 960px 미만 메뉴 가로 스크롤 |
+| `.calc-strip a` | 200px 카드, **2px 초록 테두리**, radius 12px, `.lbl` 11px 초록 / `.nm` 15px/900 / `.ds` 12px sub. 현재 페이지 배경 #E7F3ED |
+| `.side-box` | paper, 1px line, radius 14px, h2 12px/2px 자간 초록. `.calcs`는 2px 초록 테두리. `.side-calc` hover #E7F3ED·현재 amber 점 / `.side-search` input 1.5px line + 버튼 ink 배경 흰 글자 / `.side-cat` 행 9px, 편수 sub / `.side-post` 썸네일 84×48 radius 6px + 제목 13.5px 2줄 말줄임 + 날짜 12px |
+| `.list.grid` + `.post-card.thumb` | 600px 이상 2열 격자, 카드는 이미지(1200:686) 위 · `.body` padding 14px 18px 18px · `.tag`(카테고리명) `.date` · h2 16px · p 13px 3줄 말줄임 |
 | `.filter` 글 검색·태그 칩 (가이드 목록) | `.search input`(Noto 14.5px 좌측 정렬, 1.5px `--line`, radius 10px, focus 초록) + `.chip`(pill, 1.5px ink 테두리, `.on`은 amber 채움) + `.count` + `.no-result`. 계산기 입력창과 달리 Plex Mono·우측 정렬을 쓰지 않는다 |
 
 그림자는 위 두 가지(`0 1px 3px` / `0 6px 20px`)만 쓴다. 모서리는 4 / 9 / 10 / 12 / 14 / 999px만 쓴다. transition은 `.15s`만.

@@ -36,9 +36,10 @@ git log --since=midnight --diff-filter=A --name-only --pretty=format: -- guide/ 
 
 - head: title, meta description, og:title/og:description(**80~125자**. 메타 설명이 그 범위면 그대로, 길면 핵심만 축약 — 스레드·카톡 공유 카드에 그대로 노출됨)/og:type=article, Google Fonts 링크, JSON-LD Article (mainEntityOfPage는 `https://taxtool.kr/guide/<슬러그>.html`)
 - head 끝(`</head>` 직전): AdSense 스크립트 + **Google Analytics 4 스니펫(측정 ID G-P4F2M5B9DS)** — 최근 글 페이지의 것을 그대로 복사. 둘 중 하나라도 빠지면 안 됨
+- **뼈대(9/6 개편~)**: 가장 최근 글의 `<body>`를 통째로 복사한다 — `site-head`(AUTO:NAV) → `calc-strip`(AUTO:CALCS) → `layout`>`main`>`wrap` + `side`(AUTO:SIDE) → 푸터. `<head>`에는 `<link rel="stylesheet" href="/site.css?v=…">`가 인라인 `<style>`보다 앞에 있어야 하고, 인라인에는 글 고유 CSS(article·tbl·summary-box·cta 등)만 둔다. AUTO 구간은 비워 두면 buildlist가 채운다
 - head 공유·검색 태그(8/22~ 필수): `og:url`(페이지 절대 URL) · `og:image`=`https://taxtool.kr/og.png` + width 1200/height 630 · `og:site_name` · `twitter:card=summary_large_image` · `<link rel="canonical">` — 최근 글 페이지에서 복사하고 URL만 교체. 그리고 `</head>` 직전에 **BreadcrumbList JSON-LD**(홈 › 가이드 › 짧은 주제명, item은 절대 URL). `html{}`에 `-webkit-text-size-adjust:100%` 유지
 - **날짜(GEO·최신성 신호)**: Article JSON-LD에 `datePublished`(게시일)와 `dateModified`를 **둘 다** 넣는다. 신규 글은 두 값이 같다. 헤더 `.meta` 바로 아래에 `<p class="pubdate">YYYY년 M월 D일 게시</p>` 표시. **기존 글의 세율·법령·수치를 고치면 `dateModified`와 화면 문구를 그날 날짜로 갱신**하고 문구는 `~ 게시 · YYYY년 M월 D일 수정`으로 바꾼다. 오탈자·디자인 수정만 한 경우에는 갱신하지 않는다
-- 본문: crumb(홈/가이드/짧은 주제명) → eyebrow(주제 태그) → h1 → .meta 한 줄 소개 → article
+- 본문: crumb(홈/가이드/짧은 주제명) → eyebrow(주제 한 단어) → h1 → .meta 한 줄 소개 → article
 - article 내부: 첫 문단은 `.lead`, `##` → `<h2>`, `**굵게**` → `<b>`, 목록 → `<ul>/<ol>`, 상대 링크는 그대로 `<a href>`
 - **이미지(2026-09-02~, 글마다 2장)**: 원고의 `![alt](/img/파일.webp)` 줄은 그 자리에 `<figure class="fig"><img src="/img/파일.webp" width="1200" height="686" alt="…" loading="lazy" decoding="async"></figure>`로 변환한다. 규칙:
   - **alt 필수** — 원고의 대괄호 문구 그대로(장면을 한 문장으로). 빈 alt·"이미지"·파일명 금지
@@ -59,9 +60,9 @@ git log --since=midnight --diff-filter=A --name-only --pretty=format: -- guide/ 
 ## 4단계: 목록 반영 (tools/posts.json 한 곳만 고친다)
 
 1. **tools/posts.json**의 `posts` 배열 **맨 앞**에 새 글 항목을 추가한다:
-   `{ "slug", "date"(게시일), "tag"(반드시 파일 위쪽 "tags" 목록 안의 값), "title"(목록용 전체 제목), "short"(홈·관련글용 짧은 제목, 30자 안팎), "summary"(목록 카드 설명 2줄) }`
-   문맥상 꼭 이어 읽히면 좋은 글이 있으면 `"related": ["슬러그", ...]`로 직접 지정한다. 생략하면 같은 태그 우선 → 최신순으로 자동 선정된다.
-2. `node tools/buildlist.js` 실행 → **가이드 목록·태그 칩·전체 편수·홈 최신 5편·모든 글의 "이어서 읽으면 좋은 글"이 한 번에 갱신**된다. 오류가 나면(파일 없음, 슬러그 중복 등) 메시지대로 고친 뒤 다시 실행한다.
+   `{ "slug", "date"(게시일), "cat"(반드시 파일 위쪽 "cats"의 slug: freelance·salary·owner — 9/6 카테고리 3개 체제), "title"(목록용 전체 제목), "short"(홈·관련글용 짧은 제목, 30자 안팎), "summary"(목록 카드 설명 2줄) }`
+   문맥상 꼭 이어 읽히면 좋은 글이 있으면 `"related": ["슬러그", ...]`로 직접 지정한다. 생략하면 같은 카테고리 우선 → 최신순으로 자동 선정된다.
+2. `node tools/buildlist.js` 실행 → **가이드 목록·카테고리 칩·카테고리 페이지(guide/<slug>/)·홈 카드·모든 페이지의 상단 메뉴·계산기 줄·사이드바(최근 글 4편)·각 글의 "이어서 읽으면 좋은 글"이 한 번에 갱신**된다. 오류가 나면(파일 없음, 슬러그 중복 등) 메시지대로 고친 뒤 다시 실행한다.
 3. **sitemap.xml**: `</urlset>` 앞에 새 url 블록 추가 (`<lastmod>`=게시일 YYYY-MM-DD). **글의 `dateModified`를 갱신하면 sitemap의 `<lastmod>`도 같은 날짜로 함께 갱신**한다(불일치 금지).
 
 ※ guide/index.html·index.html·각 글의 `<!-- AUTO:... -->` 구간은 **손으로 고치지 않는다.** 전부 buildlist.js가 생성한다.
