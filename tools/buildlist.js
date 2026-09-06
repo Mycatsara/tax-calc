@@ -2,6 +2,8 @@
 //   1) guide/index.html : 태그 칩 + 전체 편수 + 글 카드 목록(번호 포함)
 //   2) index.html(홈)    : 최신 N편 번호 목록 + "가이드 전체 N편 보기"
 //   3) guide/<글>.html   : 글 하단 "이어서 읽으면 좋은 글" 3편 (CTA 앞)
+//   4) 모든 페이지      : <!-- AUTO:CALCS --> 모바일 계산기 줄, <!-- AUTO:SIDE --> 사이드바(계산기 + 최신 5편)
+//   5) index.html(홈)    : 썸네일 카드 목록 전체 (AUTO:HOME) — 2026-09-06 블로그형 개편
 // 사용: node tools/buildlist.js
 // 규칙: 자동 생성 구간은 <!-- AUTO:XXX:START --> ~ <!-- AUTO:XXX:END --> 사이만 바뀐다. 그 밖은 손대지 않는다.
 
@@ -35,9 +37,30 @@ function fill(file, name, inner) {
   return true;
 }
 
+function fillIf(file, name, inner) { // 마커가 없으면 건너뜀 (있으면 fill과 동일)
+  const s = read(file);
+  return s.includes(`<!-- AUTO:${name}:START -->`) ? fill(file, name, inner) : false;
+}
+
 // ---------- 데이터 ----------
 const data = JSON.parse(read('tools/posts.json'));
 const posts = data.posts;
+const calcs = data.calcs || [];
+// 글의 첫 이미지(히어로) 경로 — 홈 썸네일용. 없으면 null
+function hero(slug) {
+  const m = read(`guide/${slug}.html`).match(/<figure class="fig"><img src="([^"]+)"/);
+  return m ? m[1] : null;
+}
+// 파일 경로 → 사이트 URL (현재 페이지 표시용)
+function urlOf(file) { return '/' + file.replace(/\\/g, '/').replace(/index\.html$/, ''); }
+function stripHtml(cur) {
+  return calcs.map((c) => `    <a href="${c.path}"${c.path === cur ? ' aria-current="page"' : ''}><span class="lbl">${esc(c.label)}</span><span class="nm">${esc(c.name)}</span><span class="ds">${esc(c.desc)}</span></a>`).join('\n');
+}
+function sideHtml(cur) {
+  const cs = calcs.map((c) => `      <a class="side-calc" href="${c.path}"${c.path === cur ? ' aria-current="page"' : ''}><span class="txt"><span class="nm">${esc(c.name)}</span><span class="ds">${esc(c.desc)}</span></span><span class="arr">→</span></a>`).join('\n');
+  const rs = posts.slice(0, CFG.homeMax).map(listItem).join('\n');
+  return `    <div class="side-box calcs">\n      <h2>계산기</h2>\n${cs}\n    </div>\n    <div class="side-box">\n      <h2>최신 글</h2>\n      <ol class="post-list">\n${rs}\n      </ol>\n      <a class="rel-more" href="/guide/">${CFG.moreText(posts.length)}</a>\n    </div>`;
+}
 
 // 검증: posts.json ↔ 실제 파일
 const files = fs.readdirSync(path.join(ROOT, 'guide'))
@@ -61,6 +84,20 @@ const card = (p, i) => `      <a class="post-card" href="/guide/${p.slug}.html" 
         <span class="${CFG.cardArrowClass}">${CFG.cardArrowText}</span>
       </a>`;
 
+// 홈 썸네일 카드
+const dateKo = (d) => { const [y, m, dd] = d.split('-'); return `${y}.${m}.${dd}`; };
+const thumbCard = (p) => {
+  const img = hero(p.slug);
+  const pic = img ? `        <img src="${img}" width="1200" height="686" alt="" loading="lazy" decoding="async">` : `        <span class="ph" aria-hidden="true"></span>`;
+  return `      <a class="post-card thumb" href="/guide/${p.slug}.html">
+${pic}
+        <span class="body"><span class="tag">${esc(p.tag)}</span><span class="date">${dateKo(p.date)}</span>
+        <h2>${esc(p.title)}</h2>
+        <p>${esc(p.summary)}</p>
+        <span class="arrow">${CFG.cardArrowText}</span></span>
+      </a>`;
+};
+
 // 관련 글: 같은 태그 우선 → 나머지 최신순으로 채움
 function related(p) {
   const byS = (s) => posts.find((x) => x.slug === s);
@@ -82,12 +119,8 @@ if (fill('guide/index.html', 'CHIPS', chips)) changed++;
 if (fill('guide/index.html', 'COUNT', `  <p class=\"count\" id=\"count\">${CFG.countText(posts.length)}</p>`)) changed++;
 if (fill('guide/index.html', 'LIST', posts.map(card).join('\n'))) changed++;
 
-// ---------- 2) 홈 ----------
-const home = `      <ol class="post-list">
-${posts.slice(0, CFG.homeMax).map(listItem).join('\n')}
-      </ol>
-      <a class="rel-more" href="/guide/">${CFG.moreText(posts.length)}</a>`;
-if (fill('index.html', 'HOME', home)) changed++;
+// ---------- 2) 홈: 썸네일 카드 전체 ----------
+if (fill('index.html', 'HOME', posts.map(thumbCard).join('\n'))) changed++;
 
 // ---------- 3) 각 글의 관련 글 ----------
 for (const p of posts) {
@@ -101,4 +134,16 @@ ${items}
   if (fill(`guide/${p.slug}.html`, 'NEXT', block)) changed++;
 }
 
-console.log(`글 ${posts.length}편 · 태그 ${usedTags.length}개 · 갱신된 파일 ${changed}개`);
+// ---------- 4) 모든 페이지: 계산기 줄 + 사이드바 ----------
+const allPages = [];
+for (const d of ['.', 'guide', 'pay', '33']) {
+  if (!fs.existsSync(path.join(ROOT, d))) continue;
+  for (const f of fs.readdirSync(path.join(ROOT, d))) if (f.endsWith('.html')) allPages.push(d === '.' ? f : `${d}/${f}`);
+}
+for (const f of allPages) {
+  const cur = urlOf(f);
+  if (fillIf(f, 'CALCS', stripHtml(cur))) changed++;
+  if (fillIf(f, 'SIDE', sideHtml(cur))) changed++;
+}
+
+console.log(`글 ${posts.length}편 · 태그 ${usedTags.length}개 · 계산기 ${calcs.length}개 · 갱신된 파일 ${changed}개`);
