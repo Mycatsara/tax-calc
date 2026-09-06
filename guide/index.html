@@ -217,7 +217,7 @@
       cnt=document.getElementById('count'), nores=document.getElementById('nores');
   if(!q||!list) return;
   var cards=[].slice.call(list.querySelectorAll('.post-card')), term='', shown=cards.length, timer;
-  function norm(s){ return (s||'').toLowerCase().replace(/s+/g,''); }
+  function norm(s){ return (s||'').toLowerCase().replace(/\s+/g,''); }
   function apply(){
     var n=0;
     cards.forEach(function(c){
@@ -240,7 +240,7 @@
   // 사이드바 검색(/guide/?q=찾는말)에서 넘어온 경우
   try{
     var m = location.search.match(/[?&]q=([^&]*)/);
-    if(m && m[1]){ q.value = decodeURIComponent(m[1].replace(/+/g,' ')); term = norm(q.value); }
+    if(m && m[1]){ q.value = decodeURIComponent(m[1].replace(/\+/g,' ')); term = norm(q.value); }
   }catch(e){}
   apply();
   if(term) track();
