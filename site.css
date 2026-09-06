@@ -13,7 +13,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--ink)
 .site-head nav a:hover,.site-head nav a[aria-current=page]{color:var(--green)}
 
 /* 모바일 계산기 줄 (960px 미만) */
-.calc-strip{display:flex;gap:10px;overflow-x:auto;padding:14px 20px 4px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.calc-strip{display:flex;gap:10px;overflow-x:auto;padding:14px 20px 4px;scroll-snap-type:x mandatory;scroll-padding-left:20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .calc-strip::-webkit-scrollbar{display:none}
 .calc-strip a{flex:none;width:200px;scroll-snap-align:start;background:var(--paper);border:2px solid var(--green);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--ink)}
 .calc-strip .lbl{display:block;font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--green)}
@@ -71,7 +71,7 @@ header .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spaci
 .post-card p{margin-top:8px;font-size:13.5px;color:var(--sub);line-height:1.55}
 .post-card .arrow{display:block;margin-top:10px;font-size:13px;font-weight:700;color:var(--green)}
 .post-card.thumb{display:grid;grid-template-columns:1fr;gap:14px}
-.post-card.thumb img{display:block;width:100%;aspect-ratio:1200/686;object-fit:cover;border-radius:10px;background:#E0E4EA}
+.post-card.thumb img{display:block;width:100%;height:auto;aspect-ratio:1200/686;object-fit:cover;border-radius:10px;background:#E0E4EA}
 @media(min-width:600px){.post-card.thumb{grid-template-columns:150px 1fr;align-items:start}}
 
 /* 푸터 */
