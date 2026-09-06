@@ -94,7 +94,7 @@ function navHtml(cur) {
 function stripHtml(cur) {
   return calcs.map((c) => `    <a href="${c.path}"${c.path === cur ? ' aria-current="page"' : ''}><span class="lbl">${esc(c.label)}</span><span class="nm">${esc(c.name)}</span><span class="ds">${esc(c.desc)}</span></a>`).join('\n');
 }
-// 사이드바: 계산기 → 검색 → 카테고리 → 최근 글(썸네일)
+// 사이드바: 계산기 → 카테고리 → 검색 → 최근 글(썸네일)  (9/6 운영자 순서)
 function sideHtml(cur) {
   const cs = calcs.map((c) => `      <a class="side-calc" href="${c.path}"${c.path === cur ? ' aria-current="page"' : ''}><span class="txt"><span class="nm">${esc(c.name)}</span><span class="ds">${esc(c.desc)}</span></span><span class="arr">→</span></a>`).join('\n');
   const ct = cats.map((c) => `      <a class="side-cat" href="/guide/${c.slug}/"${`/guide/${c.slug}/` === cur ? ' aria-current="page"' : ''}>${esc(c.name)} <span>(${countOf(c)})</span></a>`).join('\n');
@@ -105,8 +105,8 @@ function sideHtml(cur) {
   }).join('\n');
   return [
     `    <div class="side-box calcs">\n      <h2>계산기</h2>\n${cs}\n    </div>`,
-    `    <div class="side-box">\n      <h2>검색</h2>\n      <form class="side-search" action="/guide/" method="get" role="search"><input type="search" name="q" placeholder="찾는 말" aria-label="글 검색" autocomplete="off"><button type="submit">찾기</button></form>\n    </div>`,
     `    <div class="side-box">\n      <h2>카테고리</h2>\n${ct}\n    </div>`,
+    `    <div class="side-box">\n      <h2>검색</h2>\n      <form class="side-search" action="/guide/" method="get" role="search"><input type="search" name="q" placeholder="찾는 말" aria-label="글 검색" autocomplete="off"><button type="submit">찾기</button></form>\n    </div>`,
     `    <div class="side-box">\n      <h2>최근 글</h2>\n${rs}\n    </div>`,
   ].join('\n');
 }
