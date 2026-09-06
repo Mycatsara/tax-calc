@@ -16,24 +16,28 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--ink)
 .site-head nav a:hover,.site-head nav a[aria-current=page]{color:var(--green)}
 
 /* 모바일 계산기 줄 (960px 미만) */
-.calc-strip{display:flex;gap:10px;overflow-x:auto;padding:14px 20px 4px;scroll-snap-type:x mandatory;scroll-padding-left:20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.calc-strip::-webkit-scrollbar{display:none}
-.calc-strip a{flex:none;width:200px;scroll-snap-align:start;background:var(--paper);border:2px solid var(--green);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--ink)}
-.calc-strip .lbl{display:block;font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--green)}
-.calc-strip .nm{display:block;font-size:15px;font-weight:900;margin-top:2px;line-height:1.3}
-.calc-strip .ds{display:block;font-size:12px;color:var(--sub);margin-top:2px}
+/* 9/6 밤: 한 화면에 다 들어오게 2칸 격자(스크롤 없음). 계산기가 3개 이상이 되면 줄바꿈된다 */
+.calc-strip{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 20px 4px}
+.calc-strip a{min-width:0;background:var(--paper);border:2px solid var(--green);border-radius:12px;padding:10px 12px;text-decoration:none;color:var(--ink)}
+.calc-strip .lbl{display:block;font-size:10.5px;font-weight:700;letter-spacing:1px;color:var(--green);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.calc-strip .nm{display:block;font-size:14px;font-weight:900;margin-top:2px;line-height:1.3;letter-spacing:-0.3px}
+.calc-strip .ds{display:block;font-size:11.5px;color:var(--sub);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:360px){.calc-strip .ds{display:none}}
 .calc-strip a[aria-current=page]{background:#E7F3ED}
 
 /* 본문 + 사이드바 */
 .layout{max-width:1000px;margin:0 auto;padding:0 20px}
 .main{min-width:0}
 .wrap{max-width:640px;margin:0 auto;padding:24px 0 40px}
-.side{display:none}
+/* 9/6 밤: 모바일에서도 사이드바(카테고리·검색·최근 글)를 본문 아래에 보여준다(눈치와 동일). 계산기 박스는 위의 계산기 줄이 대신하므로 숨김 */
+.side{display:block;max-width:640px;margin:0 auto;padding:8px 0 40px}
+.side .side-box.calcs{display:none}
 @media(min-width:960px){
   .calc-strip{display:none}
   .layout{display:grid;grid-template-columns:minmax(0,680px) 280px;gap:32px;justify-content:center;align-items:start}
   .wrap{padding-top:32px}
-  .side{display:block;padding:32px 0 40px}
+  .side{max-width:none;margin:0;padding:32px 0 40px}
+  .side .side-box.calcs{display:block}
 }
 .side-box{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 18px 12px;margin-bottom:18px}
 .side-box.calcs{border:2px solid var(--green)}
