@@ -14,6 +14,9 @@ const ROOT = path.join(__dirname, '..');
 
 const CFG = {
   cardArrowText: '읽어보기 →',
+  cardMax: Number(process.env.CARDMAX) || 4, // 홈·목록·카테고리에서 사진 카드로 보일 글 수 (나머지는 제목 목록). posts.json의 cardMax가 있으면 그 값
+  pageSize: 10,                     // 제목 목록 한 페이지 편수 — 넘으면 site.js가 1·2·3 번호를 만든다. posts.json의 pageSize가 있으면 그 값
+
   recentMax: 4,                     // 사이드바 최근 글 수
   nextMax: 3,                       // 글 하단 관련 글 수
   nextHeading: '이어서 읽으면 좋은 글',
@@ -86,6 +89,16 @@ ${pic}
       </a>`;
 };
 
+// 목록 블록: 앞 N편은 사진 카드(2열), 나머지는 제목·날짜 목록 (9/6 운영자 결정)
+const listItemDated = (p, i) => `        <li data-cat="${p.cat}" data-text="${esc((p.title + ' ' + p.summary + ' ' + catOf(p).name).replace(/\s+/g, ' '))}"><a href="/guide/${p.slug}.html"><span class="n">${num(i)}</span><span class="t">${esc(p.title)}</span><span class="d">${dateKo(p.date)}</span><span class="g">→</span></a></li>`;
+function listBlock(list) {
+  const n = data.cardMax || CFG.cardMax;
+  const cards = list.slice(0, n).map(gridCard).join('\n');
+  const rest = list.slice(n);
+  const ol = rest.length ? `\n      <ol class="post-list archive" data-page-size="${data.pageSize || CFG.pageSize}">\n${rest.map((p, i) => listItemDated(p, i + n)).join('\n')}\n      </ol>` : '';
+  return `      <div class="grid">\n${cards}\n      </div>${ol}`;
+}
+
 // 상단 메뉴: 홈 · 계산기 · 카테고리… · 소개 (운영자 결정 9/6)
 function navHtml(cur) {
   const items = [['/', '홈'], ['/33/', '계산기'], ...cats.map((c) => [`/guide/${c.slug}/`, c.name]), ['/about.html', '소개']];
@@ -131,10 +144,10 @@ let changed = 0;
 // ---------- 1) 가이드 전체 목록 ----------
 if (fill('guide/index.html', 'CHIPS', chipsHtml('/guide/'))) changed++;
 if (fill('guide/index.html', 'COUNT', `  <p class="count" id="count">${CFG.countText(posts.length)}</p>`)) changed++;
-if (fill('guide/index.html', 'LIST', posts.map(gridCard).join('\n'))) changed++;
+if (fill('guide/index.html', 'LIST', listBlock(posts))) changed++;
 
 // ---------- 2) 홈 ----------
-if (fill('index.html', 'HOME', posts.map(gridCard).join('\n'))) changed++;
+if (fill('index.html', 'HOME', listBlock(posts))) changed++;
 
 // ---------- 3) 각 글의 관련 글 ----------
 for (const p of posts) {
@@ -162,7 +175,7 @@ for (const c of cats) {
     if (next !== s) { write(f, next); changed++; }
   }
   if (fill(f, 'CHIPS', chipsHtml(`/guide/${c.slug}/`))) changed++;
-  if (fill(f, 'LIST', posts.filter((p) => p.cat === c.slug).map(gridCard).join('\n'))) changed++;
+  if (fill(f, 'LIST', listBlock(posts.filter((p) => p.cat === c.slug)))) changed++;
 }
 
 // ---------- 5) 모든 페이지: 상단 메뉴 + 계산기 줄 + 사이드바 ----------

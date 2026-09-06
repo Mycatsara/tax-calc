@@ -85,8 +85,15 @@ header .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spaci
 .post-card h2{font-size:17px;font-weight:900;letter-spacing:-0.3px;line-height:1.4}
 .post-card p{margin-top:8px;font-size:13.5px;color:var(--sub);line-height:1.55}
 .post-card .arrow{display:block;margin-top:10px;font-size:13px;font-weight:700;color:var(--green)}
-.list.grid{display:grid;grid-template-columns:1fr;gap:14px}
-@media(min-width:600px){.list.grid{grid-template-columns:1fr 1fr}}
+.list.grid,.list .grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:600px){.list.grid,.list .grid{grid-template-columns:1fr 1fr}}
+.post-list.archive{margin-top:18px}
+.post-list.archive .t{font-weight:700}
+.post-list .d{flex:none;font-size:12px;color:var(--sub);font-family:'IBM Plex Mono',monospace}
+.pager{display:flex;justify-content:center;gap:6px;margin-top:22px}
+.pager a,.pager .cur{min-width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;text-decoration:none;color:var(--ink);border:1.5px solid var(--line);background:var(--paper)}
+.pager a:hover{border-color:var(--green);color:var(--green)}
+.pager .cur{background:var(--ink);border-color:var(--ink);color:#fff}
 .post-card.thumb{padding:0;overflow:hidden;display:flex;flex-direction:column}
 .post-card.thumb img,.post-card.thumb .ph{display:block;width:100%;height:auto;aspect-ratio:1200/686;object-fit:cover;background:#E0E4EA}
 .post-card.thumb .body{display:block;padding:14px 18px 18px}
