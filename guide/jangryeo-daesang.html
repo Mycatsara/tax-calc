@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>근로장려금 대상 조회, 안내문이 안 왔을 때 홈택스 확인법과 탈락 사유 6가지 — taxtool.kr</title>
+<meta name="description" content="근로장려금 대상인지 홈택스 안내대상자 여부 조회로 확인하는 법, 안내문이 안 와도 신청하는 방법, 소득·재산·가구·월급 500만 원 기준으로 탈락하는 사유 6가지와 신청 후 12월에 입금이 없는 경우 3가지를 정리했습니다.">
+<meta property="og:title" content="근로장려금 대상 조회, 안내문이 안 왔을 때 홈택스 확인법과 탈락 사유 6가지">
+<meta property="og:description" content="근로장려금 대상인지 홈택스 안내대상자 여부 조회로 확인하는 법, 안내문이 안 와도 신청하는 방법, 소득·재산·가구·월급 500만 원 기준으로 탈락하는 사유 6가지와 신청 후 12월에 입금이 없는 경우 3가지를 정리했습니다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://taxtool.kr/guide/jangryeo-daesang.html">
+<meta property="og:image" content="https://taxtool.kr/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="taxtool.kr">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://taxtool.kr/guide/jangryeo-daesang.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "근로장려금 대상 조회, 안내문이 안 왔을 때 홈택스 확인법과 탈락 사유 6가지",
+  "description": "근로장려금 대상인지 홈택스 안내대상자 여부 조회로 확인하는 법, 안내문이 안 와도 신청하는 방법, 소득·재산·가구·월급 500만 원 기준으로 탈락하는 사유 6가지와 신청 후 12월에 입금이 없는 경우 3가지를 정리했습니다.",
+  "mainEntityOfPage": "https://taxtool.kr/guide/jangryeo-daesang.html",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "author": {"@type": "Organization", "name": "taxtool.kr"},
+  "publisher": {"@type": "Organization", "name": "taxtool.kr"}
+}
+</script>
+<link rel="stylesheet" href="/site.css?v=20260906d">
+<style>
+  header h1{font-size:26px;font-weight:900;line-height:1.35;letter-spacing:-0.5px}
+  header .meta{margin-top:12px;font-size:13px;color:var(--sub)}
+
+  article{margin-top:30px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px 24px}
+  article .lead{font-size:15.5px;color:#333A45;margin-bottom:20px;padding-bottom:20px;border-bottom:1.5px dashed var(--line)}
+  article .fig{margin:22px 0}
+  article .fig img{display:block;width:100%;height:auto;border-radius:12px}
+  article h2{font-size:19px;font-weight:900;letter-spacing:-0.3px;margin:26px 0 12px}
+  article h2:first-child{margin-top:0}
+  article p{font-size:14.5px;color:#333A45;margin-bottom:12px}
+  article b{color:var(--ink)}
+  article ul, article ol{margin:6px 0 14px 20px}
+  article li{font-size:14.5px;color:#333A45;margin-bottom:6px}
+  article a{color:var(--green);font-weight:700;text-decoration:none}
+  article a:hover{text-decoration:underline}
+  /* 금액 표 */
+  .tbl{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:14px;color:#333A45}
+  .tbl th,.tbl td{padding:9px 4px;border-bottom:1px solid var(--line);text-align:left}
+  .tbl th{font-size:12.5px;font-weight:700;color:var(--sub);border-bottom:1.5px solid var(--line)}
+  .tbl th:last-child,.tbl td:last-child{text-align:right;font-family:'IBM Plex Mono',monospace;font-weight:600;white-space:nowrap}
+  .tbl tr.total td{border-top:1.5px dashed var(--line);border-bottom:none;color:var(--ink);font-weight:700}
+  .tbl td .how{display:block;font-size:12px;font-weight:400;color:var(--sub);line-height:1.4;margin-top:2px}
+  .tbl.txt th:last-child,.tbl.txt td:last-child{text-align:left;font-family:inherit;font-weight:400;white-space:normal}
+  .tbl th,.tbl td{padding:8px 3px;font-size:13px}
+  .summary-box{
+    margin-top:22px;background:#FDF6EA;border:1px solid #F0DDBB;
+    border-radius:10px;padding:16px 18px;
+  }
+  .summary-box h2{margin-top:0;font-size:15px}
+  .summary-box ul{margin:6px 0 0 18px}
+  .summary-box li{font-size:13.5px;color:#6B5320;margin-bottom:5px}
+  .cta{
+    margin-top:22px;text-align:center;background:var(--green);color:#fff;
+    border-radius:12px;padding:20px;
+  }
+  .cta a{color:#fff;font-weight:900;font-size:16px;text-decoration:none;border-bottom:2px solid rgba(255,255,255,.5)}
+  .cta a:hover{border-color:#fff}
+  .footnote{margin-top:18px;font-size:12.5px;color:var(--sub);font-style:italic}
+
+  .pubdate{margin-top:6px;font-size:12.5px;color:#5B6472}
+
+  /* 글 목록(번호형) — 홈·글 하단 공용 */
+  .next-read{margin-top:34px}
+  .next-read h2{font-size:15px;font-weight:900;letter-spacing:-0.3px;margin:0}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4428587485814712" crossorigin="anonymous"></script>
+<!-- Google Analytics 4 -->
+<script>
+(function(){
+  // ?ga=off 로 접속하면 이 브라우저 세션 동안 집계 제외 (운영자·클로드 점검용)
+  try{ if(location.search.indexOf('ga=off')>-1) sessionStorage.setItem('gaoff','1'); }catch(e){}
+  var off=false; try{ off=sessionStorage.getItem('gaoff')==='1'; }catch(e){}
+  // 자동화 브라우저(크롤러·스크래퍼)는 집계하지 않는다. 실제 사용자에게는 절대 걸리지 않는 조건만 사용.
+  var auto = navigator.webdriver===true || /HeadlessChrome|PhantomJS|Puppeteer|Playwright|Selenium/i.test(navigator.userAgent);
+  if(off||auto) return;
+  var s=document.createElement('script'); s.async=true;
+  s.src='https://www.googletagmanager.com/gtag/js?id=G-P4F2M5B9DS'; document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments);};
+  gtag('js',new Date()); gtag('config','G-P4F2M5B9DS');
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';var t=(a.textContent||'').trim().slice(0,60);if(/coupang\.com|link\.coupang|toss/.test(h)){gtag('event','affiliate_click',{link_url:h,link_text:t,page_path:location.pathname});return;}var area=a.closest('.calc-strip')?'strip':a.closest('.side')?'side':a.closest('.cta,.rel-card,.post-card,.post-list,.card')?'body':'';if(area){gtag('event','internal_link',{link_url:h,link_text:t,link_area:area,page_path:location.pathname});}});
+})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://taxtool.kr/"},{"@type":"ListItem","position":2,"name":"가이드","item":"https://taxtool.kr/guide/"},{"@type":"ListItem","position":3,"name":"근로장려금","item":"https://taxtool.kr/guide/jangryeo-daesang.html"}]}
+</script>
+</head>
+<body>
+<header class="site-head"><div class="in">
+  <a class="logo" href="/">tax<b>tool</b>.kr</a>
+  <nav>
+<!-- AUTO:NAV:START -->
+    <a href="/">홈</a>
+    <a href="/33/">계산기</a>
+    <a href="/guide/freelance/">프리랜서·알바</a>
+    <a href="/guide/salary/">직장인·급여</a>
+    <a href="/guide/owner/">사장님</a>
+    <a href="/about.html">소개</a>
+<!-- AUTO:NAV:END -->
+  </nav>
+</div></header>
+<div class="calc-strip">
+<!-- AUTO:CALCS:START -->
+    <a href="/33/"><span class="lbl">프리랜서·알바</span><span class="nm">3.3% 계산기</span><span class="ds">세전 ↔ 실수령 바로 환산</span></a>
+    <a href="/pay/"><span class="lbl">직장인</span><span class="nm">월급 실수령액 계산기</span><span class="ds">4대보험·소득세 뗀 실수령</span></a>
+<!-- AUTO:CALCS:END -->
+</div>
+<div class="layout">
+<main class="main">
+<div class="wrap">
+
+  <p class="crumb"><a href="/">홈</a> / <a href="/guide/">가이드</a> / 근로장려금</p>
+
+  <header>
+    <span class="eyebrow">근로장려금</span>
+    <h1>근로장려금 대상 조회, 안내문이 안 왔을 때 홈택스 확인법과 탈락 사유 6가지</h1>
+    <p class="meta">안내문이 안 와도 홈택스에서 대상인지 조회하고 신청하는 법, 탈락 사유 6가지와 12월 미입금 사유 3가지</p>
+    <p class="pubdate">2026년 9월 8일 게시</p>
+  </header>
+
+  <article>
+    <p class="lead">같은 회사 동료는 국세청 안내 문자를 받았는데 나한테는 아무것도 안 왔습니다. 급여도 비슷하고 혼자 사는 것도 같은데 왜 나만 빠졌는지 알 수가 없습니다. 안내문이 안 왔다고 대상이 아닌 것은 아니고, 반대로 안내문을 받았어도 심사에서 빠질 수 있어요. 이 글은 세 가지를 순서대로 다룹니다. 홈택스에서 내가 대상인지 직접 조회하는 법, 안내문 없이 신청하는 법, 그리고 탈락 사유 6가지입니다. 반기 신청 제도가 처음이라면 <a href="/guide/jangryeo.html">근로장려금 반기 신청 글</a>부터 보는 편이 빠릅니다.</p>
+    <figure class="fig"><img src="/img/jangryeo-daesang-real1.webp" width="1200" height="686" alt="사무실 창가에서 동료가 보여주는 휴대폰 알림을 보며 자기 휴대폰을 확인하는 두 사람" fetchpriority="high" decoding="async"></figure>
+
+    <h2>안내문이 안 와도 홈택스에서 1분이면 조회된다</h2>
+    <p>문자를 못 받으면 대상이 아닌 줄 알고 넘기기 쉬운데, 확인하는 메뉴가 따로 있습니다.</p>
+    <p>국세청은 홈택스와 손택스 앱에 "안내대상자 여부 조회" 메뉴를 두고 있습니다. 로그인한 뒤 장려금 메뉴로 들어가 근로장려금 반기 신청 항목을 고르면 그 안에 조회 버튼이 있습니다. 홈택스 화면은 개편될 수 있어 메뉴 이름이 조금 다를 수 있지만, 장려금 메뉴 안에서 찾으면 됩니다.</p>
+    <p>조회 결과 안내 대상이 아니라고 나와도 신청 자체는 막히지 않습니다. 홈택스 로그인 후 장려금 메뉴의 "직접입력신청"으로 들어가면 됩니다. 이때는 공동인증서나 간편인증으로 본인 확인을 먼저 합니다. 그러면 세대원 명세와 소득 자료가 불러와지고, 소득·재산 확인 → 연락처 등록 → 환급계좌 등록 순서로 끝납니다. 안내문 QR은 안내문 자체가 있어야 하고, ARS도 안내문의 개별인증번호를 넣는 방식이므로 안내문이 없는 사람은 홈택스로 가는 것이 맞습니다.</p>
+    <table class="tbl txt">
+      <thead>
+        <tr><th>내 상황</th><th>할 일</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>안내문(문자·우편)을 받았다</td><td>안내문의 신청하기·QR·ARS 1544-9944로 바로 신청</td></tr>
+        <tr><td>안내문이 안 왔다</td><td>홈택스 장려금 메뉴 → 안내대상자 여부 조회 → 직접입력신청</td></tr>
+        <tr><td>대상인지 헷갈린다</td><td>장려금 상담센터 1566-3636(9시~18시), 국세상담센터 126</td></tr>
+        <tr><td>신청은 했는데 결과가 궁금하다</td><td>홈택스 장려금 메뉴 → 심사진행상황 조회</td></tr>
+      </tbody>
+    </table>
+    <p>신청 마감은 9월 15일입니다. 홈택스 이용 시간은 06시부터 24시까지입니다.</p>
+
+    <h2>탈락 사유 6가지, 내가 대상인지 여기서 갈린다</h2>
+    <p>급여가 비슷한 동료와 나의 조건이 어디서 다른지, 아래 6가지 중 하나에 걸리면 거기서 갈립니다.</p>
+    <p>반기 신청은 2025년 소득·재산으로 자격을 보고, 2026년 상반기 근로소득으로 금액을 정합니다. 그래서 탈락 사유도 두 해에 걸쳐 있습니다. 아래 6가지 중 하나라도 해당하면 이번 12월 지급 대상이 아닙니다.</p>
+    <table class="tbl">
+      <thead>
+        <tr><th>사유</th><th>기준</th><th>어느 해 기준</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>① 상반기 근로소득이 없다</td><td>2026년 1~6월에 급여를 받은 사실이 없으면 대상 아님</td><td>2026년</td></tr>
+        <tr><td>② 사업소득이 섞여 있다</td><td>3.3%를 뗀 소득이나 종교인소득이 있으면 반기 대상 아님. 다음 해 5월 정기 신청으로</td><td>2026년</td></tr>
+        <tr><td>③ 총소득 기준 초과</td><td>부부합산 총소득이 단독 2,200만 · 홑벌이 3,200만 · 맞벌이 4,400만 원 이상</td><td>2025년</td></tr>
+        <tr><td>④ 재산 2억 4천만 원 이상</td><td>2025년 6월 1일 기준 가구원 전원의 재산 합계. 1억 7천만 원 이상이면 절반만 지급</td><td>2025년</td></tr>
+        <tr><td>⑤ 월급이 많은 상용근로자</td><td>2025년 12월 31일 현재 계속 근무 중이고 월평균 근로소득 500만 원 이상(배우자 포함)</td><td>2025년</td></tr>
+        <tr><td>⑥ 신청 제외 유형</td><td>대한민국 국적이 없는 사람(국적자 배우자·자녀가 있으면 가능), 다른 사람의 부양자녀, 전문직 사업자(배우자 포함)</td><td>2025년</td></tr>
+      </tbody>
+    </table>
+    <p>②는 본인이 모르고 지나치기 쉬운 항목입니다. 낮에는 회사를 다니고 저녁에 배달이나 강의로 3.3%를 떼는 돈을 조금이라도 받았다면 근로소득만 있는 사람이 아닙니다. 본인뿐 아니라 배우자에게 사업소득이 있어도 마찬가지입니다. 근로소득과 사업소득을 가르는 기준은 <a href="/guide/alba33.html">알바 3.3%와 4대보험의 차이 글</a>에 있습니다.</p>
+    <p>⑤는 연봉 기준만 보고 넘기기 쉽습니다. 2025년 12월 31일 현재 계속 근무 중인 상용근로자이고 월평균 근로소득이 500만 원 이상이면 신청할 수 없습니다. 배우자가 그 조건이어도 같아요.</p>
+
+    <h2>재산 2억 4천만 원, 빚은 빼주지 않는다</h2>
+    <p>전세 보증금이 있으면 재산이 없다고 생각하기 쉬운데, 국세청 계산은 다릅니다.</p>
+    <p>재산에는 주택·토지·건물, 승용차, 전세금, 예금 같은 금융자산, 회원권이 들어갑니다. 분양권처럼 부동산을 취득할 수 있는 권리도 마찬가지예요. 주택·토지·건물과 승용차는 시가표준액으로 봅니다. 대출이 있어도 재산가액에서 부채를 빼주지 않습니다. 담보대출을 끼고 산 집은 대출을 뺀 순자산이 아니라 집의 시가표준액 그대로 재산으로 잡힙니다.</p>
+    <p>전세로 사는 사람은 전세금이 재산에 들어갑니다. 계산은 주택 기준시가의 55%를 간주전세금으로 잡고, 실제 전세금과 비교해 작은 금액을 씁니다. 부모나 자녀에게 빌린 집이라면 비교 없이 주택가액 전체를 그대로 재산으로 봅니다. 가족 집에 싸게 살고 있어도 재산은 집값 전체로 잡힌다는 뜻입니다.</p>
+    <p>가구원의 범위도 봐야 합니다. 가구원은 2025년 12월 31일 기준으로 배우자, 같은 주소에 사는 직계존비속, 부양자녀까지입니다. 그 가구원들의 2025년 6월 1일 기준 재산이 모두 합산돼요. 부모님과 같이 살면 부모님 명의의 집과 차도 합계에 들어갑니다.</p>
+    <figure class="fig"><img src="/img/jangryeo-daesang-real2.webp" width="1200" height="686" alt="저녁 식탁에서 노트북 화면을 보며 펜을 든 채 생각에 잠긴 사람" loading="lazy" decoding="async"></figure>
+
+    <h2>신청은 됐는데 12월에 안 들어오는 경우 3가지</h2>
+    <p>대상이라고 나와서 신청까지 마쳤는데 12월에 입금이 없다면, 탈락이 아니라 미뤄진 것일 수 있습니다.</p>
+    <p><b>① 상반기분이 15만 원 미만이다.</b> 연간 산정액에 35%를 적용한 금액이 15만 원에 못 미치는 경우예요. 12월에 주지 않고 다음 해 6월 정산 때 합쳐서 줍니다.</p>
+    <p><b>② 정산 때 환수가 예상된다.</b> 가구원·소득·재산이 바뀌어 정산 때 환수가 예상되면 국세청은 12월 지급을 유보합니다. 환수는 받은 돈을 돌려줘야 하는 것을 말해요. 이것도 6월 정산에서 정리됩니다. 정산과 환수 구조는 <a href="/guide/jangryeo.html">반기 신청 글</a>에 있습니다.</p>
+    <p><b>③ 근로소득 자료가 없어 심사가 길어진다.</b> 회사가 근로소득 간이지급명세서를 내지 않으면 국세청은 내 급여를 확인할 수 없어요. 국세청은 자료가 누락된 신청자에게 추가 자료를 요구하거나 현장확인을 합니다. 이 경우 회사에 제출을 요구하고 실제 받은 급여 기준으로 신청할 수 있습니다. 회사가 끝까지 내지 않으면 급여가 들어온 통장 내역이나 근로계약서를 신청서에 첨부하면 세무서가 사실관계를 확인합니다.</p>
+    <p>국세 체납액이 있는 사람은 지급액의 30%를 한도로 체납액에 먼저 충당된다는 점도 알아두면 됩니다. 신청 후 진행 상황은 홈택스 장려금 메뉴의 심사진행상황 조회에서 볼 수 있습니다.</p>
+
+    <div class="summary-box">
+      <h2>정리</h2>
+      <ul>
+        <li>안내문이 안 와도 홈택스 장려금 메뉴의 안내대상자 여부 조회로 확인하고, 직접입력신청으로 신청할 수 있다</li>
+        <li>탈락 사유 6가지 중 넷은 상반기 근로소득 없음, 사업소득 섞임, 총소득 초과, 재산 2억 4천만 원 이상이다</li>
+        <li>나머지 둘은 월평균 근로소득 500만 원 이상인 상용근로자, 그리고 국적·부양자녀·전문직 제외 유형이다</li>
+        <li>재산은 부채를 빼지 않고 계산하며, 전세금과 같이 사는 가족의 재산도 합산된다</li>
+        <li>신청 후 12월에 입금이 없으면 15만 원 미만, 환수 예상 유보, 근로소득 자료 누락 중 하나일 수 있다. 6월 정산 때 정리된다</li>
+        <li>신청 마감은 9월 15일, 진행 상황은 심사진행상황 조회에서 본다</li>
+      </ul>
+    </div>
+
+    <!-- AUTO:NEXT:START -->
+    <div class="next-read">
+      <h2>이어서 읽으면 좋은 글</h2>
+      <ol class="post-list">
+        <li><a href="/guide/jangryeo.html"><span class="n">01</span><span class="t">근로장려금 반기 신청: 대상·금액·정기 신청과의 차이</span><span class="g">→</span></a></li>
+        <li><a href="/guide/alba33.html"><span class="n">02</span><span class="t">알바인데 왜 3.3%를 떼나요? 4대보험과 뭐가 다른지</span><span class="g">→</span></a></li>
+        <li><a href="/guide/gongje.html"><span class="n">03</span><span class="t">월급에서 뭐가 얼마나 빠질까: 4대보험과 소득세</span><span class="g">→</span></a></li>
+      </ol>
+    </div>
+<!-- AUTO:NEXT:END -->
+
+    <div class="cta">
+      <a href="/pay/">기준이 되는 월평균 500만 원이 실수령액으로 얼마인지 보려면 월급 실수령액 계산기에 넣어 보면 됩니다 →</a>
+    </div>
+
+    <p class="footnote">본 글은 일반적인 정보 제공을 목적으로 하며, 기준과 절차는 2026년 9월 국세청 안내 기준입니다. 개별 심사 결과는 국세청 판단에 따르며, 가구 상황에 따라 달라질 수 있습니다.</p>
+  </article>
+
+
+</div>
+</main>
+<aside class="side">
+<!-- AUTO:SIDE:START -->
+    <div class="side-box calcs">
+      <h2>계산기</h2>
+      <a class="side-calc" href="/33/"><span class="txt"><span class="nm">3.3% 계산기</span><span class="ds">세전 ↔ 실수령 바로 환산</span></span><span class="arr">→</span></a>
+      <a class="side-calc" href="/pay/"><span class="txt"><span class="nm">월급 실수령액 계산기</span><span class="ds">4대보험·소득세 뗀 실수령</span></span><span class="arr">→</span></a>
+    </div>
+    <div class="side-box">
+      <h2>카테고리</h2>
+      <a class="side-cat" href="/guide/freelance/">프리랜서·알바 <span>(7)</span></a>
+      <a class="side-cat" href="/guide/salary/">직장인·급여 <span>(4)</span></a>
+      <a class="side-cat" href="/guide/owner/">사장님 <span>(1)</span></a>
+    </div>
+    <div class="side-box">
+      <h2>검색</h2>
+      <form class="side-search" action="/guide/" method="get" role="search"><input type="search" name="q" placeholder="찾는 말" aria-label="글 검색" autocomplete="off"><button type="submit">찾기</button></form>
+    </div>
+    <div class="side-box">
+      <h2>최근 글</h2>
+      <a class="side-post" href="/guide/jangryeo-daesang.html"><img src="/img/jangryeo-daesang-real1.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">근로장려금 대상 조회: 안내문 없을 때 확인법·탈락 사유 6가지</span><span class="d">2026.09.08</span></span></a>
+      <a class="side-post" href="/guide/jangryeo.html"><img src="/img/jangryeo-real1.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">근로장려금 반기 신청: 대상·금액·정기 신청과의 차이</span><span class="d">2026.09.07</span></span></a>
+      <a class="side-post" href="/guide/myeongsese.html"><img src="/img/myeongsese-real1.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">급여명세서 보는 법: 공제 6줄과 확인할 3가지</span><span class="d">2026.09.04</span></span></a>
+      <a class="side-post" href="/guide/bigwase.html"><img src="/img/bigwase-real1.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">식대 비과세 20만 원, 실수령액이 달라지는 이유</span><span class="d">2026.08.31</span></span></a>
+    </div>
+<!-- AUTO:SIDE:END -->
+</aside>
+</div>
+<footer>
+    <p class="disclaimer">본 사이트의 정보는 참고용이며, 실제 세액·환급액과 다를 수 있습니다.</p>
+    <p>세금은 어렵게, 계산은 쉽게 · taxtool.kr</p>
+    <nav class="footer-links">
+      <a href="/guide/">가이드</a>·<a href="/about.html">사이트 소개</a>·<a href="/privacy.html">개인정보처리방침</a>
+    </nav>
+  </footer>
+</body>
+</html>
