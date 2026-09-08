@@ -125,7 +125,9 @@ html = html.split(tplDesc).join(esc(metaDesc));
 html = html.split(tplOg).join(esc(ogDesc));
 html = html.replace(/"datePublished": ".*?"/, `"datePublished": "${date}"`).replace(/"dateModified": ".*?"/, `"dateModified": "${date}"`);
 html = html.split(tplPub).join(pubdate);
-html = html.split(tplShort).join(short);
+// short(짧은 주제)는 빵부스러기 두 곳에만 넣는다 — 전체 치환은 본문까지 바꾼다(9/8 "대상 대상" 사고)
+html = html.replace(`"position":3,"name":"${tplShort}"`, `"position":3,"name":"${esc(short)}"`);
+html = html.replace(/(<p class="crumb">.*?\/ )(.*?)(<\/p>)/, (m, a, mid, z) => mid === tplShort ? a + esc(short) + z : m);
 html = html.split(tplMeta).join(esc(metaLine));
 html = html.replace(/<span class="eyebrow">.*?<\/span>/, `<span class="eyebrow">${short}</span>`);
 if (tplDate !== date) { /* no-op: dates replaced above */ }
