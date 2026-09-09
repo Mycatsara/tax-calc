@@ -111,7 +111,9 @@ function stripHtml(cur) {
 // 사이드바: 계산기 → 카테고리 → 검색 → 최근 글(썸네일)  (9/6 운영자 순서)
 function sideHtml(cur) {
   const cs = calcs.map((c) => `      <a class="side-calc" href="${c.path}"${c.path === cur ? ' aria-current="page"' : ''}><span class="txt"><span class="nm">${esc(c.name)}</span><span class="ds">${esc(c.desc)}</span></span><span class="arr">→</span></a>`).join('\n');
-  const ct = cats.map((c) => `      <a class="side-cat" href="/guide/${c.slug}/"${`/guide/${c.slug}/` === cur ? ' aria-current="page"' : ''}>${esc(c.name)} <span>(${countOf(c)})</span></a>`).join('\n');
+  // 전체(N) — 맨 위, 전체 글 목록(/guide/)으로 (2026-09-09 운영자 요청, 4개 블로그 공통)
+  const allCat = `      <a class="side-cat" href="/guide/"${cur === '/guide/' ? ' aria-current="page"' : ''}>전체 <span>(${posts.length})</span></a>`;
+  const ct = [allCat, ...cats.map((c) => `      <a class="side-cat" href="/guide/${c.slug}/"${`/guide/${c.slug}/` === cur ? ' aria-current="page"' : ''}>${esc(c.name)} <span>(${countOf(c)})</span></a>`)].join('\n');
   const rs = posts.slice(0, CFG.recentMax).map((p) => {
     const img = hero(p.slug);
     const pic = img ? `<img src="${img}" width="84" height="48" alt="" loading="lazy" decoding="async">` : `<span class="ph" aria-hidden="true"></span>`;
