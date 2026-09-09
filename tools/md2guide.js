@@ -83,7 +83,7 @@ if (idxSummary > -1) {
   mainBlocks = blocks.slice(0, idxSummary);
 }
 
-let hasTxtTable = false;
+let hasTxtTable = false; let hasWideTable = false;
 const render = (b, idx) => {
   switch (b.type) {
     case "h2": return `\n    <h2>${inline(b.text)}</h2>`;
@@ -97,7 +97,10 @@ const render = (b, idx) => {
       const cls = lastNum ? "tbl" : "tbl txt";
       const th = b.head.map((c) => `<th>${inline(c)}</th>`).join("");
       const trs = b.rows.map((r) => `        <tr>${r.map((c) => `<td>${inline(c)}</td>`).join("")}</tr>`).join("\n");
-      return `    <table class="${cls}">\n      <thead>\n        <tr>${th}</tr>\n      </thead>\n      <tbody>\n${trs}\n      </tbody>\n    </table>`;
+      const tbl = `    <table class="${cls}">\n      <thead>\n        <tr>${th}</tr>\n      </thead>\n      <tbody>\n${trs}\n      </tbody>\n    </table>`;
+      // 열 5개 이상은 모바일 375px에 못 들어가므로 가로 스크롤 상자로 감싼다(9/9 실업급여 6열 표에서 본문 카드 밖으로 삐져나옴)
+      if (b.head.length >= 5) { hasWideTable = true; return `    <div class="tbl-wrap">\n${tbl}\n    </div>`; }
+      return tbl;
     }
     default: return "";
   }
@@ -143,6 +146,8 @@ html = html.slice(0, aStart) + newArticle + html.slice(aEnd);
 if (hasTxtTable && !html.includes(".tbl.txt")) html = html.replace("  .summary-box{", "  .tbl.txt th:last-child,.tbl.txt td:last-child{text-align:left;font-family:inherit;font-weight:400;white-space:normal}\n  .summary-box{");
 // 표 열 수가 3 이상이면 글자 크기 살짝 축소(모바일 375px 대비)
 if (blocks.some((b) => b.type === "table" && b.head.length >= 4) && !html.includes(".tbl.wide")) html = html.replace("  .summary-box{", "  .tbl th,.tbl td{padding:8px 3px;font-size:13px}\n  .summary-box{");
+// 열 5개 이상 표: 가로 스크롤 상자 CSS(표 자체는 자연 폭, 넘치면 상자 안에서만 스크롤)
+if (hasWideTable && !html.includes(".tbl-wrap{")) html = html.replace("  .summary-box{", "  .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px 0 14px}\n  .tbl-wrap .tbl{margin:0;white-space:nowrap}\n  .summary-box{");
 
 const outFile = path.join(ROOT, "guide", slug + ".html");
 fs.writeFileSync(outFile, html);

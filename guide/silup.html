@@ -57,6 +57,8 @@
   .tbl.txt th:last-child,.tbl.txt td:last-child{text-align:left;font-family:inherit;font-weight:400;white-space:normal}
   .tbl th,.tbl td{padding:8px 3px;font-size:13px}
   .tbl th,.tbl td{padding:8px 3px;font-size:13px}
+  .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px 0 14px}
+  .tbl-wrap .tbl{margin:0;white-space:nowrap}
   .summary-box{
     margin-top:22px;background:#FDF6EA;border:1px solid #F0DDBB;
     border-radius:10px;padding:16px 18px;
@@ -149,6 +151,7 @@
     <h2>월급별 하루 지급액과 총액 표</h2>
     <p>내 월급이 어느 줄에 해당하는지만 보면 됩니다.</p>
     <p>아래 표는 월 평균임금을 30으로 나눠 하루치를 잡은 단순 계산입니다. 실제 평균임금은 퇴사 전 3개월 임금 총액을 그 기간 일수(89~92일)로 나누므로 조금 달라집니다. 하루 8시간 근무, 2026년 퇴사 기준입니다.</p>
+    <div class="tbl-wrap">
     <table class="tbl">
       <thead>
         <tr><th>월 평균임금</th><th>하루 지급액</th><th>한 달(30일)</th><th>120일 총액</th><th>150일 총액</th><th>180일 총액</th></tr>
@@ -162,6 +165,7 @@
         <tr><td>500만 원</td><td>68,100원(상한)</td><td>2,043,000원</td><td>8,172,000원</td><td>10,215,000원</td><td>12,258,000원</td></tr>
       </tbody>
     </table>
+    </div>
     <p>월급 300만 원이던 사람이 150일을 받으면 990만 원 남짓입니다. 월급 500만 원이던 사람도 1,021만 원으로 큰 차이가 없습니다. 실업급여는 월급을 대신하는 돈이 아니라 최저 생계선을 받쳐 주는 돈이라고 보는 편이 실제와 가깝습니다.</p>
     <p>하루 근무 시간이 8시간보다 짧았다면 하한액도 그 시간에 비례해 줄어듭니다. 하루 4시간 근무였다면 하한액은 33,024원, 6시간이면 49,536원입니다.</p>
     <p>실업급여는 소득세를 떼지 않는 비과세 소득입니다. 표의 금액이 그대로 들어옵니다.</p>
