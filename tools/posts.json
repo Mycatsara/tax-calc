@@ -35,6 +35,19 @@
   ],
   "posts": [
     {
+      "slug": "jangryeo-sinchung",
+      "date": "2026-09-10",
+      "cat": "freelance",
+      "title": "근로장려금 신청방법 2026: ARS·홈택스·손택스 3가지, 9월 15일까지",
+      "short": "근로장려금 신청방법: ARS·홈택스·손택스, 9월 15일까지",
+      "summary": "안내문이 있으면 ARS 1544-9944·QR·모바일 안내문, 없으면 홈택스 직접입력신청 5단계. 인증번호가 없어 막힐 때 해결법, 이용시간, 신청 뒤 심사 확인과 12월에 안 들어오는 경우 3가지까지.",
+      "related": [
+        "jangryeo",
+        "jangryeo-daesang",
+        "alba33"
+      ]
+    },
+    {
       "slug": "silup",
       "date": "2026-09-09",
       "cat": "salary",
