@@ -35,6 +35,19 @@
   ],
   "posts": [
     {
+      "slug": "jangryeo-jigeubil",
+      "date": "2026-09-12",
+      "cat": "freelance",
+      "title": "근로장려금 지급일 2026: 정기·반기 일정표",
+      "short": "근로장려금 지급일: 정기·반기 일정표",
+      "summary": "9월 상반기 신청분은 12월 17일 지급 예정입니다. 정기·반기·기한 후 신청 일정, 홈택스 심사진행 조회와 지급유보·감액 확인법을 정리했습니다.",
+      "related": [
+        "jangryeo-sinchung",
+        "jangryeo-daesang",
+        "jangryeo"
+      ]
+    },
+    {
       "slug": "juhyu",
       "date": "2026-09-11",
       "cat": "salary",
