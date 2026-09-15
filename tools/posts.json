@@ -35,6 +35,19 @@
   ],
   "posts": [
     {
+      "slug": "jangryeo-gijun",
+      "date": "2026-09-15",
+      "cat": "freelance",
+      "title": "근로장려금 기준 2026: 가구별 소득·재산 확인법",
+      "short": "근로장려금 기준: 가구·소득·재산",
+      "summary": "단독·홑벌이·맞벌이 구분부터 부부 총소득과 가구원 재산까지 순서대로 확인하세요.",
+      "related": [
+        "jangryeo-daesang",
+        "jangryeo-sinchung",
+        "jangryeo-jigeubil"
+      ]
+    },
+    {
       "slug": "sanghanje-refund",
       "date": "2026-09-14",
       "cat": "salary",
