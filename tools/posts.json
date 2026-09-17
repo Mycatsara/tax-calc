@@ -35,6 +35,17 @@
   ],
   "posts": [
     {
+      "slug": "silup-sinchung",
+      "date": "2026-09-17",
+      "cat": "salary",
+      "title": "실업급여 신청방법: 퇴사 후 신청 순서",
+      "short": "실업급여 신청방법: 퇴사 후 순서",
+      "summary": "회사 서류부터 고용24 구직신청·교육·고용센터 방문까지 순서대로 확인하세요.",
+      "related": [
+        "silup"
+      ]
+    },
+    {
       "slug": "yuka-hyujik",
       "date": "2026-09-16",
       "cat": "salary",
