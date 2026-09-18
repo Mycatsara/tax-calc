@@ -35,6 +35,14 @@
   ],
   "posts": [
     {
+      "slug": "cash-receipt",
+      "date": "2026-09-18",
+      "cat": "salary",
+      "title": "현금영수증 조회: 홈택스·손택스 확인 방법",
+      "short": "현금영수증 조회: 홈택스·손택스",
+      "summary": "사용내역과 누계를 구분하고, 내역이 안 보일 때 번호와 자진발급 여부를 확인하세요."
+    },
+    {
       "slug": "silup-sinchung",
       "date": "2026-09-17",
       "cat": "salary",
