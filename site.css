@@ -111,3 +111,6 @@ footer .disclaimer{max-width:420px;margin:0 auto 8px}
 footer .footer-links{margin-top:10px}
 footer .footer-links a{color:#5B6472;text-decoration:underline;margin:0 6px}
 footer .footer-links a:hover{color:var(--sub)}
+
+/* 2026-09-19: 사진 설명과 출처 */
+.main figure figcaption,.main figure figcaption a,.main figure figcaption p,.main .photo-credit{font-size:12.5px;line-height:1.5;color:var(--sub);overflow-wrap:anywhere}

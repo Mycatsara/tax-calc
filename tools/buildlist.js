@@ -21,7 +21,7 @@ const CFG = {
   nextMax: 3,                       // 글 하단 관련 글 수
   nextHeading: '이어서 읽으면 좋은 글',
   countText: (n) => `전체 ${n}편`,
-  cssVersion: '20260906',
+  cssVersion: '20260919',
 };
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
