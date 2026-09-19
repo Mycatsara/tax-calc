@@ -35,6 +35,17 @@
   ],
   "posts": [
     {
+      "slug": "cash-receipt-register",
+      "date": "2026-09-19",
+      "cat": "salary",
+      "title": "현금영수증 등록 방법: 휴대전화번호·카드 등록 순서",
+      "short": "현금영수증 등록: 번호·카드 등록 순서",
+      "summary": "휴대전화번호·카드 등록과 자진발급 영수증 연결 순서를 확인하세요.",
+      "related": [
+        "cash-receipt"
+      ]
+    },
+    {
       "slug": "cash-receipt",
       "date": "2026-09-18",
       "cat": "salary",
