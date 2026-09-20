@@ -35,6 +35,19 @@
   ],
   "posts": [
     {
+      "slug": "toejik-gijun",
+      "date": "2026-09-21",
+      "cat": "salary",
+      "title": "퇴직금 지급기준: 1년·주 15시간과 지급기한 확인법",
+      "short": "퇴직금 지급기준: 기간·시간·지급기한",
+      "summary": "계속근로 1년과 주 15시간 기준, 근무시간 변동과 지급기한을 확인하세요.",
+      "related": [
+        "alba33",
+        "juhyu",
+        "silup-sinchung"
+      ]
+    },
+    {
       "slug": "cash-receipt-register",
       "date": "2026-09-19",
       "cat": "salary",
