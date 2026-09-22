@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>퇴직금 세금: 실수령액과 원천징수영수증 확인법 — taxtool.kr</title>
+<meta name="description" content="퇴직금 안내액과 입금액이 다르다면 원천징수영수증부터 확인하세요. 퇴직소득세 계산 방식, IRP 과세이연, 실제 수령액을 대조할 항목을 정리했습니다.">
+<meta property="og:title" content="퇴직금 세금: 실수령액과 원천징수영수증 확인법">
+<meta property="og:description" content="퇴직금 안내액과 입금액이 다르다면 원천징수영수증부터 확인하세요. 퇴직소득세 계산 방식, IRP 과세이연, 실제 수령액을 대조할 항목을 정리했습니다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://taxtool.kr/guide/toejik-tax.html">
+<meta property="og:image" content="https://taxtool.kr/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="taxtool.kr">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://taxtool.kr/guide/toejik-tax.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "퇴직금 세금: 실수령액과 원천징수영수증 확인법",
+  "description": "퇴직금 안내액과 입금액이 다르다면 원천징수영수증부터 확인하세요. 퇴직소득세 계산 방식, IRP 과세이연, 실제 수령액을 대조할 항목을 정리했습니다.",
+  "mainEntityOfPage": "https://taxtool.kr/guide/toejik-tax.html",
+  "datePublished": "2026-09-22",
+  "dateModified": "2026-09-22",
+  "author": {"@type": "Organization", "name": "taxtool.kr"},
+  "publisher": {"@type": "Organization", "name": "taxtool.kr"}
+}
+</script>
+<link rel="stylesheet" href="/site.css?v=20260919">
+<style>
+  header h1{font-size:26px;font-weight:900;line-height:1.35;letter-spacing:-0.5px}
+  header .meta{margin-top:12px;font-size:13px;color:var(--sub)}
+
+  article{margin-top:30px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px 24px}
+  article .lead{font-size:15.5px;color:#333A45;margin-bottom:20px;padding-bottom:20px;border-bottom:1.5px dashed var(--line)}
+  article .fig{margin:22px 0}
+  article .fig img{display:block;width:100%;height:auto;border-radius:12px}
+  article h2{font-size:19px;font-weight:900;letter-spacing:-0.3px;margin:26px 0 12px}
+  article h2:first-child{margin-top:0}
+  article p{font-size:14.5px;color:#333A45;margin-bottom:12px}
+  article b{color:var(--ink)}
+  article ul, article ol{margin:6px 0 14px 20px}
+  article li{font-size:14.5px;color:#333A45;margin-bottom:6px}
+  article a{color:var(--green);font-weight:700;text-decoration:none}
+  article a:hover{text-decoration:underline}
+  /* 금액 표 */
+  .tbl{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:14px;color:#333A45}
+  .tbl th,.tbl td{padding:9px 4px;border-bottom:1px solid var(--line);text-align:left}
+  .tbl th{font-size:12.5px;font-weight:700;color:var(--sub);border-bottom:1.5px solid var(--line)}
+  .tbl th:last-child,.tbl td:last-child{text-align:right;font-family:'IBM Plex Mono',monospace;font-weight:600;white-space:nowrap}
+  .tbl tr.total td{border-top:1.5px dashed var(--line);border-bottom:none;color:var(--ink);font-weight:700}
+  .tbl td .how{display:block;font-size:12px;font-weight:400;color:var(--sub);line-height:1.4;margin-top:2px}
+  .tbl.txt th:last-child,.tbl.txt td:last-child{text-align:left;font-family:inherit;font-weight:400;white-space:normal}
+  .tbl th,.tbl td{padding:8px 3px;font-size:13px}
+  .tbl th,.tbl td{padding:8px 3px;font-size:13px}
+  .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px 0 14px}
+  .tbl-wrap .tbl{margin:0;white-space:nowrap}
+  .summary-box{
+    margin-top:22px;background:#FDF6EA;border:1px solid #F0DDBB;
+    border-radius:10px;padding:16px 18px;
+  }
+  .summary-box h2{margin-top:0;font-size:15px}
+  .summary-box ul{margin:6px 0 0 18px}
+  .summary-box li{font-size:13.5px;color:#6B5320;margin-bottom:5px}
+  .cta{
+    margin-top:22px;text-align:center;background:var(--green);color:#fff;
+    border-radius:12px;padding:20px;
+  }
+  .cta a{color:#fff;font-weight:900;font-size:16px;text-decoration:none;border-bottom:2px solid rgba(255,255,255,.5)}
+  .cta a:hover{border-color:#fff}
+  .footnote{margin-top:18px;font-size:12.5px;color:var(--sub);font-style:italic}
+
+  .pubdate{margin-top:6px;font-size:12.5px;color:#5B6472}
+
+  /* 글 목록(번호형) — 홈·글 하단 공용 */
+  .next-read{margin-top:34px}
+  .next-read h2{font-size:15px;font-weight:900;letter-spacing:-0.3px;margin:0}
+article .fig figcaption{font-size:12.5px;line-height:1.5;color:var(--sub);margin-top:6px}article .fig figcaption{font-size:12.5px;line-height:1.5;color:var(--sub);margin-top:6px}</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4428587485814712" crossorigin="anonymous"></script>
+<!-- Google Analytics 4 -->
+<script>
+(function(){
+  // ?ga=off 로 접속하면 이 브라우저 세션 동안 집계 제외 (운영자·클로드 점검용)
+  try{ if(location.search.indexOf('ga=off')>-1) sessionStorage.setItem('gaoff','1'); }catch(e){}
+  var off=false; try{ off=sessionStorage.getItem('gaoff')==='1'; }catch(e){}
+  // 자동화 브라우저(크롤러·스크래퍼)는 집계하지 않는다. 실제 사용자에게는 절대 걸리지 않는 조건만 사용.
+  var auto = navigator.webdriver===true || /HeadlessChrome|PhantomJS|Puppeteer|Playwright|Selenium/i.test(navigator.userAgent);
+  if(off||auto) return;
+  var s=document.createElement('script'); s.async=true;
+  s.src='https://www.googletagmanager.com/gtag/js?id=G-P4F2M5B9DS'; document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments);};
+  gtag('js',new Date()); gtag('config','G-P4F2M5B9DS');
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';var t=(a.textContent||'').trim().slice(0,60);if(/coupang\.com|link\.coupang|toss/.test(h)){gtag('event','affiliate_click',{link_url:h,link_text:t,page_path:location.pathname});return;}var area=a.closest('.calc-strip')?'strip':a.closest('.side')?'side':a.closest('.cta,.rel-card,.post-card,.post-list,.card')?'body':'';if(area){gtag('event','internal_link',{link_url:h,link_text:t,link_area:area,page_path:location.pathname});}});
+})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://taxtool.kr/"},{"@type":"ListItem","position":2,"name":"가이드","item":"https://taxtool.kr/guide/"},{"@type":"ListItem","position":3,"name":"퇴직금 세금","item":"https://taxtool.kr/guide/toejik-tax.html"}]}
+</script>
+</head>
+<body>
+<header class="site-head"><div class="in">
+  <a class="logo" href="/">tax<b>tool</b>.kr</a>
+  <nav>
+<!-- AUTO:NAV:START -->
+    <a href="/">홈</a>
+    <a href="/33/">계산기</a>
+    <a href="/guide/freelance/">프리랜서·알바</a>
+    <a href="/guide/salary/">직장인·급여</a>
+    <a href="/guide/owner/">사장님</a>
+    <a href="/about.html">소개</a>
+<!-- AUTO:NAV:END -->
+  </nav>
+</div></header>
+<div class="calc-strip">
+<!-- AUTO:CALCS:START -->
+    <a href="/33/"><span class="lbl">프리랜서·알바</span><span class="nm">3.3% 계산기</span><span class="ds">세전 ↔ 실수령 바로 환산</span></a>
+    <a href="/pay/"><span class="lbl">직장인</span><span class="nm">월급 실수령액 계산기</span><span class="ds">4대보험·소득세 뗀 실수령</span></a>
+<!-- AUTO:CALCS:END -->
+</div>
+<div class="layout">
+<main class="main">
+<div class="wrap">
+
+  <p class="crumb"><a href="/">홈</a> / <a href="/guide/">가이드</a> / 퇴직금 세금</p>
+
+  <header>
+    <span class="eyebrow">퇴직금 세금</span>
+    <h1>퇴직금 세금: 실수령액과 원천징수영수증 확인법</h1>
+    <p class="meta">계산 사례와 영수증으로 퇴직금 세금·실수령액을 확인하세요</p>
+    <p class="pubdate">2026년 9월 22일 게시</p>
+  </header>
+
+  <article>
+    <p class="lead">회사에서 안내받은 퇴직금과 통장에 들어온 금액이 다르면 세금부터 떠올리게 됩니다. 그런데 <b>일반 계좌로 받은 돈인지, IRP에 들어온 퇴직금인지</b>에 따라 확인할 항목이 달라요. 먼저 퇴직소득 원천징수영수증과 입금 내역을 나란히 놓고, 지급액과 세금을 구분해 보세요.</p>
+    <figure class="fig"><img src="/img/toejik-tax-real1.webp" width="1200" height="675" alt="인사 담당자에게 퇴직 관련 서류 봉투를 받는 직장인" fetchpriority="high" decoding="async"><figcaption>AI 생성 예시 이미지</figcaption></figure>
+
+    <h2>퇴직금 세금은 모두 같은 비율이 아닙니다</h2>
+    <p>동료와 비슷한 퇴직금을 받았는데 세금이 다를 수 있습니다. 퇴직소득세는 퇴직금 전체에 일정한 비율을 곱해서 끝나는 계산이 아니에요. 퇴직소득금액과 근속연수에 따라 공제를 적용하고, 환산한 금액을 기준으로 세금을 계산합니다.</p>
+    <p>공제는 세금 계산에서 일정 금액을 빼주는 것입니다. 국세청 계산 구조에는 근속연수공제와 환산급여공제가 들어갑니다. 그래서 퇴직금 액수만 듣고 내 세금도 동료와 같다고 판단하기는 어렵습니다.</p>
+    <p>퇴직금에 프리랜서 보수처럼 <b>3.3%를 일괄 적용하면 안 됩니다.</b> 회사가 안내한 금액이 세전인지 세후인지 먼저 확인하고, 내 근속기간이 반영된 계산 내역을 보세요. 받을 자격과 지급기한이 궁금하다면 <a href="https://taxtool.kr/guide/toejik-gijun.html">퇴직금 지급기준 글</a>에서 먼저 확인할 수 있습니다.</p>
+    <figure class="fig"><img src="/img/toejik-tax-real2.webp" width="1200" height="675" alt="계산기로 서류의 금액을 대조하는 직장인" loading="lazy" decoding="async"><figcaption>AI 생성 예시 이미지</figcaption></figure>
+
+    <h2>20년 근속·퇴직금 1억원이면 세금은 얼마일까요?</h2>
+    <p>세율 설명만 보면 실제로 얼마가 빠지는지 감이 잘 오지 않습니다. 국세청은 <b>근속연수 20년, 퇴직급여 1억원</b>인 계산 사례를 안내합니다. 이 조건의 퇴직소득세는 112만원입니다. 모든 1억원 퇴직금에 적용하는 고정 세금은 아니에요.</p>
+    <table class="tbl">
+      <thead>
+        <tr><th>계산 단계</th><th>국세청 사례의 금액</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>퇴직소득금액</td><td>1억원</td></tr>
+        <tr><td>근속연수공제</td><td>4,000만원</td></tr>
+        <tr><td>환산급여</td><td>3,600만원</td></tr>
+        <tr><td>환산급여공제</td><td>2,480만원</td></tr>
+        <tr><td>과세표준</td><td>1,120만원</td></tr>
+        <tr><td>퇴직소득세</td><td>112만원</td></tr>
+      </tbody>
+    </table>
+    <p>과세표준 1,120만원에 6%를 적용하면 환산산출세액은 67만2,000원입니다. 이를 12로 나누고 근속연수 20을 곱하면 112만원이 나옵니다. 이 금액은 소득세이며 <b>지방소득세를 포함한 합계가 아닙니다.</b></p>
+    <p>일반적인 거주자의 원천징수에서 지방소득세는 소득세의 10%입니다. 위 사례에서 11만2,000원을 더하면 세금 합계는 123만2,000원입니다. 과세이연과 다른 정산 항목 없이 전액 일시금으로 받는다고 가정한 세후 금액은 <b>9,876만8,000원</b>입니다.</p>
+    <p>이 예시는 국세청 계산 사례에 지방소득세와 차감 산술을 더했습니다. 내 근속기간·중간정산 이력·수령 방식이 다르면 그대로 적용할 수 없습니다. 특히 IRP 입금 단계에서는 아래의 과세이연 설명과 구분하세요.</p>
+
+    <h2>영수증에서는 지급액·근속기간·세금을 나눠 보세요</h2>
+    <p>퇴사할 때 받은 서류가 여러 장이면 무엇을 봐야 할지 헷갈립니다. 이번에 필요한 것은 퇴직금에 관한 <b>퇴직소득 원천징수영수증</b>입니다. 마지막 월급의 근로소득 원천징수영수증과 구분하세요.</p>
+    <p>원천징수는 돈을 지급하는 쪽이 세금을 미리 떼어 대신 내는 방식입니다. 영수증은 지급액과 세금 계산을 확인하는 자료로 쓰입니다. 세금을 당장 떼지 않는 과세이연이라면 그 사유도 함께 기재하도록 돼 있어요.</p>
+    <table class="tbl txt">
+      <thead>
+        <tr><th>확인할 항목</th><th>대조할 내용</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>퇴직급여액</td><td>회사가 안내한 세전 퇴직금과 같은지</td></tr>
+        <tr><td>근속기간</td><td>입사·퇴사 정보와 계산에 반영한 기간이 맞는지</td></tr>
+        <tr><td>세금 내역</td><td>소득세와 지방소득세가 각각 얼마인지</td></tr>
+        <tr><td>과세이연 내역</td><td>지금 낸 세금인지, 나중으로 미룬 세금인지</td></tr>
+        <tr><td>지급·입금 내역</td><td>일반 계좌와 IRP 중 어디로 얼마가 지급됐는지</td></tr>
+      </tbody>
+    </table>
+    <p>국세청 안내상 영수증은 <b>지급일이 속하는 달의 다음 달 말일까지</b> 발급합니다. 돈을 받은 날 서류가 없더라도, 지급한 회사나 퇴직연금 금융회사에 발급 여부와 계산 내역을 문의해 보세요.</p>
+    <figure class="fig"><img src="/img/toejik-tax-real3.webp" width="1200" height="675" alt="금융 상담원에게 계좌 설명을 듣는 고객" loading="lazy" decoding="async"><figcaption>AI 생성 예시 이미지</figcaption></figure>
+
+    <h2>IRP 입금액과 당장 쓸 수 있는 돈은 구분해야 합니다</h2>
+    <p>IRP에 퇴직금이 그대로 들어왔다고 해서 세금이 없어진 것은 아닙니다. IRP는 개인형 퇴직연금 계좌입니다. 퇴직소득을 연금계좌로 이체하는 등 법정 조건에 해당하면, 그 돈을 인출할 때까지 원천징수를 미루는 과세이연이 적용됩니다.</p>
+    <p>따라서 일반 계좌에서 세금을 뗀 뒤 받은 금액과, 세금 징수를 미룬 IRP 입금액을 그대로 비교하면 차이가 납니다. <b>계좌에 들어온 금액과 세후 인출액이 같은 뜻인지</b>부터 확인해야 해요.</p>
+    <p>IRP에서 연금으로 받는 경우와 연금 외 방식으로 받는 경우도 과세 구분이 다릅니다. 특히 퇴직금으로 들어온 돈, 내가 추가로 납입해 세액공제를 받은 돈, 운용수익을 한 덩어리로 보면 안 됩니다. 국세청은 이연된 퇴직소득의 연금 외 수령과 세액공제 납입금·운용수익의 과세를 구분합니다.</p>
+    <p>인출을 생각한다면 금융회사에 세후 예상 지급액을 확인하세요. 퇴직금과 개인 납입금은 각각 어떻게 계산되는지 물어보세요. 계좌 전체에 세율 하나를 적용해 추정하면 차이가 날 수 있습니다.</p>
+    <figure class="fig"><img src="/img/toejik-tax-real4.webp" width="1200" height="675" alt="집에서 휴대전화와 지급 서류를 확인하는 사람" loading="lazy" decoding="async"><figcaption>AI 생성 예시 이미지</figcaption></figure>
+
+    <h2>입금액이 다르면 세금 외 항목도 확인하세요</h2>
+    <p>통장에 들어온 돈이 적다는 이유만으로 차액을 전부 세금이라고 볼 수는 없습니다. 우선 같은 지급 건을 비교하고 있는지 살펴보세요. 마지막 급여와 퇴직금을 합친 입금인지, 퇴직금만 따로 받은 내역인지부터 구분해야 합니다.</p>
+    <p>일반 계좌로 받았고 다른 정산 항목이 없다면 세전 지급액에서 소득세와 지방소득세를 빼보세요. 이렇게 계산한 금액을 입금액과 대조하면 됩니다. IRP로 이체됐거나 나눠 지급된 경우에는 해당 지급 내역을 별도로 확인하세요.</p>
+    <p>금액이 맞지 않을 때는 다음처럼 문의할 항목을 좁혀보면 좋습니다.</p>
+    <ul>
+      <li>안내받은 퇴직금은 세전 금액인가요, 세후 금액인가요?</li>
+      <li>영수증에서 실제로 원천징수한 세금은 어느 항목인가요?</li>
+      <li>IRP 이체액과 일반 계좌 지급액을 각각 확인할 수 있나요?</li>
+      <li>세금 외에 차감하거나 함께 정산한 항목이 있나요?</li>
+    </ul>
+    <p>근속기간이나 지급액 자체가 다르게 적혔다면 세율부터 다시 계산하기보다 지급자에게 기초자료를 확인받으세요. 영수증 숫자를 대조하면 어디서 차이가 났는지 설명을 요청하기가 수월합니다.</p>
+
+    <div class="summary-box">
+      <h2>정리</h2>
+      <ul>
+        <li>퇴직금 세금은 지급액에 같은 비율을 일괄 적용하는 방식이 아닙니다.</li>
+        <li>퇴직소득 원천징수영수증에서 지급액·근속기간·세금·과세이연을 구분하세요.</li>
+        <li>IRP 입금액은 세후 인출액과 다를 수 있습니다.</li>
+        <li><b>오늘은 영수증과 입금 내역을 나란히 놓고 같은 지급 건인지 확인해 보세요.</b></li>
+      </ul>
+    </div>
+
+    <!-- AUTO:NEXT:START -->
+    <div class="next-read">
+      <h2>이어서 읽으면 좋은 글</h2>
+      <ol class="post-list">
+        <li><a href="/guide/toejik-gijun.html"><span class="n">01</span><span class="t">퇴직금 지급기준: 기간·시간·지급기한</span><span class="g">→</span></a></li>
+        <li><a href="/guide/silup-sinchung.html"><span class="n">02</span><span class="t">실업급여 신청방법: 퇴사 후 순서</span><span class="g">→</span></a></li>
+        <li><a href="/guide/alba33.html"><span class="n">03</span><span class="t">알바인데 왜 3.3%를 떼나요? 4대보험과 뭐가 다른지</span><span class="g">→</span></a></li>
+      </ol>
+    </div>
+<!-- AUTO:NEXT:END -->
+
+<p class="footnote">출처·확인일: 2026년 9월 22일. <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7880">국세청 퇴직소득세 계산방법</a>, <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7883">퇴직소득 원천징수와 영수증 발급</a>, <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7882&amp;mi=2318">퇴직소득세 이연</a>, <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7888&amp;mi=2312">연금소득 과세 구분</a>.</p>
+<p class="footnote">지방소득세 근거: <a href="https://etax.seoul.go.kr/jsp/RegnIncmtxSpeclSingoAction.view?gl_gubun=l&amp;gnb_id=020301&amp;lnb_id=020301">서울시 ETAX 특별징수 안내</a>.</p>
+<p class="footnote">이 글은 일반적인 확인 방법을 안내합니다. 실제 세액은 근속기간·중간정산·수령 방식 등에 따라 달라지므로 지급자나 세무전문가에게 개별 계산 내역을 확인하세요.</p>
+</article>
+
+
+</div>
+</main>
+<aside class="side">
+<!-- AUTO:SIDE:START -->
+    <div class="side-box calcs">
+      <h2>계산기</h2>
+      <a class="side-calc" href="/33/"><span class="txt"><span class="nm">3.3% 계산기</span><span class="ds">세전 ↔ 실수령 바로 환산</span></span><span class="arr">→</span></a>
+      <a class="side-calc" href="/pay/"><span class="txt"><span class="nm">월급 실수령액 계산기</span><span class="ds">4대보험·소득세 뗀 실수령</span></span><span class="arr">→</span></a>
+    </div>
+    <div class="side-box">
+      <h2>카테고리</h2>
+      <a class="side-cat" href="/guide/">전체 <span>(24)</span></a>
+      <a class="side-cat" href="/guide/freelance/">프리랜서·알바 <span>(10)</span></a>
+      <a class="side-cat" href="/guide/salary/">직장인·급여 <span>(13)</span></a>
+      <a class="side-cat" href="/guide/owner/">사장님 <span>(1)</span></a>
+    </div>
+    <div class="side-box">
+      <h2>검색</h2>
+      <form class="side-search" action="/guide/" method="get" role="search"><input type="search" name="q" placeholder="찾는 말" aria-label="글 검색" autocomplete="off"><button type="submit">찾기</button></form>
+    </div>
+    <div class="side-box">
+      <h2>최근 글</h2>
+      <a class="side-post" href="/guide/toejik-tax.html"><img src="/img/toejik-tax-real1.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">퇴직금 세금·실수령액 확인법</span><span class="d">2026.09.22</span></span></a>
+      <a class="side-post" href="/guide/toejik-gijun.html"><img src="/img/toejik-gijun-real1.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">퇴직금 지급기준: 기간·시간·지급기한</span><span class="d">2026.09.21</span></span></a>
+      <a class="side-post" href="/guide/cash-receipt-register.html"><img src="/img/cash-receipt-register-real1.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">현금영수증 등록: 번호·카드 등록 순서</span><span class="d">2026.09.19</span></span></a>
+      <a class="side-post" href="/guide/cash-receipt.html"><img src="/img/cash-receipt-real1.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">현금영수증 조회: 홈택스·손택스</span><span class="d">2026.09.18</span></span></a>
+    </div>
+<!-- AUTO:SIDE:END -->
+</aside>
+</div>
+<footer>
+    <p class="disclaimer">본 사이트의 정보는 참고용이며, 실제 세액·환급액과 다를 수 있습니다.</p>
+    <p>세금은 어렵게, 계산은 쉽게 · taxtool.kr</p>
+    <nav class="footer-links">
+      <a href="/guide/">가이드</a>·<a href="/about.html">사이트 소개</a>·<a href="/privacy.html">개인정보처리방침</a>
+    </nav>
+  </footer>
+</body>
+</html>

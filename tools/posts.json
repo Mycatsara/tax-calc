@@ -35,6 +35,19 @@
   ],
   "posts": [
     {
+      "slug": "toejik-tax",
+      "date": "2026-09-22",
+      "cat": "salary",
+      "title": "퇴직금 세금: 실수령액과 원천징수영수증 확인법",
+      "short": "퇴직금 세금·실수령액 확인법",
+      "summary": "계산 사례와 원천징수영수증으로 세금·입금액을 대조하고 IRP 과세이연을 구분하세요.",
+      "related": [
+        "toejik-gijun",
+        "silup-sinchung",
+        "alba33"
+      ]
+    },
+    {
       "slug": "toejik-gijun",
       "date": "2026-09-21",
       "cat": "salary",
