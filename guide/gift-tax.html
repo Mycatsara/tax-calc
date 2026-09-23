@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>증여세 세율 2026: 공제한도와 현금 증여 계산법 — taxtool.kr</title>
+<meta name="description" content="증여세는 받은 돈에 세율을 바로 곱하지 않습니다. 가족관계별 공제한도, 현금 1억·2억 원 계산 사례, 과거 증여 합산과 신고기한을 확인하세요.">
+<meta property="og:title" content="증여세 세율 2026: 공제한도와 현금 증여 계산법">
+<meta property="og:description" content="증여세는 받은 돈에 세율을 바로 곱하지 않습니다. 가족관계별 공제한도, 현금 1억·2억 원 계산 사례, 과거 증여 합산과 신고기한을 확인하세요.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://taxtool.kr/guide/gift-tax.html">
+<meta property="og:image" content="https://taxtool.kr/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="taxtool.kr">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://taxtool.kr/guide/gift-tax.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "증여세 세율 2026: 공제한도와 현금 증여 계산법",
+  "description": "증여세는 받은 돈에 세율을 바로 곱하지 않습니다. 가족관계별 공제한도, 현금 1억·2억 원 계산 사례, 과거 증여 합산과 신고기한을 확인하세요.",
+  "mainEntityOfPage": "https://taxtool.kr/guide/gift-tax.html",
+  "datePublished": "2026-09-23",
+  "dateModified": "2026-09-23",
+  "author": {"@type": "Organization", "name": "taxtool.kr"},
+  "publisher": {"@type": "Organization", "name": "taxtool.kr"}
+}
+</script>
+<link rel="stylesheet" href="/site.css?v=20260919">
+<style>
+  header h1{font-size:26px;font-weight:900;line-height:1.35;letter-spacing:-0.5px}
+  header .meta{margin-top:12px;font-size:13px;color:var(--sub)}
+
+  article{margin-top:30px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px 24px}
+  article .lead{font-size:15.5px;color:#333A45;margin-bottom:20px;padding-bottom:20px;border-bottom:1.5px dashed var(--line)}
+  article .fig{margin:22px 0}
+  article .fig img{display:block;width:100%;height:auto;border-radius:12px}
+  article h2{font-size:19px;font-weight:900;letter-spacing:-0.3px;margin:26px 0 12px}
+  article h2:first-child{margin-top:0}
+  article p{font-size:14.5px;color:#333A45;margin-bottom:12px}
+  article b{color:var(--ink)}
+  article ul, article ol{margin:6px 0 14px 20px}
+  article li{font-size:14.5px;color:#333A45;margin-bottom:6px}
+  article a{color:var(--green);font-weight:700;text-decoration:none}
+  article a:hover{text-decoration:underline}
+  /* 금액 표 */
+  .tbl{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:14px;color:#333A45}
+  .tbl th,.tbl td{padding:9px 4px;border-bottom:1px solid var(--line);text-align:left}
+  .tbl th{font-size:12.5px;font-weight:700;color:var(--sub);border-bottom:1.5px solid var(--line)}
+  .tbl th:last-child,.tbl td:last-child{text-align:right;font-family:'IBM Plex Mono',monospace;font-weight:600;white-space:nowrap}
+  .tbl tr.total td{border-top:1.5px dashed var(--line);border-bottom:none;color:var(--ink);font-weight:700}
+  .tbl td .how{display:block;font-size:12px;font-weight:400;color:var(--sub);line-height:1.4;margin-top:2px}
+  .tbl.txt th:last-child,.tbl.txt td:last-child{text-align:left;font-family:inherit;font-weight:400;white-space:normal}
+  .tbl th,.tbl td{padding:8px 3px;font-size:13px}
+  .tbl th,.tbl td{padding:8px 3px;font-size:13px}
+  .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px 0 14px}
+  .tbl-wrap .tbl{margin:0;white-space:nowrap}
+  .tbl th,.tbl td{padding:8px 3px;font-size:13px}
+  .summary-box{
+    margin-top:22px;background:#FDF6EA;border:1px solid #F0DDBB;
+    border-radius:10px;padding:16px 18px;
+  }
+  .summary-box h2{margin-top:0;font-size:15px}
+  .summary-box ul{margin:6px 0 0 18px}
+  .summary-box li{font-size:13.5px;color:#6B5320;margin-bottom:5px}
+  .cta{
+    margin-top:22px;text-align:center;background:var(--green);color:#fff;
+    border-radius:12px;padding:20px;
+  }
+  .cta a{color:#fff;font-weight:900;font-size:16px;text-decoration:none;border-bottom:2px solid rgba(255,255,255,.5)}
+  .cta a:hover{border-color:#fff}
+  .footnote{margin-top:18px;font-size:12.5px;color:var(--sub);font-style:italic}
+
+  .pubdate{margin-top:6px;font-size:12.5px;color:#5B6472}
+
+  /* 글 목록(번호형) — 홈·글 하단 공용 */
+  .next-read{margin-top:34px}
+  .next-read h2{font-size:15px;font-weight:900;letter-spacing:-0.3px;margin:0}
+article .fig figcaption{font-size:12.5px;line-height:1.5;color:var(--sub);margin-top:6px}article .fig figcaption{font-size:12.5px;line-height:1.5;color:var(--sub);margin-top:6px}.next-read{display:none}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4428587485814712" crossorigin="anonymous"></script>
+<!-- Google Analytics 4 -->
+<script>
+(function(){
+  // ?ga=off 로 접속하면 이 브라우저 세션 동안 집계 제외 (운영자·클로드 점검용)
+  try{ if(location.search.indexOf('ga=off')>-1) sessionStorage.setItem('gaoff','1'); }catch(e){}
+  var off=false; try{ off=sessionStorage.getItem('gaoff')==='1'; }catch(e){}
+  // 자동화 브라우저(크롤러·스크래퍼)는 집계하지 않는다. 실제 사용자에게는 절대 걸리지 않는 조건만 사용.
+  var auto = navigator.webdriver===true || /HeadlessChrome|PhantomJS|Puppeteer|Playwright|Selenium/i.test(navigator.userAgent);
+  if(off||auto) return;
+  var s=document.createElement('script'); s.async=true;
+  s.src='https://www.googletagmanager.com/gtag/js?id=G-P4F2M5B9DS'; document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments);};
+  gtag('js',new Date()); gtag('config','G-P4F2M5B9DS');
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';var t=(a.textContent||'').trim().slice(0,60);if(/coupang\.com|link\.coupang|toss/.test(h)){gtag('event','affiliate_click',{link_url:h,link_text:t,page_path:location.pathname});return;}var area=a.closest('.calc-strip')?'strip':a.closest('.side')?'side':a.closest('.cta,.rel-card,.post-card,.post-list,.card')?'body':'';if(area){gtag('event','internal_link',{link_url:h,link_text:t,link_area:area,page_path:location.pathname});}});
+})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://taxtool.kr/"},{"@type":"ListItem","position":2,"name":"가이드","item":"https://taxtool.kr/guide/"},{"@type":"ListItem","position":3,"name":"증여세 세율","item":"https://taxtool.kr/guide/gift-tax.html"}]}
+</script>
+</head>
+<body>
+<header class="site-head"><div class="in">
+  <a class="logo" href="/">tax<b>tool</b>.kr</a>
+  <nav>
+<!-- AUTO:NAV:START -->
+    <a href="/">홈</a>
+    <a href="/33/">계산기</a>
+    <a href="/guide/freelance/">프리랜서·알바</a>
+    <a href="/guide/salary/">직장인·급여</a>
+    <a href="/guide/owner/">사장님</a>
+    <a href="/about.html">소개</a>
+<!-- AUTO:NAV:END -->
+  </nav>
+</div></header>
+<div class="calc-strip">
+<!-- AUTO:CALCS:START -->
+    <a href="/33/"><span class="lbl">프리랜서·알바</span><span class="nm">3.3% 계산기</span><span class="ds">세전 ↔ 실수령 바로 환산</span></a>
+    <a href="/pay/"><span class="lbl">직장인</span><span class="nm">월급 실수령액 계산기</span><span class="ds">4대보험·소득세 뗀 실수령</span></a>
+<!-- AUTO:CALCS:END -->
+</div>
+<div class="layout">
+<main class="main">
+<div class="wrap">
+
+  <p class="crumb"><a href="/">홈</a> / <a href="/guide/">가이드</a> / 증여세 세율</p>
+
+  <header>
+    <span class="eyebrow">증여세 세율</span>
+    <h1>증여세 세율 2026: 공제한도와 현금 증여 계산법</h1>
+    <p class="meta">공제 후 세금과 과거 증여 합산을 계산 사례로 확인하세요</p>
+    <p class="pubdate">2026년 9월 23일 게시</p>
+  </header>
+
+  <article>
+    <p class="lead">부모님에게 현금 1억 원을 받으면 세금을 1천만 원 내야 할까요? <b>거주자인 성년 자녀가 처음 받고 기본공제를 전부 쓸 수 있다면, 산출세액은 500만 원입니다.</b> 기한 안에 적법하게 신고해 3% 신고세액공제까지 받으면 납부액은 485만 원이에요. 과거에 받은 돈이나 혼인·출산 공제 여부에 따라 결과는 달라집니다.</p>
+    <p>아래는 2026년 9월 23일 확인한 일반적인 현금 증여 기준입니다. 돈을 받는 사람이 거주자이고, 증여받은 돈과 관련한 채무나 다른 공제·가산세는 없다고 가정했습니다. 세금은 받는 사람이 직접 납부하는 사례입니다.</p>
+    <figure class="fig"><img src="/img/gift-tax-family.webp" width="1200" height="675" alt="부모와 성년 자녀가 식탁에서 지원 계획을 의논하는 생성 이미지" fetchpriority="high" decoding="async"><figcaption>AI 생성 이미지 · 실제 증여 사례가 아닙니다.</figcaption></figure>
+
+    <h2>증여세 세율표는 받은 돈이 아니라 공제 후 금액에 적용합니다</h2>
+    <p>통장에 들어온 금액만 보고 세율을 고르면 계산부터 어긋납니다. 먼저 가족관계에 따라 빼주는 <b>증여재산공제</b>를 확인하세요. 공제를 뺀 뒤 세금을 매기는 기준금액을 <b>과세표준</b>이라고 합니다.</p>
+    <table class="tbl txt">
+      <thead>
+        <tr><th>과세표준</th><th>세율</th><th>누진공제</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1억 원 이하</td><td>10%</td><td>없음</td></tr>
+        <tr><td>1억 원 초과~5억 원 이하</td><td>20%</td><td>1천만 원</td></tr>
+        <tr><td>5억 원 초과~10억 원 이하</td><td>30%</td><td>6천만 원</td></tr>
+        <tr><td>10억 원 초과~30억 원 이하</td><td>40%</td><td>1억 6천만 원</td></tr>
+        <tr><td>30억 원 초과</td><td>50%</td><td>4억 6천만 원</td></tr>
+      </tbody>
+    </table>
+    <p><b>산출세액 = 과세표준 × 세율 − 누진공제</b>입니다. 누진공제는 낮은 구간에 적용되는 세율까지 반영해 한 번에 계산하도록 빼주는 금액이에요. 가족관계별 공제와는 다른 항목입니다.</p>
+    <p>예를 들어 성년 자녀가 부모에게 현금 2억 원을 처음 받았다고 해볼게요. 기본공제 5천만 원을 빼면 과세표준은 1억 5천만 원입니다. 여기에 20%를 곱하고 누진공제 1천만 원을 빼면 산출세액은 <b>2천만 원</b>이 됩니다. 다른 공제 없이 신고세액공제 3%를 적용한 납부액은 <b>1,940만 원</b>입니다.</p>
+    <p>세율표와 산출 구조는 <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7728&amp;mi=2340">국세청 세액계산 흐름도</a>를 기준으로 정리했습니다.</p>
+    <figure class="fig"><img src="/img/gift-tax-flow.webp" width="900" height="1100" alt="성년 자녀 현금1억원 증여에서 기본공제와 신고공제를 거쳐485만원을 계산하는 도표" loading="lazy" decoding="async"><figcaption>국세청 자료를 바탕으로 taxtool 제작 · 조건별 가상 계산</figcaption></figure>
+
+    <h2>공제한도는 가족관계와 이전 10년 기록을 함께 봅니다</h2>
+    <p>같은 현금이라도 누구에게 받았는지에 따라 공제액이 달라집니다. 아래 금액은 매번 새로 생기는 한도가 아닙니다. <b>해당 구분에서 이전 10년 동안 이미 공제받은 금액까지 합쳐서</b> 적용합니다.</p>
+    <table class="tbl">
+      <thead>
+        <tr><th>돈을 주는 사람</th><th>기본공제 한도</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>법률상 배우자</td><td>6억 원</td></tr>
+        <tr><td>부모·조부모 등 직계존속 → 성년</td><td>5천만 원</td></tr>
+        <tr><td>부모·조부모 등 직계존속 → 미성년자</td><td>2천만 원</td></tr>
+        <tr><td>자녀·손자녀 등 직계비속</td><td>5천만 원</td></tr>
+        <tr><td>그 밖의 4촌 이내 혈족·3촌 이내 인척</td><td>1천만 원</td></tr>
+      </tbody>
+    </table>
+    <p>성년 자녀가 아버지에게 공제받았다고 해서 어머니나 할아버지에게 받을 때 5천만 원이 별도로 생기지 않습니다. 직계존속에게 받은 증여에 적용한 공제액을 함께 확인해야 해요.</p>
+    <p>이 표는 <a href="https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1029615597">상속세 및 증여세법 제53조</a>의 거주자 공제 기준입니다. 비거주자는 이 공제표를 그대로 적용하면 안 됩니다.</p>
+
+    <h2>현금 1억 원, 성년·미성년·배우자의 세금은 이렇게 다릅니다</h2>
+    <p>가족에게 같은 금액을 주더라도 받는 사람에 따라 납부액이 달라져요. 과거 증여가 없고, 해당 기본공제를 전부 쓸 수 있다는 조건으로 비교했습니다.</p>
+    <ul><li><b>받는 사람·관계: 부모에게 받는 성년 자녀</b><ul><li>과세표준: 5천만 원</li><li>산출세액: 500만 원</li><li>신고세액공제 후 납부액: 485만 원</li></ul></li><li><b>받는 사람·관계: 부모에게 받는 미성년 자녀</b><ul><li>과세표준: 8천만 원</li><li>산출세액: 800만 원</li><li>신고세액공제 후 납부액: 776만 원</li></ul></li><li><b>받는 사람·관계: 법률상 배우자에게 받는 배우자</b><ul><li>과세표준: 0원</li><li>산출세액: 0원</li><li>신고세액공제 후 납부액: 0원</li></ul></li></ul>
+    <p>성년 자녀의 계산은 <b>1억 원 − 5천만 원 = 과세표준 5천만 원</b>, 여기에 10%를 곱해 500만 원입니다. 이 사례의 신고세액공제는 15만 원이므로 납부액은 485만 원이 됩니다.</p>
+    <p>표의 마지막 금액은 기한 안에 적법하게 신고하고, 다른 공제나 가산세가 없을 때의 결과입니다. 세금을 부모가 대신 내주면 추가 증여 문제가 생기므로 위 계산을 그대로 쓰지 마세요.</p>
+    <figure class="fig"><img src="/img/gift-tax-compare.webp" width="900" height="1100" alt="현금1억원을 받는 성년·미성년 자녀와 배우자의 조건별 납부액 비교" loading="lazy" decoding="async"><figcaption>국세청 자료를 바탕으로 taxtool 제작 · 조건별 가상 계산</figcaption></figure>
+
+    <h2>예전에 받은 돈이 있으면 이번 증여와 합산할 수 있습니다</h2>
+    <p>이번에 받은 돈만 입력했는데 실제 세금은 더 나오는 경우가 있습니다. 증여 전 10년 이내 같은 사람에게 받은 증여재산의 과세가액 합계가 1천만 원 이상이면 합산 대상입니다. 증여자가 부모 등 직계존속이면 그 배우자도 같은 사람에 포함합니다.</p>
+    <p>성년 자녀가 <b>5년 전 아버지에게 5천만 원</b>을 받고 기본공제를 모두 사용했습니다. <b>이번에는 어머니에게 1억 원</b>을 받았다고 해보겠습니다. 부모는 혼인 중이며, 다른 증여나 추가 공제는 없다는 조건입니다.</p>
+    <ol>
+      <li>합산할 증여금액: 과거 5천만 원 + 이번 1억 원 = 1억 5천만 원</li>
+      <li>10년 동안 적용할 기본공제: 총 5천만 원</li>
+      <li>과세표준: 1억 원, 산출세액: 1천만 원</li>
+      <li>과거 산출세액은 0원, 이번 신고세액공제 30만 원을 빼면 납부액은 <b>970만 원</b></li>
+    </ol>
+    <p><b>재산을 합산하는 범위와 공제한도를 묶는 범위는 다릅니다.</b> 부모와 조부모를 모두 같은 증여자로 묶어 계산하는 것은 아닙니다. 반면 직계존속 기본공제는 부모·조부모에게 사용한 금액을 함께 확인합니다.</p>
+    <p>과거에 낸 증여세가 있는 사례라면 납부세액공제도 따져야 합니다. 합산 기준과 공제 방식은 <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7960&amp;mi=6533">국세청 항목별 설명</a>에서 확인할 수 있습니다.</p>
+    <figure class="fig"><img src="/img/gift-tax-history.webp" width="900" height="1100" alt="5년 전 아버지5천만원과 이번 어머니1억원을 합산하는 예시" loading="lazy" decoding="async"><figcaption>국세청 자료를 바탕으로 taxtool 제작 · 조건별 가상 계산</figcaption></figure>
+
+    <h2>혼인·출산 공제 대상이면 계산이 달라집니다</h2>
+    <p>결혼이나 출산을 앞뒤로 부모에게 지원받는 경우라면 기본공제만 확인하고 끝내지 마세요. 거주자가 직계존속에게 받은 증여 중 요건을 충족하면 <b>기본공제와 별도로 혼인·출산 통합 1억 원</b>까지 공제합니다.</p>
+    <ul>
+      <li>혼인: 혼인관계증명서상 신고일 전후 2년 이내에 받은 증여</li>
+      <li>출산: 자녀 출생일 또는 입양신고일부터 2년 이내에 받은 증여</li>
+    </ul>
+    <p>혼인 때 1억 원, 출산 때 또 1억 원씩 공제하는 방식은 아닙니다. 둘을 합친 한도가 1억 원입니다. 이 추가 공제는 기본공제처럼 10년마다 한도가 새로 생기지 않습니다. 기본공제의 남은 금액과 이미 사용한 혼인·출산 공제액을 각각 확인해야 합니다. 근거는 <a href="https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1029616213">상속세 및 증여세법 제53조의2</a>입니다.</p>
+
+    <h2>신고기한을 잡고 실제 증여내역으로 확인하세요</h2>
+    <p>세금을 계산했다면 신고·납부 날짜도 함께 적어두세요. 일반적인 증여세 신고기한은 <b>증여받은 날이 속하는 달의 말일부터 3개월 이내</b>입니다. 증여 당일부터 단순히 90일을 세는 방식이 아닙니다. 기한이 공휴일 등에 해당하면 연장 규정을 확인해야 합니다.</p>
+    <p>홈택스는 증여세 전자신고와 자동계산을 제공합니다. 계산 전에는 증여일·현금액·가족관계·이전 증여 및 공제 기록을 정리해 두세요. 혼인·출산 공제를 적용한다면 해당 날짜와 공제 이력도 필요합니다. 신고서와 제출서류는 <a href="https://j.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7730&amp;mi=2342">국세청 신고 안내</a>를 확인하세요.</p>
+    <p>부동산·주식의 평가, 조부모가 손자녀에게 직접 주는 증여, 비거주자나 특례 적용은 이 글의 현금 예시와 구분해야 합니다.</p>
+
+    <div class="summary-box">
+      <h2>정리</h2>
+<p>증여세는 받은 돈에서 공제를 뺀 과세표준으로 계산합니다. 처음 받는 성년 자녀의 현금 1억 원 사례는 납부액이 485만 원이지만, 과거에 공제를 사용했다면 결과가 달라집니다. <b>가족관계 → 이전 증여·공제 기록 → 세율 계산 → 신고기한</b> 순서로 확인하세요.</p>
+    </div>
+
+    <!-- AUTO:NEXT:START -->
+    <div class="next-read">
+      <h2>이어서 읽으면 좋은 글</h2>
+      <ol class="post-list">
+        <li><a href="/guide/toejik-tax.html"><span class="n">01</span><span class="t">퇴직금 세금·실수령액 확인법</span><span class="g">→</span></a></li>
+        <li><a href="/guide/toejik-gijun.html"><span class="n">02</span><span class="t">퇴직금 지급기준: 기간·시간·지급기한</span><span class="g">→</span></a></li>
+        <li><a href="/guide/cash-receipt-register.html"><span class="n">03</span><span class="t">현금영수증 등록: 번호·카드 등록 순서</span><span class="g">→</span></a></li>
+      </ol>
+    </div>
+<!-- AUTO:NEXT:END -->
+
+    <div class="cta">
+      <a href="https://www.hometax.go.kr/">홈택스에서 실제 증여내역으로 계산·신고 확인하기 →</a>
+    </div>
+
+    <p class="footnote">이 글은 2026년 9월 23일 확인한 일반적인 제도 안내입니다. 계산 사례는 명시한 조건에 따른 가상 예시이며, 개별 증여에 대한 세무 자문을 대신하지 않습니다.</p>
+</article>
+
+
+</div>
+</main>
+<aside class="side">
+<!-- AUTO:SIDE:START -->
+    <div class="side-box calcs">
+      <h2>계산기</h2>
+      <a class="side-calc" href="/33/"><span class="txt"><span class="nm">3.3% 계산기</span><span class="ds">세전 ↔ 실수령 바로 환산</span></span><span class="arr">→</span></a>
+      <a class="side-calc" href="/pay/"><span class="txt"><span class="nm">월급 실수령액 계산기</span><span class="ds">4대보험·소득세 뗀 실수령</span></span><span class="arr">→</span></a>
+    </div>
+    <div class="side-box">
+      <h2>카테고리</h2>
+      <a class="side-cat" href="/guide/">전체 <span>(25)</span></a>
+      <a class="side-cat" href="/guide/freelance/">프리랜서·알바 <span>(10)</span></a>
+      <a class="side-cat" href="/guide/salary/">직장인·급여 <span>(14)</span></a>
+      <a class="side-cat" href="/guide/owner/">사장님 <span>(1)</span></a>
+    </div>
+    <div class="side-box">
+      <h2>검색</h2>
+      <form class="side-search" action="/guide/" method="get" role="search"><input type="search" name="q" placeholder="찾는 말" aria-label="글 검색" autocomplete="off"><button type="submit">찾기</button></form>
+    </div>
+    <div class="side-box">
+      <h2>최근 글</h2>
+      <a class="side-post" href="/guide/gift-tax.html"><img src="/img/gift-tax-family.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">증여세 세율·현금 증여 계산법</span><span class="d">2026.09.23</span></span></a>
+      <a class="side-post" href="/guide/toejik-tax.html"><img src="/img/toejik-tax-real1.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">퇴직금 세금·실수령액 확인법</span><span class="d">2026.09.22</span></span></a>
+      <a class="side-post" href="/guide/toejik-gijun.html"><img src="/img/toejik-gijun-real1.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">퇴직금 지급기준: 기간·시간·지급기한</span><span class="d">2026.09.21</span></span></a>
+      <a class="side-post" href="/guide/cash-receipt-register.html"><img src="/img/cash-receipt-register-real1.webp" width="84" height="48" alt="" loading="lazy" decoding="async"><span class="txt"><span class="t">현금영수증 등록: 번호·카드 등록 순서</span><span class="d">2026.09.19</span></span></a>
+    </div>
+<!-- AUTO:SIDE:END -->
+</aside>
+</div>
+<footer>
+    <p class="disclaimer">본 사이트의 정보는 참고용이며, 실제 세액·환급액과 다를 수 있습니다.</p>
+    <p>세금은 어렵게, 계산은 쉽게 · taxtool.kr</p>
+    <nav class="footer-links">
+      <a href="/guide/">가이드</a>·<a href="/about.html">사이트 소개</a>·<a href="/privacy.html">개인정보처리방침</a>
+    </nav>
+  </footer>
+</body>
+</html>
