@@ -35,6 +35,18 @@
   ],
   "posts": [
     {
+      "slug": "toejik-interim",
+      "date": "2026-09-24",
+      "cat": "salary",
+      "title": "퇴직금 중간정산: 가능한 사유와 신청서류",
+      "short": "퇴직금 중간정산 사유·신청서류",
+      "summary": "전세보증금·주택구입·의료비 조건과 제도별 차이, 회사 신청 순서를 확인하세요.",
+      "related": [
+        "toejik-gijun",
+        "toejik-tax"
+      ]
+    },
+    {
       "slug": "gift-tax",
       "date": "2026-09-23",
       "cat": "salary",
