@@ -35,6 +35,17 @@
   ],
   "posts": [
     {
+      "slug": "monthly-rent-credit",
+      "date": "2026-09-25",
+      "cat": "salary",
+      "title": "월세 세액공제 조건: 대상·서류와 공제액 확인법",
+      "short": "월세 세액공제 조건·서류",
+      "summary": "대상 판단과 공제액 계산, 제출서류와 주말부부·다자녀 조건을 확인하세요.",
+      "related": [
+        "cash-receipt"
+      ]
+    },
+    {
       "slug": "toejik-interim",
       "date": "2026-09-24",
       "cat": "salary",
