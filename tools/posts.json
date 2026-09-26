@@ -35,6 +35,17 @@
   ],
   "posts": [
     {
+      "slug": "gift-tax-filing",
+      "date": "2026-09-26",
+      "cat": "salary",
+      "title": "증여세 신고방법: 현금 증여 홈택스 절차와 필요서류",
+      "short": "증여세 신고방법·필요서류",
+      "summary": "현금 증여의 신고기한과 홈택스 절차, 증빙 제출·납부 완료 확인법을 정리했습니다.",
+      "related": [
+        "gift-tax"
+      ]
+    },
+    {
       "slug": "monthly-rent-credit",
       "date": "2026-09-25",
       "cat": "salary",
