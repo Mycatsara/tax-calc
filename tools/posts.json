@@ -35,6 +35,18 @@
   ],
   "posts": [
     {
+      "slug": "silup-voluntary",
+      "date": "2026-09-26",
+      "cat": "salary",
+      "title": "자진퇴사 실업급여 조건: 인정 사유와 준비할 증빙서류",
+      "short": "자진퇴사 실업급여 조건·증빙서류",
+      "summary": "임금체불·통근곤란·질병 등 사유별 조건과 증빙, 퇴사 전 확인할 순서를 정리했습니다.",
+      "related": [
+        "silup-sinchung",
+        "silup"
+      ]
+    },
+    {
       "slug": "gift-tax-filing",
       "date": "2026-09-26",
       "cat": "salary",
