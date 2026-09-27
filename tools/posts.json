@@ -35,6 +35,30 @@
   ],
   "posts": [
     {
+      "slug": "health-insurance-continuation",
+      "date": "2026-09-27",
+      "cat": "salary",
+      "title": "건강보험 임의계속가입: 퇴사 후 신청기한과 보험료 비교",
+      "short": "건강보험 임의계속가입",
+      "summary": "퇴사 후 신청기한, 가족 보험료를 포함한 비교와 첫 보험료 납부까지 확인하세요.",
+      "related": [
+        "silup-voluntary",
+        "gongje"
+      ]
+    },
+    {
+      "slug": "annual-leave-pay",
+      "date": "2026-09-27",
+      "cat": "salary",
+      "title": "연차수당 계산법: 남은 연차와 통상임금으로 확인하기",
+      "short": "연차수당 계산법",
+      "summary": "통상임금과 근로시간을 넣은 계산 예시, 사용촉진 예외와 퇴사 정산기한을 확인하세요.",
+      "related": [
+        "silup-voluntary",
+        "toejik-gijun"
+      ]
+    },
+    {
       "slug": "silup-voluntary",
       "date": "2026-09-26",
       "cat": "salary",
