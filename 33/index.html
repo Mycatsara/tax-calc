@@ -345,13 +345,19 @@
       local = floor10(gross * 0.003);
       net = gross - tax - local;
     }else{
-      // 실수령 → 세전 역산: net ≈ gross * 0.967
-      gross = Math.round(v / 0.967);
+      // 실수령 → 세전 역산: 세전 g의 실수령(g − 소득세 − 지방소득세)이 입력값과 정확히 같아지는 g 중에서
+      // 단순 나눗셈(v ÷ 0.967)에 가장 가까운 것(같으면 작은 쪽)을 고른다. 예: 실수령 967,000 → 1,000,000(999,980도 답이지만 덜 자연스러움).
+      // 10원 미만 절사 때문에 단순 나눗셈만 쓰면 약 1.4% 입력에서 10원 어긋났다(2026-09-28 수정, tools/test/calc33.test.js로 전수 대조).
+      const netOf = g => g - floor10(g * 0.03) - floor10(g * 0.003);
+      const est = v / 0.967;
+      gross = null;
+      for(let g = Math.max(0, Math.floor(est) - 40); g <= Math.floor(est) + 40; g++){
+        if(netOf(g) === v && (gross === null || Math.abs(g - est) < Math.abs(gross - est))){ gross = g; }
+      }
+      if(gross === null){ gross = Math.round(est); } // 이론상 오지 않음(실수령은 1원씩 오르다 절사 때만 9원 내려가므로 범위 안에 답이 있다)
       tax = floor10(gross * 0.03);
       local = floor10(gross * 0.003);
       net = v;
-      // 절사 오차 보정
-      if(gross - tax - local !== net){ gross = net + tax + local; }
     }
     document.getElementById('rGross').textContent = comma(gross);
     document.getElementById('rTax').textContent = '−' + comma(tax);
