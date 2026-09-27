@@ -194,4 +194,33 @@ for (const f of allPages) {
   if (fillIf(f, 'SIDE', sideHtml(cur))) changed++;
 }
 
+// ---------- 6) RSS 피드 feed.xml (2026-09-28 추가 — 네이버 서치어드바이저·다음 웹마스터도구에 새 글을 알리는 통로) ----------
+{
+  const SITE = 'https://taxtool.kr';
+  const rfc822 = (d) => new Date(`${d}T09:00:00+09:00`).toUTCString().replace('GMT', '+0000');
+  const latest = [...posts].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0)).slice(0, 20);
+  const items = latest.map((p) => `    <item>
+      <title>${esc(p.title)}</title>
+      <link>${SITE}/guide/${p.slug}.html</link>
+      <guid isPermaLink="true">${SITE}/guide/${p.slug}.html</guid>
+      <pubDate>${rfc822(p.date)}</pubDate>
+      <description>${esc(p.summary || p.title)}</description>
+    </item>`).join('\n');
+  const feed = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>taxtool.kr — 세금 계산기와 실수령액 가이드</title>
+    <link>${SITE}/</link>
+    <description>알바·프리랜서·직장인의 세금과 급여를 계산기와 공식 자료로 정리하는 가이드</description>
+    <language>ko</language>
+    <atom:link href="${SITE}/feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>${latest[0] ? rfc822(latest[0].date) : rfc822('2026-09-28')}</lastBuildDate>
+${items}
+  </channel>
+</rss>
+`;
+  const prev = fs.existsSync(path.join(ROOT, 'feed.xml')) ? read('feed.xml') : '';
+  if (prev !== feed) { write('feed.xml', feed); changed++; }
+}
+
 console.log(`글 ${posts.length}편 · 카테고리 ${cats.length}개 · 계산기 ${calcs.length}개 · 페이지 ${allPages.length}개 · 갱신된 파일 ${changed}개`);
