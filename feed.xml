@@ -6,7 +6,14 @@
     <description>알바·프리랜서·직장인의 세금과 급여를 계산기와 공식 자료로 정리하는 가이드</description>
     <language>ko</language>
     <atom:link href="https://taxtool.kr/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sun, 27 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>일용직 퇴직금: 쉬는 날이 있어도 받을 수 있나요?</title>
+      <link>https://taxtool.kr/guide/daily-worker-severance.html</link>
+      <guid isPermaLink="true">https://taxtool.kr/guide/daily-worker-severance.html</guid>
+      <pubDate>Mon, 28 Sep 2026 00:00:00 +0000</pubDate>
+      <description>근무 공백과 주 15시간 판단, 계산 사례와 퇴직공제금 차이를 확인하세요.</description>
+    </item>
     <item>
       <title>건강보험 임의계속가입: 퇴사 후 신청기한과 보험료 비교</title>
       <link>https://taxtool.kr/guide/health-insurance-continuation.html</link>
@@ -139,13 +146,6 @@
       <guid isPermaLink="true">https://taxtool.kr/guide/silup.html</guid>
       <pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate>
       <description>평균임금의 60%라지만 실제 하루 지급액은 하한 66,048원과 상한 68,100원 사이입니다. 월급 200만~500만 원별 하루·한 달·120~180일 총액 표, 나이·가입기간별 지급 일수, 조건 4가지와 12개월 신청 기한까지.</description>
-    </item>
-    <item>
-      <title>근로장려금 대상 조회, 안내문이 안 왔을 때 홈택스 확인법과 탈락 사유 6가지</title>
-      <link>https://taxtool.kr/guide/jangryeo-daesang.html</link>
-      <guid isPermaLink="true">https://taxtool.kr/guide/jangryeo-daesang.html</guid>
-      <pubDate>Tue, 08 Sep 2026 00:00:00 +0000</pubDate>
-      <description>안내문이 안 와도 홈택스 안내대상자 여부 조회로 확인하고 직접입력신청으로 신청할 수 있습니다. 소득·재산·월급 500만 원 기준 탈락 사유 6가지, 부채를 빼지 않는 재산 계산, 신청 후 12월에 입금이 없는 경우 3가지까지.</description>
     </item>
   </channel>
 </rss>

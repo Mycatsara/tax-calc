@@ -35,6 +35,18 @@
   ],
   "posts": [
     {
+      "slug": "daily-worker-severance",
+      "date": "2026-09-28",
+      "cat": "salary",
+      "title": "일용직 퇴직금: 쉬는 날이 있어도 받을 수 있나요?",
+      "short": "일용직 퇴직금",
+      "summary": "근무 공백과 주 15시간 판단, 계산 사례와 퇴직공제금 차이를 확인하세요.",
+      "related": [
+        "toejik-gijun",
+        "toejik-tax"
+      ]
+    },
+    {
       "slug": "health-insurance-continuation",
       "date": "2026-09-27",
       "cat": "salary",
