@@ -6,7 +6,14 @@
     <description>알바·프리랜서·직장인의 세금과 급여를 계산기와 공식 자료로 정리하는 가이드</description>
     <language>ko</language>
     <atom:link href="https://taxtool.kr/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 28 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>해고예고수당 조건: 3개월·30일 기준과 계산법</title>
+      <link>https://taxtool.kr/guide/dismissal-notice-pay.html</link>
+      <guid isPermaLink="true">https://taxtool.kr/guide/dismissal-notice-pay.html</guid>
+      <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
+      <description>3개월·30일 기준, 단시간 알바 계산과 미지급 신고 준비물을 확인하세요.</description>
+    </item>
     <item>
       <title>일용직 퇴직금: 쉬는 날이 있어도 받을 수 있나요?</title>
       <link>https://taxtool.kr/guide/daily-worker-severance.html</link>
@@ -139,13 +146,6 @@
       <guid isPermaLink="true">https://taxtool.kr/guide/jangryeo-sinchung.html</guid>
       <pubDate>Thu, 10 Sep 2026 00:00:00 +0000</pubDate>
       <description>안내문이 있으면 ARS 1544-9944·QR·모바일 안내문, 없으면 홈택스 직접입력신청 5단계. 인증번호가 없어 막힐 때 해결법, 이용시간, 신청 뒤 심사 확인과 12월에 안 들어오는 경우 3가지까지.</description>
-    </item>
-    <item>
-      <title>실업급여 금액 2026: 하루 66,048~68,100원, 수급기간별 총액 표</title>
-      <link>https://taxtool.kr/guide/silup.html</link>
-      <guid isPermaLink="true">https://taxtool.kr/guide/silup.html</guid>
-      <pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate>
-      <description>평균임금의 60%라지만 실제 하루 지급액은 하한 66,048원과 상한 68,100원 사이입니다. 월급 200만~500만 원별 하루·한 달·120~180일 총액 표, 나이·가입기간별 지급 일수, 조건 4가지와 12개월 신청 기한까지.</description>
     </item>
   </channel>
 </rss>

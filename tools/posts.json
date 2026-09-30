@@ -35,6 +35,18 @@
   ],
   "posts": [
     {
+      "slug": "dismissal-notice-pay",
+      "date": "2026-09-30",
+      "cat": "salary",
+      "title": "해고예고수당 조건: 3개월·30일 기준과 계산법",
+      "short": "해고예고수당 조건·계산법",
+      "summary": "3개월·30일 기준, 단시간 알바 계산과 미지급 신고 준비물을 확인하세요.",
+      "related": [
+        "alba33",
+        "toejik-gijun"
+      ]
+    },
+    {
       "slug": "daily-worker-severance",
       "date": "2026-09-28",
       "cat": "salary",
