@@ -35,6 +35,18 @@
   ],
   "posts": [
     {
+      "slug": "wage-arrears-report",
+      "date": "2026-10-02",
+      "cat": "salary",
+      "title": "임금체불 신고: 월급 못 받았을 때 준비서류와 신청 순서",
+      "short": "임금체불 신고·준비서류",
+      "summary": "월별 체불액과 증빙자료 정리부터 노동포털 진정 신청·조사·미지급 후속 절차까지 확인하세요.",
+      "related": [
+        "alba33",
+        "toejik-gijun"
+      ]
+    },
+    {
       "slug": "dismissal-notice-pay",
       "date": "2026-09-30",
       "cat": "salary",
