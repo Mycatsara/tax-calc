@@ -6,7 +6,14 @@
     <description>알바·프리랜서·직장인의 세금과 급여를 계산기와 공식 자료로 정리하는 가이드</description>
     <language>ko</language>
     <atom:link href="https://taxtool.kr/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Fri, 02 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>실업크레딧 신청: 대상·본인부담금·납부 방법</title>
+      <link>https://taxtool.kr/guide/unemployment-credit.html</link>
+      <guid isPermaLink="true">https://taxtool.kr/guide/unemployment-credit.html</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>지원 대상과 월 본인부담금부터 신청기한, 고지서 납부와 가입기간 반영까지 확인하세요.</description>
+    </item>
     <item>
       <title>임금체불 신고: 월급 못 받았을 때 준비서류와 신청 순서</title>
       <link>https://taxtool.kr/guide/wage-arrears-report.html</link>
@@ -139,13 +146,6 @@
       <guid isPermaLink="true">https://taxtool.kr/guide/jangryeo-jigeubil.html</guid>
       <pubDate>Sat, 12 Sep 2026 00:00:00 +0000</pubDate>
       <description>9월 상반기 신청분은 12월 17일 지급 예정입니다. 정기·반기·기한 후 신청 일정, 홈택스 심사진행 조회와 지급유보·감액 확인법을 정리했습니다.</description>
-    </item>
-    <item>
-      <title>주휴수당 조건과 계산법 2026: 주 20시간 알바면 한 주 41,280원</title>
-      <link>https://taxtool.kr/guide/juhyu.html</link>
-      <guid isPermaLink="true">https://taxtool.kr/guide/juhyu.html</guid>
-      <pubDate>Fri, 11 Sep 2026 00:00:00 +0000</pubDate>
-      <description>주 15시간 이상·개근이면 5인 미만 가게도 받는 유급휴일 하루치. 2026 최저시급 기준 15·20·30·40시간별 금액표, 주 20시간 알바 월급 차이 179,362원, 세금·4대보험 적용, 못 받았을 때 진정과 시효 3년까지.</description>
     </item>
   </channel>
 </rss>
