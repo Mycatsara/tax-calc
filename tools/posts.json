@@ -35,6 +35,17 @@
   ],
   "posts": [
     {
+      "slug": "health-insurance-dependent",
+      "date": "2026-10-05",
+      "cat": "salary",
+      "title": "건강보험 피부양자 등록: 신청 방법과 필요서류",
+      "short": "건강보험 피부양자 등록",
+      "summary": "등록 조건과 필요서류, 직장가입자의 신고 방법부터 취득일과 처리 결과 확인까지 정리했습니다.",
+      "related": [
+        "health-insurance-continuation"
+      ]
+    },
+    {
       "slug": "unemployment-credit",
       "date": "2026-10-04",
       "cat": "salary",

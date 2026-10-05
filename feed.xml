@@ -6,7 +6,14 @@
     <description>알바·프리랜서·직장인의 세금과 급여를 계산기와 공식 자료로 정리하는 가이드</description>
     <language>ko</language>
     <atom:link href="https://taxtool.kr/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sun, 04 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>건강보험 피부양자 등록: 신청 방법과 필요서류</title>
+      <link>https://taxtool.kr/guide/health-insurance-dependent.html</link>
+      <guid isPermaLink="true">https://taxtool.kr/guide/health-insurance-dependent.html</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 +0000</pubDate>
+      <description>등록 조건과 필요서류, 직장가입자의 신고 방법부터 취득일과 처리 결과 확인까지 정리했습니다.</description>
+    </item>
     <item>
       <title>실업크레딧 신청: 대상·본인부담금·납부 방법</title>
       <link>https://taxtool.kr/guide/unemployment-credit.html</link>
@@ -139,13 +146,6 @@
       <guid isPermaLink="true">https://taxtool.kr/guide/sanghanje-refund.html</guid>
       <pubDate>Mon, 14 Sep 2026 00:00:00 +0000</pubDate>
       <description>2025년 병원비 환급 대상인지 확인하고, 자동 지급과 개별 신청을 구분하세요.</description>
-    </item>
-    <item>
-      <title>근로장려금 지급일 2026: 정기·반기 일정표</title>
-      <link>https://taxtool.kr/guide/jangryeo-jigeubil.html</link>
-      <guid isPermaLink="true">https://taxtool.kr/guide/jangryeo-jigeubil.html</guid>
-      <pubDate>Sat, 12 Sep 2026 00:00:00 +0000</pubDate>
-      <description>9월 상반기 신청분은 12월 17일 지급 예정입니다. 정기·반기·기한 후 신청 일정, 홈택스 심사진행 조회와 지급유보·감액 확인법을 정리했습니다.</description>
     </item>
   </channel>
 </rss>
