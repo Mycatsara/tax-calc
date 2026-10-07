@@ -35,6 +35,19 @@
   ],
   "posts": [
     {
+      "slug": "vat-prepayment-notice",
+      "date": "2026-10-07",
+      "cat": "owner",
+      "title": "부가세 예정고지 대상: 조회 방법과 2026년 10월 납부기한",
+      "short": "부가세 예정고지 대상·조회·납부기한",
+      "summary": "예정고지 대상과 50만원 기준, 홈택스 조회, 11월2일 납부기한과 매출 부진 때 예정신고 조건을 정리했습니다.",
+      "related": [
+        "cash-receipt",
+        "wonchon",
+        "jongsose"
+      ]
+    },
+    {
       "slug": "health-insurance-dependent",
       "date": "2026-10-05",
       "cat": "salary",

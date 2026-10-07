@@ -6,7 +6,14 @@
     <description>알바·프리랜서·직장인의 세금과 급여를 계산기와 공식 자료로 정리하는 가이드</description>
     <language>ko</language>
     <atom:link href="https://taxtool.kr/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 05 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>부가세 예정고지 대상: 조회 방법과 2026년 10월 납부기한</title>
+      <link>https://taxtool.kr/guide/vat-prepayment-notice.html</link>
+      <guid isPermaLink="true">https://taxtool.kr/guide/vat-prepayment-notice.html</guid>
+      <pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate>
+      <description>예정고지 대상과 50만원 기준, 홈택스 조회, 11월2일 납부기한과 매출 부진 때 예정신고 조건을 정리했습니다.</description>
+    </item>
     <item>
       <title>건강보험 피부양자 등록: 신청 방법과 필요서류</title>
       <link>https://taxtool.kr/guide/health-insurance-dependent.html</link>
@@ -139,13 +146,6 @@
       <guid isPermaLink="true">https://taxtool.kr/guide/jangryeo-gijun.html</guid>
       <pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate>
       <description>단독·홑벌이·맞벌이 구분부터 부부 총소득과 가구원 재산까지 순서대로 확인하세요.</description>
-    </item>
-    <item>
-      <title>상한제 사후환급금 2026: 조회·신청·지급일</title>
-      <link>https://taxtool.kr/guide/sanghanje-refund.html</link>
-      <guid isPermaLink="true">https://taxtool.kr/guide/sanghanje-refund.html</guid>
-      <pubDate>Mon, 14 Sep 2026 00:00:00 +0000</pubDate>
-      <description>2025년 병원비 환급 대상인지 확인하고, 자동 지급과 개별 신청을 구분하세요.</description>
     </item>
   </channel>
 </rss>
