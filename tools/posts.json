@@ -35,6 +35,18 @@
   ],
   "posts": [
     {
+      "slug": "midyear-tax",
+      "date": "2026-10-09",
+      "cat": "salary",
+      "title": "중도퇴사자 연말정산: 재취업 여부별 신고 시기와 준비서류",
+      "short": "중도퇴사자 연말정산",
+      "summary": "재취업 여부별 정산 시기, 원천징수영수증 준비와 추가 환급 확인 방법을 설명합니다.",
+      "related": [
+        "toejik-tax",
+        "gihanhu"
+      ]
+    },
+    {
       "slug": "vat-prepayment-notice",
       "date": "2026-10-07",
       "cat": "owner",

@@ -6,7 +6,14 @@
     <description>알바·프리랜서·직장인의 세금과 급여를 계산기와 공식 자료로 정리하는 가이드</description>
     <language>ko</language>
     <atom:link href="https://taxtool.kr/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 07 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>중도퇴사자 연말정산: 재취업 여부별 신고 시기와 준비서류</title>
+      <link>https://taxtool.kr/guide/midyear-tax.html</link>
+      <guid isPermaLink="true">https://taxtool.kr/guide/midyear-tax.html</guid>
+      <pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+      <description>재취업 여부별 정산 시기, 원천징수영수증 준비와 추가 환급 확인 방법을 설명합니다.</description>
+    </item>
     <item>
       <title>부가세 예정고지 대상: 조회 방법과 2026년 10월 납부기한</title>
       <link>https://taxtool.kr/guide/vat-prepayment-notice.html</link>
@@ -139,13 +146,6 @@
       <guid isPermaLink="true">https://taxtool.kr/guide/yuka-hyujik.html</guid>
       <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
       <description>기간별 급여 상한과 6+6·한부모 특례를 구분하고 고용24 신청 순서를 확인하세요.</description>
-    </item>
-    <item>
-      <title>근로장려금 기준 2026: 가구별 소득·재산 확인법</title>
-      <link>https://taxtool.kr/guide/jangryeo-gijun.html</link>
-      <guid isPermaLink="true">https://taxtool.kr/guide/jangryeo-gijun.html</guid>
-      <pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate>
-      <description>단독·홑벌이·맞벌이 구분부터 부부 총소득과 가구원 재산까지 순서대로 확인하세요.</description>
     </item>
   </channel>
 </rss>
